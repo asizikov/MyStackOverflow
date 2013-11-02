@@ -103,6 +103,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\ServiceLocator.cs" />
+    <Compile Include="Services\SystemDispatcher.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -173,9 +176,13 @@
       <Project>{D246B465-E289-452B-A16B-0792C68979A2}</Project>
       <Name>MyStackOverflow.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyStackOverflow.Model\MyStackOverflow.Model.csproj">
-      <Project>{CF654FEA-A8DE-4B86-BC85-062B04023D74}</Project>
-      <Name>MyStackOverflow.Model</Name>
+    <ProjectReference Include="..\MyStackOverflow.Data\MyStackOverflow.Data.csproj">
+      <Project>{3762C1C7-C64B-4F6E-A9F4-1F36C2F486E1}</Project>
+      <Name>MyStackOverflow.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyStackOverflow.ViewModels\MyStackOverflow.ViewModels.csproj">
+      <Project>{23B64E89-5D7B-4D9C-BA9A-EDB0EC80BBF3}</Project>
+      <Name>MyStackOverflow.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

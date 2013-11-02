@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MyStackOverflow.Model
+﻿namespace MyStackOverflow.Model
 {
-    public class BadgeCounts
-    {
-        public int gold { get; set; }
-        public int silver { get; set; }
-        public int bronze { get; set; }
-    }
-
     public class User
     {
         public int user_id { get; set; }
@@ -42,13 +30,5 @@ namespace MyStackOverflow.Model
         public string user_comments_url { get; set; }
         public string user_reputation_url { get; set; }
         public BadgeCounts badge_counts { get; set; }
-    }
-
-    public class RootObject
-    {
-        public int total { get; set; }
-        public int page { get; set; }
-        public int pagesize { get; set; }
-        public List<User> users { get; set; }
     }
 }
