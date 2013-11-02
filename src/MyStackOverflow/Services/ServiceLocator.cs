@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
 using MyStackOverflow.Data;
 using MyStackOverflow.ViewModels;
+using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.Services
@@ -19,6 +20,7 @@ namespace MyStackOverflow.Services
             WebCache.PullFromStorage();
             DataProvider = new AsyncDataProvider(WebCache);
             ApplicationSettings = new ApplicationSettings();
+            NavigationService = new NavigationService(rootFrame, SystemDispatcher);
         }
 
         [NotNull]
@@ -32,5 +34,8 @@ namespace MyStackOverflow.Services
 
         [NotNull]
         public static IApplicationSettings ApplicationSettings { get; private set; }
+
+        [NotNull]
+        public static INavigationService NavigationService { get; private set; }
     }
 }

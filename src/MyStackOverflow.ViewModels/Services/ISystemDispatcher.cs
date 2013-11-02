@@ -4,6 +4,6 @@ namespace MyStackOverflow.ViewModels
 {
     public interface ISystemDispatcher
     {
-        void BeginInvokeOnUIifNeeded(Action action);
+        void InvokeOnUIifNeeded(Action action);
     }
 }

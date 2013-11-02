@@ -12,7 +12,7 @@ namespace MyStackOverflow.Services
 
         private bool? _designer;
 
-        public void BeginInvokeOnUIifNeeded(Action action)
+        public void InvokeOnUIifNeeded(Action action)
         {
             BeginInvoke(action);
         }

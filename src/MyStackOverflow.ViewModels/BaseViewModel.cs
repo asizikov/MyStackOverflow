@@ -22,7 +22,7 @@ namespace MyStackOverflow.ViewModels
             var handler = PropertyChanged;
             if (handler != null)
             {
-                _dispatcher.BeginInvokeOnUIifNeeded(() => handler(this, new PropertyChangedEventArgs(propertyName)));
+                _dispatcher.InvokeOnUIifNeeded(() => handler(this, new PropertyChangedEventArgs(propertyName)));
             }
         }
 

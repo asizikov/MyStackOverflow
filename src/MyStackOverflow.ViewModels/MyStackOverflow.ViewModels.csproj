@@ -48,10 +48,13 @@
     <Compile Include="Factories\IProfileViewModelFactory.cs" />
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />
+    <Compile Include="Navigation\INavigationService.cs" />
     <Compile Include="Services\ISystemDispatcher.cs" />
     <Compile Include="Navigation\Pages.cs" />
     <Compile Include="ProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Navigation\NavigationParameter.cs" />
+    <Compile Include="Navigation\NavigationParameterName.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations.PCL">
