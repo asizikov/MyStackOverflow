@@ -45,9 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
-    <Compile Include="Factories\IMainViewModelFactory.cs" />
+    <Compile Include="Factories\IProfileViewModelFactory.cs" />
+    <Compile Include="Factories\ProfileViewModelFactory.cs" />
     <Compile Include="ISystemDispatcher.cs" />
-    <Compile Include="MainViewModel.cs" />
+    <Compile Include="ProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

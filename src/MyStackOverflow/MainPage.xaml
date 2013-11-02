@@ -7,48 +7,82 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
+    FontFamily="{StaticResource PhoneFontFamilyLight}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    d:DataContext="{d:DesignData Source=/SampleData/ProfileViewModelSampleData.xaml}"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.Opacity="0">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/profile_bg.png" />
+            </Grid.Background>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                Style="{StaticResource PhoneTextTitle1Style}"
+                Text="{Binding DisplayName}" />
+            <Image Grid.Row="1" Grid.Column="1" Source="{Binding UserPic, Converter={StaticResource JetImageLoaderConverter}}"/>
+            <StackPanel 
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Orientation="Horizontal">
+                <Image CacheMode="BitmapCache" Source="/Assets/Images/appbar.location.png" Width="37" />
+                <TextBlock
+                    FontFamily="{StaticResource PhoneFontFamilyLight}"
+                    Text="{Binding Location}"
+                    Style="{StaticResource PhoneTextLargeStyle}" />
+            </StackPanel>
+        </Grid>
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Text="{Binding Reputation}"></TextBlock>
-   </Grid>
+        <Grid Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        FontFamily="{StaticResource PhoneFontFamilyLight}"
+                        Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBlock Text="{Binding GoldBages}"
+                               Foreground="Gold"
+                               FontFamily="{StaticResource PhoneFontFamilyLight}"
+                               Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBlock Text="{Binding SilverBages}"
+                               Foreground="Silver"
+                               FontFamily="{StaticResource PhoneFontFamilyLight}"
+                               Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBlock Text="{Binding BronzeBages}"
+                               Foreground="SaddleBrown"
+                               FontFamily="{StaticResource PhoneFontFamilyLight}"
+                               Style="{StaticResource PhoneTextLargeStyle}" />
+                </StackPanel>
+                <TextBlock
+                    FontFamily="{StaticResource PhoneFontFamilyLight}"
+                    Foreground="{StaticResource PhoneAccentBrush}"
+                    Style="{StaticResource PhoneTextExtraLargeStyle}"
+                    Text="{Binding Reputation}" UseOptimizedManipulationRouting="False" />
+            </StackPanel>
+        </Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>

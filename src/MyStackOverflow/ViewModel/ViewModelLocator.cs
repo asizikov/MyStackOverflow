@@ -7,7 +7,7 @@ namespace MyStackOverflow.ViewModel
 {
     internal static class ViewModelLocator
     {
-        private static Lazy<IMainViewModelFactory> _mainViewModelFactory;
+        private static Lazy<IProfileViewModelFactory> _mainViewModelFactory;
 
         static ViewModelLocator()
         {
@@ -17,10 +17,10 @@ namespace MyStackOverflow.ViewModel
         private static void InitFactories()
         {
             _mainViewModelFactory =
-                new Lazy<IMainViewModelFactory>(() => new MainViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider));
+                new Lazy<IProfileViewModelFactory>(() => new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider));
         }
 
-        public static IMainViewModelFactory MainViewModelFactory
+        public static IProfileViewModelFactory ProfileViewModelFactory
         {
             get { return _mainViewModelFactory.Value; }
         }

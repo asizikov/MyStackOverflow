@@ -13,7 +13,7 @@ namespace MyStackOverflow
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            DataContext = ViewModelLocator.MainViewModelFactory.Create();
+            DataContext = ViewModelLocator.ProfileViewModelFactory.Create();
         }
     }
 
