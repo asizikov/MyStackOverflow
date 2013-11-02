@@ -23,25 +23,30 @@ namespace MyStackOverflow.Data
         {
             if (!_cache.IsCached<T>(request.Url))
             {
-                Debug.WriteLine("DataProvider::Getting data:" + request.Url);
+                Debug.WriteLine("Getting data:" + request.Url);
                 return Observable.Create<T>(
                     observer =>
                         Scheduler.Default.Schedule(() => ExecuteRequest(request, observer))
                     );
             }
-            Debug.WriteLine("DataProvider::Getting cached data:" + request.Url);
+            Debug.WriteLine("Getting cached data:" + request.Url);
             return Observable.Create<T>(
                 observer =>
                     Scheduler.Default.Schedule(() =>
                     {
                         var item = _cache.Fetch<T>(request.Url);
                         observer.OnNext(item);
+
+                        Debug.WriteLine("UpdateData:" + request.Url);
+                        ExecuteRequest(request, observer, true);
+
                         observer.OnCompleted();
                     })
                 );
         }
 
-        private void ExecuteRequest<T>(RestfullRequest<T> request, IObserver<T> observer) where T : new()
+        private void ExecuteRequest<T>(RestfullRequest<T> request, IObserver<T> observer, bool ignoreErrors = false)
+            where T : new()
         {
             request.Execute()
                 .Subscribe(result =>
@@ -49,7 +54,13 @@ namespace MyStackOverflow.Data
                     _cache.Put(result, request.Url);
                     observer.OnNext(result);
                 },
-                    observer.OnError,
+                    ex =>
+                    {
+                        if (!ignoreErrors)
+                        {
+                            observer.OnError(ex);
+                        }
+                    },
                     observer.OnCompleted);
         }
     }

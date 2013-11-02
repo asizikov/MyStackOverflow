@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MyStackOverflow.Resources;
+using MyStackOverflow.Services;
 
 namespace MyStackOverflow
 {
@@ -79,6 +80,7 @@ namespace MyStackOverflow
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
+            ServiceLocator.WebCache.PushToStorage();
         }
 
         // Code to execute if a navigation fails
