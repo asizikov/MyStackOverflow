@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Factories\LoginViewModelFactory.cs" />
+    <Compile Include="Factories\ILoginViewModelFactory.cs" />
+    <Compile Include="LoginViewModel.cs" />
     <Compile Include="Factories\IProfileViewModelFactory.cs" />
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />

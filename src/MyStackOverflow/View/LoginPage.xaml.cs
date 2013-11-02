@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
+﻿using System.Windows.Navigation;
+using MyStackOverflow.ViewModel;
 
 namespace MyStackOverflow.View
 {
-    public partial class LoginPage : PhoneApplicationPage
+    public partial class LoginPage
     {
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            DataContext = ViewModelLocator.LoginViewModelFactory.Create();
         }
     }
 }

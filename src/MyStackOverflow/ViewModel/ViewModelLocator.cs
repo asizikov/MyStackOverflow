@@ -8,6 +8,7 @@ namespace MyStackOverflow.ViewModel
     internal static class ViewModelLocator
     {
         private static Lazy<IProfileViewModelFactory> _mainViewModelFactory;
+        private static Lazy<ILoginViewModelFactory> _logingViewModelFactory;
 
         static ViewModelLocator()
         {
@@ -17,12 +18,23 @@ namespace MyStackOverflow.ViewModel
         private static void InitFactories()
         {
             _mainViewModelFactory =
-                new Lazy<IProfileViewModelFactory>(() => new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider));
+                new Lazy<IProfileViewModelFactory>(
+                    () => new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider));
+            _logingViewModelFactory =
+                new Lazy<ILoginViewModelFactory>(
+                    () =>
+                        new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
+                            ServiceLocator.ApplicationSettings));
         }
 
         public static IProfileViewModelFactory ProfileViewModelFactory
         {
             get { return _mainViewModelFactory.Value; }
+        }
+
+        public static ILoginViewModelFactory LoginViewModelFactory
+        {
+            get { return _logingViewModelFactory.Value; }
         }
     }
 }
