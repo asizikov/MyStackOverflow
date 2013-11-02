@@ -34,10 +34,15 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Internal\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BadgeCounts.cs" />
+    <Compile Include="BagesResponce.cs" />
+    <Compile Include="Badge.cs" />
+    <Compile Include="Internal\Me.cs" />
+    <Compile Include="Internal\Settings.cs" />
+    <Compile Include="ReputationChangesRequest.cs" />
+    <Compile Include="RepChange.cs" />
     <Compile Include="UsersResponce.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />

@@ -1,29 +1,36 @@
-﻿using System.Windows;
+﻿using System;
+using JetBrains.Annotations;
+using Microsoft.Phone.Controls;
 using MyStackOverflow.Data;
 using MyStackOverflow.ViewModels;
+using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.Services
 {
     internal static class ServiceLocator
     {
-        static ServiceLocator()
+        public static void InitServices([NotNull] PhoneApplicationFrame rootFrame)
         {
-            InitServices();
-        }
-
-        private static void InitServices()
-        {
-            var dispatcher  = new SystemDispatcher();
-            dispatcher.Initialize(Application.Current.RootVisual.Dispatcher);
+            if (rootFrame == null) throw new ArgumentNullException("rootFrame");
+            var dispatcher = new SystemDispatcher();
+            dispatcher.Initialize(rootFrame.Dispatcher);
             SystemDispatcher = dispatcher;
             WebCache = new WebRequestCache();
             WebCache.PullFromStorage();
             DataProvider = new AsyncDataProvider(WebCache);
-
+            ApplicationSettings = new ApplicationSettings();
         }
 
+        [NotNull]
         public static ISystemDispatcher SystemDispatcher { get; private set; }
+
+        [NotNull]
         public static AsyncDataProvider DataProvider { get; private set; }
+
+        [NotNull]
         public static IWebCache WebCache { get; private set; }
+
+        [NotNull]
+        public static IApplicationSettings ApplicationSettings { get; private set; }
     }
 }

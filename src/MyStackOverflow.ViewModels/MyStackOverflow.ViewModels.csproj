@@ -47,7 +47,9 @@
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="Factories\IProfileViewModelFactory.cs" />
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
-    <Compile Include="ISystemDispatcher.cs" />
+    <Compile Include="Services\IApplicationSettings.cs" />
+    <Compile Include="Services\ISystemDispatcher.cs" />
+    <Compile Include="Navigation\Pages.cs" />
     <Compile Include="ProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,11 +1,11 @@
 ﻿using System.Windows.Navigation;
 using MyStackOverflow.ViewModel;
 
-namespace MyStackOverflow
+namespace MyStackOverflow.View
 {
-    public partial class MainPage
+    public partial class ProfilePage
     {
-        public MainPage()
+        public ProfilePage()
         {
             InitializeComponent();
         }

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MyStackOverflow.Resources;
-using MyStackOverflow.Services;
 
 namespace MyStackOverflow
 {
@@ -35,6 +33,7 @@ namespace MyStackOverflow
 
             // Language display initialization
             InitializeLanguage();
+            Bootstrapper.InitApplication(RootFrame);
 
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)
@@ -80,7 +79,7 @@ namespace MyStackOverflow
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
-            ServiceLocator.WebCache.PushToStorage();
+            Bootstrapper.SaveAppState();
         }
 
         // Code to execute if a navigation fails
