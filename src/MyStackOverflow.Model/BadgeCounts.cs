@@ -1,9 +1,16 @@
-﻿namespace MyStackOverflow.Model
+﻿using Newtonsoft.Json;
+
+namespace MyStackOverflow.Model
 {
     public class BadgeCounts
     {
-        public int gold { get; set; }
-        public int silver { get; set; }
-        public int bronze { get; set; }
+        [JsonProperty("gold")]
+        public int Gold { get; set; }
+
+        [JsonProperty("silver")]
+        public int Silver { get; set; }
+
+        [JsonProperty("bronze")]
+        public int Bronze { get; set; }
     }
 }
