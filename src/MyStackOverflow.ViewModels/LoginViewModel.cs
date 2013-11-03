@@ -11,6 +11,7 @@ namespace MyStackOverflow.ViewModels
     {
         private readonly INavigationService _navigation;
         private readonly IApplicationSettings _settings;
+        private string _userId;
 
         public LoginViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
             [NotNull] IApplicationSettings settings)
@@ -25,14 +26,29 @@ namespace MyStackOverflow.ViewModels
 
         private void InitCommands()
         {
-            GoToProfileCommand = new RelayCommand(GoToProfile);
+            GoToProfileCommand = new RelayCommand(GoToProfile, CanExecute);
+        }
+
+        private bool CanExecute(object o)
+        {
+            return !string.IsNullOrWhiteSpace(UserId);
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Default)]
-        public string UserId { get; set; }
+        public string UserId
+        {
+            get { return _userId; }
+            set
+            {
+                if (value == _userId) return;
+                _userId = value;
+                GoToProfileCommand.RaisCanExecuteChanged();
+                OnPropertyChanged("UserId");
+            }
+        }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public ICommand GoToProfileCommand { get; private set; }
+        public RelayCommand GoToProfileCommand { get; private set; }
 
         private void GoToProfile(object obj)
         {

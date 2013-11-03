@@ -36,6 +36,7 @@
             <TextBox
                 Grid.Row="0"
                 binding:BindingUtility.UpdateSourceOnChange="True"
+                InputScope="Digits"
                 Text="{Binding UserId, Mode=TwoWay}"/>
             <Button Grid.Row="1" Content="go" Command="{Binding GoToProfileCommand}" Height="87"/>
         </Grid>

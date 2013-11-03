@@ -25,6 +25,14 @@ namespace MyStackOverflow.ViewModels.Commands
             return _canExecute == null || _canExecute(parameter);
         }
 
+        public void RaisCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, new EventArgs());
+            }
+        }
+
         public event EventHandler CanExecuteChanged;
 
         public void Execute(object parameter)
