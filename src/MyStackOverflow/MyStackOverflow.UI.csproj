@@ -196,6 +196,13 @@
     <Reference Include="System.Reactive.Linq">
       <HintPath>..\packages\Rx-Linq.2.1.30214.0\lib\WP8\System.Reactive.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Yandex.Metrica">
+      <HintPath>..\packages\Yandex.Metrica.1.0.5050.55\lib\wp8\Yandex.Metrica.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable, Version=1.9.1.9000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
