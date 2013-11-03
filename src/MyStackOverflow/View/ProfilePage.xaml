@@ -23,14 +23,14 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.Background>
                 <ImageBrush Stretch="Fill" ImageSource="/profile_bg.png" />
@@ -42,8 +42,9 @@
                 FontFamily="{StaticResource PhoneFontFamilyLight}"
                 Style="{StaticResource PhoneTextTitle1Style}"
                 Text="{Binding DisplayName}" />
-            <Image Grid.Row="1" Grid.Column="1" Source="{Binding UserPic, Converter={StaticResource JetImageLoaderConverter}}"/>
-            <StackPanel 
+            <Image Grid.Row="1" Grid.Column="1"
+                   Source="{Binding UserPic, Converter={StaticResource JetImageLoaderConverter}}" />
+            <StackPanel
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
@@ -57,31 +58,44 @@
         </Grid>
         <!--ContentPanel - place additional content here-->
         <Grid Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
+            <phone:Pivot>
+                <phone:Pivot.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Style="{StaticResource PhoneTextLargeStyle}"
+                                   FontFamily="{StaticResource PhoneFontFamilyLight}" />
+                    </DataTemplate>
+                </phone:Pivot.HeaderTemplate>
+                <phone:PivotItem Header="reputation">
                     <TextBlock
-                        Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                         FontFamily="{StaticResource PhoneFontFamilyLight}"
-                        Style="{StaticResource PhoneTextLargeStyle}" />
-                    <TextBlock Text="{Binding GoldBages}"
-                               Foreground="Gold"
-                               FontFamily="{StaticResource PhoneFontFamilyLight}"
-                               Style="{StaticResource PhoneTextLargeStyle}" />
-                    <TextBlock Text="{Binding SilverBages}"
-                               Foreground="Silver"
-                               FontFamily="{StaticResource PhoneFontFamilyLight}"
-                               Style="{StaticResource PhoneTextLargeStyle}" />
-                    <TextBlock Text="{Binding BronzeBages}"
-                               Foreground="SaddleBrown"
-                               FontFamily="{StaticResource PhoneFontFamilyLight}"
-                               Style="{StaticResource PhoneTextLargeStyle}" />
-                </StackPanel>
-                <TextBlock
-                    FontFamily="{StaticResource PhoneFontFamilyLight}"
-                    Foreground="{StaticResource PhoneAccentBrush}"
-                    Style="{StaticResource PhoneTextExtraLargeStyle}"
-                    Text="{Binding Reputation}" UseOptimizedManipulationRouting="False" />
-            </StackPanel>
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        Style="{StaticResource PhoneTextExtraLargeStyle}"
+                        Text="{Binding Reputation}" UseOptimizedManipulationRouting="False" />
+                </phone:PivotItem>
+                <phone:PivotItem Header="profile" />
+                <phone:PivotItem Header="bages">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                            FontFamily="{StaticResource PhoneFontFamilyLight}"
+                            Style="{StaticResource PhoneTextLargeStyle}" />
+                        <TextBlock Text="{Binding GoldBages}"
+                                   Foreground="Gold"
+                                   FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                   Style="{StaticResource PhoneTextLargeStyle}" />
+                        <TextBlock Text="{Binding SilverBages}"
+                                   Foreground="Silver"
+                                   FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                   Style="{StaticResource PhoneTextLargeStyle}" />
+                        <TextBlock Text="{Binding BronzeBages}"
+                                   Foreground="SaddleBrown"
+                                   FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                   Style="{StaticResource PhoneTextLargeStyle}" />
+                    </StackPanel>
+                </phone:PivotItem>
+            </phone:Pivot>
+
+            <!--            </StackPanel>-->
         </Grid>
     </Grid>
 
