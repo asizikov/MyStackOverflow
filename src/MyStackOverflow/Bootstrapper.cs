@@ -1,7 +1,6 @@
 ﻿using System;
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
-using MyStackOverflow.Services;
 using MyStackOverflow.ServicesImpl;
 using Yandex.Metrica;
 

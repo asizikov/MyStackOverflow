@@ -72,24 +72,41 @@
                     </StackPanel>
                 </phone:PivotItem>
                 <phone:PivotItem Header="bages">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock
-                            Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                            FontFamily="{StaticResource PhoneFontFamilyLight}"
-                            Style="{StaticResource PhoneTextLargeStyle}" />
-                        <TextBlock Text="{Binding GoldBages}"
-                                   Foreground="Gold"
-                                   FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                   Style="{StaticResource PhoneTextLargeStyle}" />
-                        <TextBlock Text="{Binding SilverBages}"
-                                   Foreground="Silver"
-                                   FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                   Style="{StaticResource PhoneTextLargeStyle}" />
-                        <TextBlock Text="{Binding BronzeBages}"
-                                   Foreground="SaddleBrown"
-                                   FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                   Style="{StaticResource PhoneTextLargeStyle}" />
-                    </StackPanel>
+                    <Grid Margin="12,0,12,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <TextBlock
+                                Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding GoldBages}"
+                                       Foreground="Gold"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding SilverBages}"
+                                       Foreground="Silver"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding BronzeBages}"
+                                       Foreground="SaddleBrown"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                        </StackPanel>
+                        <ScrollViewer Grid.Row="1">
+                            <ItemsControl ItemsSource="{Binding Badges}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding Name}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Grid>
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>

@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
+using MyStackOverflow.Model;
+using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
 {
@@ -11,6 +14,7 @@ namespace MyStackOverflow.ViewModels
 
         private readonly AsyncDataProvider _dataProvider;
         private readonly int _id;
+        private readonly StatisticsService _statistics;
         private string _reputation;
         private string _displayName;
         private string _location;
@@ -18,14 +22,19 @@ namespace MyStackOverflow.ViewModels
         private int _silverBages;
         private int _goldBages;
         private string _userPic;
+        private ObservableCollection<Badge> _badges;
 
-        public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id)
+        public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id,
+            [NotNull] StatisticsService statistics)
             : base(dispatcher)
         {
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
+            if (statistics == null) throw new ArgumentNullException("statistics");
             _dataProvider = dataProvider;
             _id = id;
+            _statistics = statistics;
             Initialize();
+            _statistics.ReportProfilePageLoaded();
         }
 
         private void Initialize()
@@ -44,18 +53,44 @@ namespace MyStackOverflow.ViewModels
                         SilverBages = user.BadgeCounts.Silver;
                         BronzeBages = user.BadgeCounts.Bronze;
                         UserPic = user.EmailHash;
+                        LoadBagesInfo(_id);
                     }
                 }, ex => { IsLoading = false; });
+        }
+
+        private void LoadBagesInfo(int id)
+        {
+            _dataProvider.GetUserBagesList(id)
+                .Subscribe(bages =>
+                {
+                    if (bages != null)
+                    {
+                        Badges = new ObservableCollection<Badge>(bages.Badges);
+                    }
+                }, ex => { }
+                );
         }
 
         public string UserPic
         {
             get { return _userPic; }
-            set
+            private set
             {
                 if (value == _userPic) return;
-                _userPic = string.Format(URL_GRAVATAR,value);
+                _userPic = string.Format(URL_GRAVATAR, value);
                 OnPropertyChanged("UserPic");
+            }
+        }
+
+        [CanBeNull, UsedImplicitly(ImplicitUseKindFlags.Access)]
+        public ObservableCollection<Badge> Badges
+        {
+            get { return _badges; }
+            private set
+            {
+                if (Equals(value, _badges)) return;
+                _badges = value;
+                OnPropertyChanged("Badges");
             }
         }
 

@@ -97,8 +97,9 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="MyStackOverflowUriMapper.cs" />
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="Services\ApplicationSettings.cs" />
-    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="ServicesImpl\ApplicationSettings.cs" />
+    <Compile Include="ServicesImpl\NavigationService.cs" />
+    <Compile Include="ServicesImpl\YandexMetricaStatistiscService.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -111,11 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\Cache.cs" />
-    <Compile Include="Services\MyAppJetImageLoaderConverter.cs" />
-    <Compile Include="Services\NoCache.cs" />
-    <Compile Include="Services\ServiceLocator.cs" />
-    <Compile Include="Services\SystemDispatcher.cs" />
+    <Compile Include="ServicesImpl\Cache.cs" />
+    <Compile Include="ServicesImpl\MyAppJetImageLoaderConverter.cs" />
+    <Compile Include="ServicesImpl\NoCache.cs" />
+    <Compile Include="ServicesImpl\ServiceLocator.cs" />
+    <Compile Include="ServicesImpl\SystemDispatcher.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\EntryPage.xaml.cs">
       <DependentUpon>EntryPage.xaml</DependentUpon>

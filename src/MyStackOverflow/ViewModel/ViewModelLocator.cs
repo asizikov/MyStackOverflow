@@ -19,12 +19,12 @@ namespace MyStackOverflow.ViewModel
         {
             _mainViewModelFactory =
                 new Lazy<IProfileViewModelFactory>(
-                    () => new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider));
+                    () => new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider, ServiceLocator.Statistics));
             _logingViewModelFactory =
                 new Lazy<ILoginViewModelFactory>(
                     () =>
                         new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
-                            ServiceLocator.ApplicationSettings));
+                            ServiceLocator.ApplicationSettings, ServiceLocator.Statistics));
         }
 
         public static IProfileViewModelFactory ProfileViewModelFactory

@@ -16,5 +16,11 @@ namespace MyStackOverflow.Data
             var request = CallFactory.CreateUsersRequestById(userId);
             return GetDataAsync(request);
         }
+
+        public IObservable<BagesResponce> GetUserBagesList(int id)
+        {
+            var request = CallFactory.CreateBagesRequestById(id);
+            return GetDataAsync(request);
+        }
     }
 }

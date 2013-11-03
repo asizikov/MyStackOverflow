@@ -11,17 +11,21 @@ namespace MyStackOverflow.ViewModels
     {
         private readonly INavigationService _navigation;
         private readonly IApplicationSettings _settings;
+        private readonly StatisticsService _statistics;
         private string _userId;
 
-        public LoginViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
-            [NotNull] IApplicationSettings settings)
+        public LoginViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation, [NotNull] IApplicationSettings settings,
+            [NotNull] StatisticsService statistics)
             : base(dispatcher)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (settings == null) throw new ArgumentNullException("settings");
+            if (statistics == null) throw new ArgumentNullException("statistics");
             _navigation = navigation;
             _settings = settings;
+            _statistics = statistics;
             InitCommands();
+            _statistics.PublishLoginPageLoaded();
         }
 
         private void InitCommands()

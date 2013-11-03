@@ -1,5 +1,6 @@
 ﻿using JetBrains.Annotations;
 using MySackOverflow.Networking;
+using MyStackOverflow.Model;
 
 namespace MyStackOverflow.Data.Restful
 {
@@ -9,6 +10,7 @@ namespace MyStackOverflow.Data.Restful
 
         private const string URL_PREFIX = "http://api.stackoverflow.com/1.1/";
         private const string USERS_TEMPLATE = "users/{0}";
+        private const string BAGES_TEMPLATE = "users/{0}/badges";
 
 
         private static string InjectIdToTemplate(string template, int id)
@@ -21,6 +23,12 @@ namespace MyStackOverflow.Data.Restful
         {
             var request = new UsersRequest(URL_PREFIX + InjectIdToTemplate(USERS_TEMPLATE, userId), _webService);
             return request;
+        }
+
+        [NotNull]
+        public RestfullRequest<BagesResponce> CreateBagesRequestById(int userId)
+        {
+            return new BagesRequest(URL_PREFIX + InjectIdToTemplate(BAGES_TEMPLATE, userId), _webService);
         }
     }
 }

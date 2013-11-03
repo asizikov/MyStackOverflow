@@ -2,13 +2,19 @@
 {
     public abstract class StatisticsService
     {
+        private const string  PROFILE_PAGE_LOADED = "Profile page loaded";
         private const string LOGIN_PAGE_LOADED = "Login page loaded";
+
+        protected abstract void PublishEvent(string eventName);
+
         public void PublishLoginPageLoaded()
         {
             PublishEvent(LOGIN_PAGE_LOADED);
         }
 
-
-        public abstract void PublishEvent(string eventName);
+        public void ReportProfilePageLoaded()
+        {
+            PublishEvent(PROFILE_PAGE_LOADED);
+        }
     }
 }

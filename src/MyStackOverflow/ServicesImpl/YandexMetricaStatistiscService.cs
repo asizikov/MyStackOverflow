@@ -5,7 +5,7 @@ namespace MyStackOverflow.ServicesImpl
 {
     internal class YandexMetricaStatistiscService : StatisticsService
     {
-        public override void PublishEvent(string eventName)
+        protected override void PublishEvent(string eventName)
         {
             Counter.ReportEvent(eventName);
         }

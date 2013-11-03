@@ -48,6 +48,7 @@
     <Compile Include="AsyncDataProvider.cs" />
     <Compile Include="IWebCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restful\BagesRequest.cs" />
     <Compile Include="Restful\RestfulCallFactory.cs" />
     <Compile Include="Restful\UsersRequest.cs" />
   </ItemGroup>

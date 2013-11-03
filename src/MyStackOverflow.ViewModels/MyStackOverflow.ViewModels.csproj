@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Navigation\NavigationParameter.cs" />
     <Compile Include="Navigation\NavigationParameterName.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations.PCL">
