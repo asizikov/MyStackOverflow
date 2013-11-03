@@ -18,9 +18,9 @@ namespace MyStackOverflow.ViewModels.Factories
             _dataProvider = dataProvider;
         }
 
-        public BaseViewModel Create()
+        public BaseViewModel Create(int id)
         {
-            return new ProfileViewModel(_systemDispatcher,_dataProvider);
+            return new ProfileViewModel(_systemDispatcher, _dataProvider, id);
         }
     }
 }

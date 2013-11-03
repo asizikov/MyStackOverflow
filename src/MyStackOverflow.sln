@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStackOverflow.Data", "MyS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStackOverflow.ViewModels", "MyStackOverflow.ViewModels\MyStackOverflow.ViewModels.csproj", "{23B64E89-5D7B-4D9C-BA9A-EDB0EC80BBF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YAToolkit", "YAToolkit\YAToolkit.csproj", "{725E4AB0-B22F-442B-AA00-37D0C3588930}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,18 @@ Global
 		{23B64E89-5D7B-4D9C-BA9A-EDB0EC80BBF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23B64E89-5D7B-4D9C-BA9A-EDB0EC80BBF3}.Release|ARM.ActiveCfg = Release|Any CPU
 		{23B64E89-5D7B-4D9C-BA9A-EDB0EC80BBF3}.Release|x86.ActiveCfg = Release|Any CPU
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Debug|ARM.ActiveCfg = Debug|ARM
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Debug|ARM.Build.0 = Debug|ARM
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Debug|x86.ActiveCfg = Debug|x86
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Debug|x86.Build.0 = Debug|x86
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Release|ARM.ActiveCfg = Release|ARM
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Release|ARM.Build.0 = Release|ARM
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Release|x86.ActiveCfg = Release|x86
+		{725E4AB0-B22F-442B-AA00-37D0C3588930}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

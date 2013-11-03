@@ -10,6 +10,7 @@ namespace MyStackOverflow.ViewModels
         private const string URL_GRAVATAR = "http://www.gravatar.com/avatar/{0}?s=128&d=identicon&r=PG";
 
         private readonly AsyncDataProvider _dataProvider;
+        private readonly int _id;
         private string _reputation;
         private string _displayName;
         private string _location;
@@ -18,18 +19,19 @@ namespace MyStackOverflow.ViewModels
         private int _goldBages;
         private string _userPic;
 
-        public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider)
+        public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id)
             : base(dispatcher)
         {
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
             _dataProvider = dataProvider;
+            _id = id;
             Initialize();
         }
 
         private void Initialize()
         {
             IsLoading = true;
-            _dataProvider.GetUsersAsync(555014)
+            _dataProvider.GetUsersAsync(_id)
                 .Subscribe(result =>
                 {
                     if (result != null && result.Total > 0)

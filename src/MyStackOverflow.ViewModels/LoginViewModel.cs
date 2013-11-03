@@ -36,7 +36,14 @@ namespace MyStackOverflow.ViewModels
 
         private void GoToProfile(object obj)
         {
-            _navigation.GoToPage(Pages.ProfilePage);
+            _navigation.GoToPage(Pages.ProfilePage, new[]
+            {
+                new NavigationParameter
+                {
+                    Parameter = NavigationParameterName.Id,
+                    Value = UserId
+                }
+            });
         }
 
     }

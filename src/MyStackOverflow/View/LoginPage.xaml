@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:binding="clr-namespace:YAToolkit.Binding;assembly=YAToolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -28,7 +29,15 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="go" Command="{Binding GoToProfileCommand}" Height="87"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBox
+                Grid.Row="0"
+                binding:BindingUtility.UpdateSourceOnChange="True"
+                Text="{Binding UserId, Mode=TwoWay}"/>
+            <Button Grid.Row="1" Content="go" Command="{Binding GoToProfileCommand}" Height="87"/>
         </Grid>
     </Grid>
 

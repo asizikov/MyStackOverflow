@@ -2,6 +2,6 @@
 {
     public interface IProfileViewModelFactory
     {
-        BaseViewModel Create();
+        BaseViewModel Create(int id);
     }
 }

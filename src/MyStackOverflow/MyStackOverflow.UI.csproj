@@ -219,6 +219,10 @@
       <Project>{23B64E89-5D7B-4D9C-BA9A-EDB0EC80BBF3}</Project>
       <Name>MyStackOverflow.ViewModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YAToolkit\YAToolkit.csproj">
+      <Project>{725E4AB0-B22F-442B-AA00-37D0C3588930}</Project>
+      <Name>YAToolkit</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <DesignData Include="SampleData\ProfileViewModelSampleData.xaml">
