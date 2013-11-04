@@ -31,8 +31,7 @@ namespace MySackOverflow.Networking
                         webRequest.Headers[HttpRequestHeader.AcceptEncoding] = "gzip";
                         Task.Factory.FromAsync<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse, new object())
                             .ToObservable()
-                        //Observable.FromAsyncPattern<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse)
-                            //()
+
                             .Timeout(timeoutTimeSpan)
                             .Take(1)
                             .Subscribe(response => HandleResponce(response, observer),
