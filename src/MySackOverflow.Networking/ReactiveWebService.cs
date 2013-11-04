@@ -4,7 +4,9 @@ using System.IO;
 using System.Net;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using System.Reactive.Threading.Tasks;
 using System.Text;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Ionic.Zlib;
 using Newtonsoft.Json;
@@ -27,8 +29,10 @@ namespace MySackOverflow.Networking
                         var webRequest = (HttpWebRequest) WebRequest.Create(fullUrl);
                         webRequest.Method = "GET";
                         webRequest.Headers[HttpRequestHeader.AcceptEncoding] = "gzip";
-                        Observable.FromAsyncPattern<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse)
-                            ()
+                        Task.Factory.FromAsync<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse, new object())
+                            .ToObservable()
+                        //Observable.FromAsyncPattern<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse)
+                            //()
                             .Timeout(timeoutTimeSpan)
                             .Take(1)
                             .Subscribe(response => HandleResponce(response, observer),
