@@ -39,8 +39,6 @@ namespace MyStackOverflow.Data
 
                         Debug.WriteLine("UpdateData:" + request.Url);
                         ExecuteRequest(request, observer, true);
-
-                        observer.OnCompleted();
                     })
                 );
         }

@@ -29,9 +29,9 @@ namespace MySackOverflow.Networking
                         var webRequest = (HttpWebRequest) WebRequest.Create(fullUrl);
                         webRequest.Method = "GET";
                         webRequest.Headers[HttpRequestHeader.AcceptEncoding] = "gzip";
-                        Task.Factory.FromAsync<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse, new object())
+                        Task.Factory.FromAsync<WebResponse>(webRequest.BeginGetResponse, webRequest.EndGetResponse,
+                            new object())
                             .ToObservable()
-
                             .Timeout(timeoutTimeSpan)
                             .Take(1)
                             .Subscribe(response => HandleResponce(response, observer),
