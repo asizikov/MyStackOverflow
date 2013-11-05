@@ -67,17 +67,23 @@ namespace MyStackOverflow.ViewModels
                     {
                         Badges = new ObservableCollection<Badge>(bages.Badges);
                     }
-                }, ex => { }
+                    IsLoading = false;
+                }, ex => { IsLoading = false; }
                 );
         }
 
         public string UserPic
         {
-            get { return _userPic; }
+            get
+            {
+                return string.IsNullOrWhiteSpace(_userPic)
+                    ? string.Empty
+                    : string.Format(URL_GRAVATAR, _userPic);
+            }
             private set
             {
                 if (value == _userPic) return;
-                _userPic = string.Format(URL_GRAVATAR, value);
+                _userPic = value;
                 OnPropertyChanged("UserPic");
             }
         }
