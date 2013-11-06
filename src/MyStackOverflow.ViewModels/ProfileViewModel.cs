@@ -23,6 +23,7 @@ namespace MyStackOverflow.ViewModels
         private int _goldBages;
         private string _userPic;
         private ObservableCollection<Badge> _badges;
+        private User _user;
 
         public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id,
             [NotNull] StatisticsService statistics)
@@ -46,12 +47,7 @@ namespace MyStackOverflow.ViewModels
                     if (result != null && result.Total > 0)
                     {
                         var user = result.Users.First();
-                        Reputation = user.Reputation.ToString();
-                        DisplayName = user.DisplayName;
-                        Location = user.Location;
-                        GoldBages = user.BadgeCounts.Gold;
-                        SilverBages = user.BadgeCounts.Silver;
-                        BronzeBages = user.BadgeCounts.Bronze;
+                        User = user;
                         UserPic = user.EmailHash;
                         LoadBagesInfo(_id);
                     }
@@ -70,6 +66,18 @@ namespace MyStackOverflow.ViewModels
                     IsLoading = false;
                 }, ex => { IsLoading = false; }
                 );
+        }
+
+        [CanBeNull, UsedImplicitly(ImplicitUseKindFlags.Access)]
+        public User User
+        {
+            get { return _user; }
+            private set
+            {
+                if (Equals(value, _user)) return;
+                _user = value;
+                OnPropertyChanged("User");
+            }
         }
 
         public string UserPic
@@ -97,78 +105,6 @@ namespace MyStackOverflow.ViewModels
                 if (Equals(value, _badges)) return;
                 _badges = value;
                 OnPropertyChanged("Badges");
-            }
-        }
-
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public int BronzeBages
-        {
-            get { return _bronzeBages; }
-            private set
-            {
-                if (value == _bronzeBages) return;
-                _bronzeBages = value;
-                OnPropertyChanged("BronzeBages");
-            }
-        }
-
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public int SilverBages
-        {
-            get { return _silverBages; }
-            private set
-            {
-                if (value == _silverBages) return;
-                _silverBages = value;
-                OnPropertyChanged("SilverBages");
-            }
-        }
-
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public int GoldBages
-        {
-            get { return _goldBages; }
-            private set
-            {
-                if (value == _goldBages) return;
-                _goldBages = value;
-                OnPropertyChanged("GoldBages");
-            }
-        }
-
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public string Location
-        {
-            get { return _location; }
-            set
-            {
-                if (value == _location) return;
-                _location = value;
-                OnPropertyChanged("Location");
-            }
-        }
-
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public string Reputation
-        {
-            get { return _reputation; }
-            private set
-            {
-                if (value == _reputation) return;
-                _reputation = value;
-                OnPropertyChanged("Reputation");
-            }
-        }
-
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public string DisplayName
-        {
-            get { return _displayName; }
-            private set
-            {
-                if (value == _displayName) return;
-                _displayName = value;
-                OnPropertyChanged("DisplayName");
             }
         }
     }
