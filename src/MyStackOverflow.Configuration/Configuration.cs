@@ -1,20 +1,17 @@
-﻿namespace MyStackOverflow
+﻿using System;
+
+namespace MyStackOverflow
 {
     public static class Configuration
     {
-        public static int VersionMajor
-        {
-            get { return 0; }
-        }
-
         public static bool EnableStatistics
         {
-           get { return false; }
+            get { return false; }
         }
 
-        public static int VersionMinor
+        public static Version Version
         {
-            get { return 1; }
+            get { return new Version(0, 1, 1); }
         }
 
         public static uint YandexMetricaKey

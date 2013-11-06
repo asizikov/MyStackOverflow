@@ -16,7 +16,7 @@ namespace MyStackOverflow
 
             if (Configuration.EnableStatistics)
             {
-                Counter.CustomAppVersion = new Version(Configuration.VersionMajor, Configuration.VersionMinor);
+                Counter.CustomAppVersion = Configuration.Version;
                 Counter.TrackLocationEnabled = true;
                 Counter.Start(Configuration.YandexMetricaKey);
             }
