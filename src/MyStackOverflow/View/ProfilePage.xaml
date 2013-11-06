@@ -70,6 +70,8 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <StackPanel
@@ -86,6 +88,22 @@
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                             <TextBlock Text="{Binding User.Age}"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                            <TextBlock Text="questions:"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding User.QuestionCount}"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Orientation="Horizontal">
+                            <TextBlock Text="answers:"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding User.AnswerCount}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
