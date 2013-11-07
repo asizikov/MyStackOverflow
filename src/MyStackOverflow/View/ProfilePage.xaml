@@ -72,6 +72,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <StackPanel
@@ -107,6 +108,15 @@
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
+                        <StackPanel Grid.Row="4" Orientation="Horizontal">
+                            <TextBlock Text="accept rate:"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding User.AcceptRate}"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                        </StackPanel>
+                        
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem Header="bages">
