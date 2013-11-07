@@ -58,14 +58,14 @@
                                    FontFamily="{StaticResource PhoneFontFamilyLight}" />
                     </DataTemplate>
                 </phone:Pivot.HeaderTemplate>
-                <phone:PivotItem Header="reputation">
+                <phone:PivotItem Header="{Binding LocalizedResources.ReputationTitle, Source={StaticResource LocalizedStrings}}">
                     <TextBlock
                         FontFamily="{StaticResource PhoneFontFamilyLight}"
                         Foreground="{StaticResource PhoneAccentBrush}"
                         Style="{StaticResource PhoneTextExtraLargeStyle}"
                         Text="{Binding User.Reputation}" UseOptimizedManipulationRouting="False" />
                 </phone:PivotItem>
-                <phone:PivotItem Header="profile">
+                <phone:PivotItem Header="{Binding LocalizedResources.ProfileTitle, Source={StaticResource LocalizedStrings}}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -85,7 +85,7 @@
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Horizontal">
-                            <TextBlock Text="age:"
+                            <TextBlock Text="{Binding LocalizedResources.Age, Source={StaticResource LocalizedStrings}}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                             <TextBlock Text="{Binding User.Age}"
@@ -93,7 +93,7 @@
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Grid.Row="2" Orientation="Horizontal">
-                            <TextBlock Text="questions:"
+                            <TextBlock Text="{Binding LocalizedResources.Questions, Source={StaticResource LocalizedStrings}}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                             <TextBlock Text="{Binding User.QuestionCount}"
@@ -101,7 +101,7 @@
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Grid.Row="3" Orientation="Horizontal">
-                            <TextBlock Text="answers:"
+                            <TextBlock Text="{Binding LocalizedResources.Answers, Source={StaticResource LocalizedStrings}}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                             <TextBlock Text="{Binding User.AnswerCount}"
@@ -109,7 +109,7 @@
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Grid.Row="4" Orientation="Horizontal">
-                            <TextBlock Text="accept rate:"
+                            <TextBlock Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                             <TextBlock Text="{Binding User.AcceptRate}"
@@ -119,7 +119,7 @@
                         
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem Header="bages">
+                <phone:PivotItem Header="{Binding LocalizedResources.BagesTitle, Source={StaticResource LocalizedStrings}}">
                     <Grid Margin="12,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />

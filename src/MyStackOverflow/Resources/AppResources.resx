@@ -140,4 +140,25 @@
   <data name="Reputation" xml:space="preserve">
     <value>reputation:</value>
   </data>
+  <data name="AcceptRate" xml:space="preserve">
+    <value>accept rate:</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>age:</value>
+  </data>
+  <data name="Answers" xml:space="preserve">
+    <value>answers:</value>
+  </data>
+  <data name="BagesTitle" xml:space="preserve">
+    <value>bages</value>
+  </data>
+  <data name="ProfileTitle" xml:space="preserve">
+    <value>profile</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>questions:</value>
+  </data>
+  <data name="ReputationTitle" xml:space="preserve">
+    <value>reputation</value>
+  </data>
 </root>
