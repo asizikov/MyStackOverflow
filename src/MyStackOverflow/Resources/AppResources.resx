@@ -152,6 +152,9 @@
   <data name="BagesTitle" xml:space="preserve">
     <value>bages</value>
   </data>
+  <data name="LastAccess" xml:space="preserve">
+    <value>last access:</value>
+  </data>
   <data name="ProfileTitle" xml:space="preserve">
     <value>profile</value>
   </data>
