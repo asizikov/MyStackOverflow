@@ -73,6 +73,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <StackPanel
@@ -116,7 +117,15 @@
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        
+                        <StackPanel Grid.Row="5" Orientation="Horizontal">
+                            <TextBlock Text="{Binding LocalizedResources.LastAccess, Source={StaticResource LocalizedStrings}}"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                            <TextBlock Text="{Binding User.LastAccessDate}"
+                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                       Style="{StaticResource PhoneTextLargeStyle}" />
+                        </StackPanel>
+
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem Header="{Binding LocalizedResources.BagesTitle, Source={StaticResource LocalizedStrings}}">
