@@ -62,7 +62,8 @@
                     <TextBlock
                         FontFamily="{StaticResource PhoneFontFamilyLight}"
                         Foreground="{StaticResource PhoneAccentBrush}"
-                        Style="{StaticResource PhoneTextExtraLargeStyle}"
+                        Style="{StaticResource PhoneTextTitle1Style}"
+                        HorizontalAlignment="Center"
                         Text="{Binding User.Reputation}" UseOptimizedManipulationRouting="False" />
                 </phone:PivotItem>
                 <phone:PivotItem Header="{Binding LocalizedResources.ProfileTitle, Source={StaticResource LocalizedStrings}}">
