@@ -34,7 +34,7 @@
                 <RowDefinition Height="128" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="12" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -58,6 +58,7 @@
                 Style="{StaticResource PhoneTextExtraLargeStyle}"
                 HorizontalAlignment="Center"
                 Text="{Binding User.Reputation}"/>
+            <Rectangle Grid.Row="4" Grid.Column="0" Height="10" Grid.ColumnSpan="3" Margin="24,24,24,0" Fill="Black" Opacity="0.4"></Rectangle>
         </Grid>
         <!--ContentPanel - place additional content here-->
         <Grid Grid.Row="1" Margin="12,0,12,0">
