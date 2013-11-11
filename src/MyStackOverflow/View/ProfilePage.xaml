@@ -42,20 +42,20 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Image Grid.Row="1" Grid.Column="1"
-                   Source="{Binding UserPic, Converter={StaticResource JetImageLoaderConverter}}" />
+                   Source="{Binding User.UserPic, Converter={StaticResource JetImageLoaderConverter}}" />
             <TextBlock
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 HorizontalAlignment="Center"
                 Margin="0,24,0,12"
-                Style="{StaticResource PhoneTextLargeStyle}"
+                Style="{StaticResource PhoneTextExtraLargeStyle}"
                 Text="{Binding User.DisplayName}" />
             <TextBlock
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Grid.Row="3"
-                Style="{StaticResource PhoneTextLargeStyle}"
+                Style="{StaticResource PhoneTextExtraLargeStyle}"
                 HorizontalAlignment="Center"
                 Text="{Binding User.Reputation}"/>
         </Grid>
@@ -64,12 +64,13 @@
             <phone:Pivot>
                 <phone:Pivot.HeaderTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" Style="{StaticResource PhoneTextLargeStyle}"
+                        <TextBlock Text="{Binding}" 
+                                   Style="{StaticResource PhoneTextExtraLargeStyle}"
                                    FontFamily="{StaticResource PhoneFontFamilyLight}" />
                     </DataTemplate>
                 </phone:Pivot.HeaderTemplate>
                 <phone:PivotItem
-                    Header="{Binding LocalizedResources.ProfileTitle, Source={StaticResource LocalizedStrings}}">
+                    Header="{Binding LocalizedResources.SummaryTitle, Source={StaticResource LocalizedStrings}}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -138,7 +139,7 @@
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem
-                    Header="{Binding LocalizedResources.BagesTitle, Source={StaticResource LocalizedStrings}}">
+                    Header="{Binding LocalizedResources.ProfileTitle, Source={StaticResource LocalizedStrings}}">
                     <Grid Margin="12,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -162,18 +163,6 @@
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <ScrollViewer Grid.Row="1">
-                            <ItemsControl ItemsSource="{Binding Badges}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <TextBlock Style="{StaticResource PhoneTextLargeStyle}"
-                                                       Text="{Binding Name}" />
-                                        </Grid>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </ScrollViewer>
                     </Grid>
                 </phone:PivotItem>
             </phone:Pivot>

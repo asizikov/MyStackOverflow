@@ -6,14 +6,14 @@ namespace MyStackOverflow.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        private readonly ISystemDispatcher _dispatcher;
+        protected readonly ISystemDispatcher Dispatcher;
         public event PropertyChangedEventHandler PropertyChanged;
         private bool _isLoading;
 
         protected BaseViewModel([NotNull] ISystemDispatcher dispatcher)
         {
             if (dispatcher == null) throw new ArgumentNullException("dispatcher");
-            _dispatcher = dispatcher;
+            Dispatcher = dispatcher;
         }
 
         [NotifyPropertyChangedInvocator]
@@ -22,7 +22,7 @@ namespace MyStackOverflow.ViewModels
             var handler = PropertyChanged;
             if (handler != null)
             {
-                _dispatcher.InvokeOnUIifNeeded(() => handler(this, new PropertyChangedEventArgs(propertyName)));
+                Dispatcher.InvokeOnUIifNeeded(() => handler(this, new PropertyChangedEventArgs(propertyName)));
             }
         }
 

@@ -60,6 +60,7 @@
     <Compile Include="Navigation\NavigationParameter.cs" />
     <Compile Include="Navigation\NavigationParameterName.cs" />
     <Compile Include="Services\StatisticsService.cs" />
+    <Compile Include="UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations.PCL">

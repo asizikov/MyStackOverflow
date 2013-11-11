@@ -10,20 +10,12 @@ namespace MyStackOverflow.ViewModels
 {
     public class ProfileViewModel : BaseViewModel
     {
-        private const string URL_GRAVATAR = "http://www.gravatar.com/avatar/{0}?s=128&d=identicon&r=PG";
-
         private readonly AsyncDataProvider _dataProvider;
         private readonly int _id;
         private readonly StatisticsService _statistics;
-        private string _reputation;
-        private string _displayName;
-        private string _location;
-        private int _bronzeBages;
-        private int _silverBages;
-        private int _goldBages;
         private string _userPic;
         private ObservableCollection<Badge> _badges;
-        private User _user;
+        private UserViewModel _user;
 
         public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id,
             [NotNull] StatisticsService statistics)
@@ -47,8 +39,7 @@ namespace MyStackOverflow.ViewModels
                     if (result != null && result.Total > 0)
                     {
                         var user = result.Users.First();
-                        User = user;
-                        UserPic = user.EmailHash;
+                        User = new UserViewModel(Dispatcher, user);
                         LoadBagesInfo(_id);
                     }
                 }, ex => { IsLoading = false; });
@@ -69,7 +60,7 @@ namespace MyStackOverflow.ViewModels
         }
 
         [CanBeNull, UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public User User
+        public UserViewModel User
         {
             get { return _user; }
             private set
@@ -77,22 +68,6 @@ namespace MyStackOverflow.ViewModels
                 if (Equals(value, _user)) return;
                 _user = value;
                 OnPropertyChanged("User");
-            }
-        }
-
-        public string UserPic
-        {
-            get
-            {
-                return string.IsNullOrWhiteSpace(_userPic)
-                    ? string.Empty
-                    : string.Format(URL_GRAVATAR, _userPic);
-            }
-            private set
-            {
-                if (value == _userPic) return;
-                _userPic = value;
-                OnPropertyChanged("UserPic");
             }
         }
 

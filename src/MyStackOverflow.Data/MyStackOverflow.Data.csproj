@@ -51,6 +51,7 @@
     <Compile Include="Restful\BagesRequest.cs" />
     <Compile Include="Restful\RestfulCallFactory.cs" />
     <Compile Include="Restful\UsersRequest.cs" />
+    <Compile Include="Utils\DateTimeUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations.PCL">

@@ -164,4 +164,7 @@
   <data name="ReputationTitle" xml:space="preserve">
     <value>reputation</value>
   </data>
+  <data name="SummaryTitle" xml:space="preserve">
+    <value>summary</value>
+  </data>
 </root>

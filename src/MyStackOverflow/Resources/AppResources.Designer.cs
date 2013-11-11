@@ -194,5 +194,14 @@ namespace MyStackOverflow.Resources {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to summary.
+        /// </summary>
+        public static string SummaryTitle {
+            get {
+                return ResourceManager.GetString("SummaryTitle", resourceCulture);
+            }
+        }
     }
 }
