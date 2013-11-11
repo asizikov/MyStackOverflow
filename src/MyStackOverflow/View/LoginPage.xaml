@@ -12,7 +12,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="False">
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
     	<Grid.Background>
@@ -28,24 +28,19 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Grid.ColumnSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+			<StackPanel>
+            <Image HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Source="/MyStackOverflow;component/Assets/Images/logo.png" Height="115" Margin="0,120,0,0" Width="400"/>
             <TextBox
-                Grid.Row="0"
+
                 binding:BindingUtility.UpdateSourceOnChange="True"
                 InputScope="Digits"
-                Text="{Binding UserId, Mode=TwoWay}"/>
-            <Button Grid.Row="1" Content="go" Command="{Binding GoToProfileCommand}" Height="87"/>
-        </Grid>
+                Text="{Binding UserId, Mode=TwoWay}" Margin="0,24,0,0"/>
+            <Button  Content="go" Command="{Binding GoToProfileCommand}" Height="87"/>
+			</StackPanel>
+		</Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>
