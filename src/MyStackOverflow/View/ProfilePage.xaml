@@ -57,15 +57,16 @@
                 Grid.Row="3"
                 Style="{StaticResource PhoneTextExtraLargeStyle}"
                 HorizontalAlignment="Center"
-                Text="{Binding User.Reputation}"/>
-            <Rectangle Grid.Row="4" Grid.Column="0" Height="10" Grid.ColumnSpan="3" Margin="24,24,24,0" Fill="Black" Opacity="0.4"></Rectangle>
+                Text="{Binding User.Reputation}" />
+            <Rectangle Grid.Row="4" Grid.Column="0" Height="10" Grid.ColumnSpan="3" Margin="24,24,24,0" Fill="Black"
+                       Opacity="0.4" />
         </Grid>
         <!--ContentPanel - place additional content here-->
         <Grid Grid.Row="1" Margin="12,0,12,0">
             <phone:Pivot>
                 <phone:Pivot.HeaderTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" 
+                        <TextBlock Text="{Binding}"
                                    Style="{StaticResource PhoneTextExtraLargeStyle}"
                                    FontFamily="{StaticResource PhoneFontFamilyLight}" />
                     </DataTemplate>
