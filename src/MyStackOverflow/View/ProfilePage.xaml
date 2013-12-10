@@ -145,26 +145,50 @@
                     <Grid Margin="12,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <TextBlock
-                                Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        <StackPanel>
+                        <TextBlock
+                            Style="{StaticResource PhoneTextLargeStyle}"
+                            Foreground="Gray"
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                Text="{Binding LocalizedResources.MemberFor, Source={StaticResource LocalizedStrings}}" />
+                        <TextBlock
+                                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                Text="{Binding User.MemberFor}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                            <TextBlock Text="{Binding User.BadgeCounts.Gold}"
-                                       Foreground="Gold"
-                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                       Style="{StaticResource PhoneTextLargeStyle}" />
-                            <TextBlock Text="{Binding User.BadgeCounts.Silver}"
-                                       Foreground="Silver"
-                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                       Style="{StaticResource PhoneTextLargeStyle}" />
-                            <TextBlock Text="{Binding User.BadgeCounts.Bronze}"
-                                       Foreground="SaddleBrown"
-                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                       Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
+                        <StackPanel Grid.Row="1" >
+                        <TextBlock
+                            Style="{StaticResource PhoneTextLargeStyle}"
+                            Foreground="Gray"
+                                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}" />
+                        <TextBlock
+                                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                                Text="{Binding User.MemberFor}"
+                                Style="{StaticResource PhoneTextLargeStyle}" />
+                        </StackPanel>
+                        <!--                        <StackPanel Grid.Row="0" Orientation="Horizontal">-->
+<!--                            <TextBlock-->
+<!--                                Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"-->
+<!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+<!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
+<!--                            <TextBlock Text="{Binding User.BadgeCounts.Gold}"-->
+<!--                                       Foreground="Gold"-->
+<!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+<!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+<!--                            <TextBlock Text="{Binding User.BadgeCounts.Silver}"-->
+<!--                                       Foreground="Silver"-->
+<!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+<!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+<!--                            <TextBlock Text="{Binding User.BadgeCounts.Bronze}"-->
+<!--                                       Foreground="SaddleBrown"-->
+<!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+<!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+<!--                        </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>
             </phone:Pivot>

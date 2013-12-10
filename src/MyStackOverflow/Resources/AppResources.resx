@@ -167,4 +167,7 @@
   <data name="SummaryTitle" xml:space="preserve">
     <value>summary</value>
   </data>
+  <data name="MemberFor" xml:space="preserve">
+    <value>member for</value>
+  </data>
 </root>

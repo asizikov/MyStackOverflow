@@ -5,7 +5,7 @@ using MyStackOverflow.Model;
 
 namespace MyStackOverflow.ViewModels
 {
-    public class UserViewModel :BaseViewModel
+    public class UserViewModel : BaseViewModel
     {
         private const string URL_GRAVATAR = "http://www.gravatar.com/avatar/{0}?s=128&d=identicon&r=PG";
         private readonly User _model;
@@ -23,7 +23,7 @@ namespace MyStackOverflow.ViewModels
             get { return _model.DisplayName; }
         }
 
-        public int Reputation 
+        public int Reputation
         {
             get { return _model.Reputation; }
         }
@@ -55,12 +55,20 @@ namespace MyStackOverflow.ViewModels
 
         public string LastAccessDate
         {
-            get { return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.LastAccessDate).ToString("dd MMM yyyy"); }
+            get
+            {
+                return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.LastAccessDate).ToString("dd MMM yyyy");
+            }
         }
 
         public BadgeCounts BadgeCounts
         {
             get { return _model.BadgeCounts; }
+        }
+
+        public string MemberFor
+        {
+            get { return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.CreationDate).ToReadableAgo(); }
         }
 
         public string UserPic

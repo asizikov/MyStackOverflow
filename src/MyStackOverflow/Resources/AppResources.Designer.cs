@@ -142,6 +142,15 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to member for.
+        /// </summary>
+        public static string MemberFor {
+            get {
+                return ResourceManager.GetString("MemberFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to profile.
         /// </summary>
         public static string ProfileTitle {

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BaseAsyncWebClient.cs" />
     <Compile Include="AsyncDataProvider.cs" />
+    <Compile Include="EnumerableEx.cs" />
     <Compile Include="IWebCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restful\BagesRequest.cs" />

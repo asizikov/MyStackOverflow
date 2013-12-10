@@ -11,7 +11,7 @@ namespace MyStackOverflow.Model
         public string UserType { get; set; }
 
         [JsonProperty("creation_date")]
-        public int CreationDate { get; set; }
+        public long CreationDate { get; set; }
 
         [JsonProperty("display_name")]
         public string DisplayName { get; set; }
