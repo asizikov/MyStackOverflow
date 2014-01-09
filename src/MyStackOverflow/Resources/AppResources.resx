@@ -153,7 +153,7 @@
     <value>bages</value>
   </data>
   <data name="LastAccess" xml:space="preserve">
-    <value>last access:</value>
+    <value>last seen:</value>
   </data>
   <data name="ProfileTitle" xml:space="preserve">
     <value>profile</value>
@@ -169,5 +169,8 @@
   </data>
   <data name="MemberFor" xml:space="preserve">
     <value>member for</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>location:</value>
   </data>
 </root>

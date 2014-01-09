@@ -11,7 +11,8 @@ namespace MyStackOverflow.ViewModels
         private readonly User _model;
         private string _userPic;
 
-        public UserViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] User model) : base(dispatcher)
+        public UserViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] User model) 
+            : base(dispatcher)
         {
             if (model == null) throw new ArgumentNullException("model");
             _model = model;
@@ -57,7 +58,7 @@ namespace MyStackOverflow.ViewModels
         {
             get
             {
-                return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.LastAccessDate).ToString("dd MMM yyyy");
+                return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.LastAccessDate).ToReadableAgo();
             }
         }
 
@@ -68,7 +69,7 @@ namespace MyStackOverflow.ViewModels
 
         public string MemberFor
         {
-            get { return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.CreationDate).ToReadableAgo(); }
+            get { return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.CreationDate).ToReadableFor(); }
         }
 
         public string UserPic

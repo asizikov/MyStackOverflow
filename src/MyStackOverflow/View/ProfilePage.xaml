@@ -18,9 +18,19 @@
         <shell:ProgressIndicator IsIndeterminate="{Binding IsLoading}"
                                  IsVisible="{Binding IsLoading}" />
     </shell:SystemTray.ProgressIndicator>
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style x:Key="GrayTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextLargeStyle}">
+                    <Setter Property="Foreground" Value="Gray" />
+                    <Setter Property="FontSize" Value="23" />
+                    <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyLight}" />
+                </Style>
+                <Style x:Key="StackPanelStyle" TargetType="StackPanel">
+                    <Setter Property="Margin" Value="0,0,12,12" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="/MyStackOverflow;component/Assets/main_bg.png" />
         </Grid.Background>
@@ -61,7 +71,6 @@
             <Rectangle Grid.Row="4" Grid.Column="0" Height="10" Grid.ColumnSpan="3" Margin="24,24,24,0" Fill="Black"
                        Opacity="0.4" />
         </Grid>
-        <!--ContentPanel - place additional content here-->
         <Grid Grid.Row="1" Margin="12,0,12,0">
             <phone:Pivot>
                 <phone:Pivot.HeaderTemplate>
@@ -83,61 +92,50 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <StackPanel
-                            Grid.Row="0"
-                            Orientation="Horizontal">
-                            <Image CacheMode="BitmapCache" Source="/Assets/Images/appbar.location.png" Width="37" />
+                        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelStyle}">
+                            <TextBlock
+                                Style="{StaticResource GrayTitleStyle}"
+                                Text="{Binding LocalizedResources.Location, Source={StaticResource LocalizedStrings}}" />
                             <TextBlock
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
                                 Text="{Binding User.Location}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <StackPanel Style="{StaticResource StackPanelStyle}" Grid.Row="1">
                             <TextBlock
                                 Text="{Binding LocalizedResources.Age, Source={StaticResource LocalizedStrings}}"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource GrayTitleStyle}" />
                             <TextBlock Text="{Binding User.Age}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="2" Orientation="Horizontal">
-                            <TextBlock
-                                Text="{Binding LocalizedResources.Questions, Source={StaticResource LocalizedStrings}}"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
-                            <TextBlock Text="{Binding User.QuestionCount}"
-                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                       Style="{StaticResource PhoneTextLargeStyle}" />
-                        </StackPanel>
-                        <StackPanel Grid.Row="3" Orientation="Horizontal">
-                            <TextBlock
-                                Text="{Binding LocalizedResources.Answers, Source={StaticResource LocalizedStrings}}"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
-                            <TextBlock Text="{Binding User.AnswerCount}"
-                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                       Style="{StaticResource PhoneTextLargeStyle}" />
-                        </StackPanel>
-                        <StackPanel Grid.Row="4" Orientation="Horizontal">
-                            <TextBlock
-                                Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
-                            <TextBlock Text="{Binding User.AcceptRate}"
-                                       FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                       Style="{StaticResource PhoneTextLargeStyle}" />
-                        </StackPanel>
-                        <StackPanel Grid.Row="5" Orientation="Horizontal">
+                        <StackPanel Style="{StaticResource StackPanelStyle}" Grid.Row="2">
                             <TextBlock
                                 Text="{Binding LocalizedResources.LastAccess, Source={StaticResource LocalizedStrings}}"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource GrayTitleStyle}" />
                             <TextBlock Text="{Binding User.LastAccessDate}"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-
+                        <!--                        <StackPanel Grid.Row="2" >-->
+                        <!--                            <TextBlock-->
+                        <!--                                Text="{Binding LocalizedResources.Questions, Source={StaticResource LocalizedStrings}}"-->
+                        <!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                Foreground="Gray"-->
+                        <!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                            <TextBlock Text="{Binding User.QuestionCount}"-->
+                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                        </StackPanel>-->
+                        <!--                        <StackPanel Grid.Row="3" Orientation="Horizontal">-->
+                        <!--                            <TextBlock-->
+                        <!--                                Text="{Binding LocalizedResources.Answers, Source={StaticResource LocalizedStrings}}"-->
+                        <!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                            <TextBlock Text="{Binding User.AnswerCount}"-->
+                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                        </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem
@@ -149,46 +147,42 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <StackPanel>
-                        <TextBlock
-                            Style="{StaticResource PhoneTextLargeStyle}"
-                            Foreground="Gray"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <TextBlock
+                                Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.MemberFor, Source={StaticResource LocalizedStrings}}" />
-                        <TextBlock
+                            <TextBlock
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
                                 Text="{Binding User.MemberFor}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="1" >
-                        <TextBlock
-                            Style="{StaticResource PhoneTextLargeStyle}"
-                            Foreground="Gray"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
+                        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelStyle}">
+                            <TextBlock
+                                Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}" />
-                        <TextBlock
+                            <TextBlock
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Text="{Binding User.MemberFor}"
+                                Text="{Binding User.AcceptRate}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <!--                        <StackPanel Grid.Row="0" Orientation="Horizontal">-->
-<!--                            <TextBlock-->
-<!--                                Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"-->
-<!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-<!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
-<!--                            <TextBlock Text="{Binding User.BadgeCounts.Gold}"-->
-<!--                                       Foreground="Gold"-->
-<!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-<!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-<!--                            <TextBlock Text="{Binding User.BadgeCounts.Silver}"-->
-<!--                                       Foreground="Silver"-->
-<!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-<!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-<!--                            <TextBlock Text="{Binding User.BadgeCounts.Bronze}"-->
-<!--                                       Foreground="SaddleBrown"-->
-<!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-<!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-<!--                        </StackPanel>-->
+                        <!--                            <TextBlock-->
+                        <!--                                Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"-->
+                        <!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                            <TextBlock Text="{Binding User.BadgeCounts.Gold}"-->
+                        <!--                                       Foreground="Gold"-->
+                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                            <TextBlock Text="{Binding User.BadgeCounts.Silver}"-->
+                        <!--                                       Foreground="Silver"-->
+                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                            <TextBlock Text="{Binding User.BadgeCounts.Bronze}"-->
+                        <!--                                       Foreground="SaddleBrown"-->
+                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
+                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
+                        <!--                        </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>
             </phone:Pivot>

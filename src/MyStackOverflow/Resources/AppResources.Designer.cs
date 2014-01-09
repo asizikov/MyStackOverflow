@@ -133,11 +133,20 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to last access:.
+        ///   Looks up a localized string similar to last seen:.
         /// </summary>
         public static string LastAccess {
             get {
                 return ResourceManager.GetString("LastAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to location:.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
             }
         }
         
