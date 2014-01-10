@@ -14,7 +14,6 @@ namespace MyStackOverflow.ViewModels
         private readonly int _id;
         private readonly StatisticsService _statistics;
         private readonly IStringsProvider _stringsProvider;
-        private string _userPic;
         private ObservableCollection<Badge> _badges;
         private UserViewModel _user;
 
@@ -31,35 +30,6 @@ namespace MyStackOverflow.ViewModels
             _stringsProvider = stringsProvider;
             Initialize();
             _statistics.ReportProfilePageLoaded();
-        }
-
-        private void Initialize()
-        {
-            IsLoading = true;
-            _dataProvider.GetUsersAsync(_id)
-                .Subscribe(result =>
-                {
-                    if (result != null && result.Total > 0)
-                    {
-                        var user = result.Users.First();
-                        User = new UserViewModel(Dispatcher, user, _stringsProvider);
-                        LoadBagesInfo(_id);
-                    }
-                }, ex => { IsLoading = false; });
-        }
-
-        private void LoadBagesInfo(int id)
-        {
-            _dataProvider.GetUserBagesList(id)
-                .Subscribe(bages =>
-                {
-                    if (bages != null)
-                    {
-                        Badges = new ObservableCollection<Badge>(bages.Badges);
-                    }
-                    IsLoading = false;
-                }, ex => { IsLoading = false; }
-                );
         }
 
         [CanBeNull, UsedImplicitly(ImplicitUseKindFlags.Access)]
@@ -84,6 +54,35 @@ namespace MyStackOverflow.ViewModels
                 _badges = value;
                 OnPropertyChanged("Badges");
             }
+        }
+
+        private void Initialize()
+        {
+            IsLoading = true;
+            _dataProvider.GetUsersAsync(_id)
+                .Subscribe(result =>
+                {
+                    if (result != null && result.Total > 0)
+                    {
+                        User user = result.Users.First();
+                        User = new UserViewModel(Dispatcher, user, _stringsProvider);
+                        LoadBagesInfo(_id);
+                    }
+                }, ex => { IsLoading = false; });
+        }
+
+        private void LoadBagesInfo(int id)
+        {
+            _dataProvider.GetUserBagesList(id)
+                .Subscribe(bages =>
+                {
+                    if (bages != null)
+                    {
+                        Badges = new ObservableCollection<Badge>(bages.Badges);
+                    }
+                    IsLoading = false;
+                }, ex => { IsLoading = false; }
+                );
         }
     }
 }
