@@ -41,6 +41,8 @@
     <Compile Include="Badge.cs" />
     <Compile Include="Internal\Me.cs" />
     <Compile Include="Internal\Settings.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="QuestionsResponce.cs" />
     <Compile Include="ReputationChangesRequest.cs" />
     <Compile Include="RepChange.cs" />
     <Compile Include="UsersResponce.cs" />

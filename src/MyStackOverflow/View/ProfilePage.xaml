@@ -117,25 +117,6 @@
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <!--                        <StackPanel Grid.Row="2" >-->
-                        <!--                            <TextBlock-->
-                        <!--                                Text="{Binding LocalizedResources.Questions, Source={StaticResource LocalizedStrings}}"-->
-                        <!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                Foreground="Gray"-->
-                        <!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                            <TextBlock Text="{Binding User.QuestionCount}"-->
-                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                        </StackPanel>-->
-                        <!--                        <StackPanel Grid.Row="3" Orientation="Horizontal">-->
-                        <!--                            <TextBlock-->
-                        <!--                                Text="{Binding LocalizedResources.Answers, Source={StaticResource LocalizedStrings}}"-->
-                        <!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                            <TextBlock Text="{Binding User.AnswerCount}"-->
-                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                        </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem
