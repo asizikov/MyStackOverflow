@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Input;
 using JetBrains.Annotations;
 using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
@@ -14,7 +13,8 @@ namespace MyStackOverflow.ViewModels
         private readonly StatisticsService _statistics;
         private string _userId;
 
-        public LoginViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation, [NotNull] IApplicationSettings settings,
+        public LoginViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
+            [NotNull] IApplicationSettings settings,
             [NotNull] StatisticsService statistics)
             : base(dispatcher)
         {
@@ -26,16 +26,6 @@ namespace MyStackOverflow.ViewModels
             _statistics = statistics;
             InitCommands();
             _statistics.PublishLoginPageLoaded();
-        }
-
-        private void InitCommands()
-        {
-            GoToProfileCommand = new RelayCommand(GoToProfile, CanExecute);
-        }
-
-        private bool CanExecute(object o)
-        {
-            return !string.IsNullOrWhiteSpace(UserId);
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Default)]
@@ -54,6 +44,16 @@ namespace MyStackOverflow.ViewModels
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand GoToProfileCommand { get; private set; }
 
+        private void InitCommands()
+        {
+            GoToProfileCommand = new RelayCommand(GoToProfile, CanExecute);
+        }
+
+        private bool CanExecute(object o)
+        {
+            return !string.IsNullOrWhiteSpace(UserId);
+        }
+
         private void GoToProfile(object obj)
         {
             _navigation.GoToPage(Pages.ProfilePage, new[]
@@ -65,6 +65,5 @@ namespace MyStackOverflow.ViewModels
                 }
             });
         }
-
     }
 }
