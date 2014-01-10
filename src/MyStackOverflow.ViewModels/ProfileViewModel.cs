@@ -13,19 +13,22 @@ namespace MyStackOverflow.ViewModels
         private readonly AsyncDataProvider _dataProvider;
         private readonly int _id;
         private readonly StatisticsService _statistics;
+        private readonly IStringsProvider _stringsProvider;
         private string _userPic;
         private ObservableCollection<Badge> _badges;
         private UserViewModel _user;
 
         public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id,
-            [NotNull] StatisticsService statistics)
+            [NotNull] StatisticsService statistics, [NotNull] IStringsProvider stringsProvider)
             : base(dispatcher)
         {
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
             if (statistics == null) throw new ArgumentNullException("statistics");
+            if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
             _dataProvider = dataProvider;
             _id = id;
             _statistics = statistics;
+            _stringsProvider = stringsProvider;
             Initialize();
             _statistics.ReportProfilePageLoaded();
         }
@@ -39,7 +42,7 @@ namespace MyStackOverflow.ViewModels
                     if (result != null && result.Total > 0)
                     {
                         var user = result.Users.First();
-                        User = new UserViewModel(Dispatcher, user);
+                        User = new UserViewModel(Dispatcher, user, _stringsProvider);
                         LoadBagesInfo(_id);
                     }
                 }, ex => { IsLoading = false; });

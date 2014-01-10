@@ -99,6 +99,7 @@
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="ServicesImpl\ApplicationSettings.cs" />
     <Compile Include="ServicesImpl\NavigationService.cs" />
+    <Compile Include="ServicesImpl\StringsProvider.cs" />
     <Compile Include="ServicesImpl\YandexMetricaStatistiscService.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>

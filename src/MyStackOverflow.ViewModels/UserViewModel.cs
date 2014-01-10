@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using MyStackOverflow.Data.Utils;
 using MyStackOverflow.Model;
+using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
 {
@@ -9,13 +10,17 @@ namespace MyStackOverflow.ViewModels
     {
         private const string URL_GRAVATAR = "http://www.gravatar.com/avatar/{0}?s=128&d=identicon&r=PG";
         private readonly User _model;
+        private readonly IStringsProvider _stringsProvider;
         private string _userPic;
 
-        public UserViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] User model) 
+        public UserViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] User model,
+            [NotNull] IStringsProvider stringsProvider)
             : base(dispatcher)
         {
             if (model == null) throw new ArgumentNullException("model");
+            if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
             _model = model;
+            _stringsProvider = stringsProvider;
             UserPic = _model.EmailHash;
         }
 
@@ -39,14 +44,14 @@ namespace MyStackOverflow.ViewModels
             get { return _model.Age; }
         }
 
-        public int QuestionCount
+        public string QuestionCount
         {
-            get { return _model.QuestionCount; }
+            get { return string.Format(_stringsProvider.Questions, _model.QuestionCount); }
         }
 
-        public int AnswerCount
+        public string AnswerCount
         {
-            get { return _model.AnswerCount; }
+            get { return string.Format(_stringsProvider.Answers, _model.AnswerCount); }
         }
 
         public string AcceptRate
@@ -56,10 +61,7 @@ namespace MyStackOverflow.ViewModels
 
         public string LastAccessDate
         {
-            get
-            {
-                return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.LastAccessDate).ToReadableAgo();
-            }
+            get { return DateTimeUtils.DateTimeFromUnixTimestampSeconds(_model.LastAccessDate).ToReadableAgo(); }
         }
 
         public BadgeCounts BadgeCounts

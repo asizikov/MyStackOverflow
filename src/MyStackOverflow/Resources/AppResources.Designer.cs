@@ -79,7 +79,7 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to answers:.
+        ///   Looks up a localized string similar to {0} answers.
         /// </summary>
         public static string Answers {
             get {
@@ -169,11 +169,20 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to questions:.
+        ///   Looks up a localized string similar to {0} questions.
         /// </summary>
         public static string Questions {
             get {
                 return ResourceManager.GetString("Questions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to questions &amp; answers.
+        /// </summary>
+        public static string QuestionsAndAnswers {
+            get {
+                return ResourceManager.GetString("QuestionsAndAnswers", resourceCulture);
             }
         }
         

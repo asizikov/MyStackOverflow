@@ -2,7 +2,6 @@
 using MyStackOverflow.ServicesImpl;
 using MyStackOverflow.ViewModels.Factories;
 
-
 namespace MyStackOverflow.ViewModel
 {
     internal static class ViewModelLocator
@@ -15,18 +14,6 @@ namespace MyStackOverflow.ViewModel
             InitFactories();
         }
 
-        private static void InitFactories()
-        {
-            _mainViewModelFactory =
-                new Lazy<IProfileViewModelFactory>(
-                    () => new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider, ServiceLocator.Statistics));
-            _logingViewModelFactory =
-                new Lazy<ILoginViewModelFactory>(
-                    () =>
-                        new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
-                            ServiceLocator.ApplicationSettings, ServiceLocator.Statistics));
-        }
-
         public static IProfileViewModelFactory ProfileViewModelFactory
         {
             get { return _mainViewModelFactory.Value; }
@@ -35,6 +22,20 @@ namespace MyStackOverflow.ViewModel
         public static ILoginViewModelFactory LoginViewModelFactory
         {
             get { return _logingViewModelFactory.Value; }
+        }
+
+        private static void InitFactories()
+        {
+            _mainViewModelFactory =
+                new Lazy<IProfileViewModelFactory>(
+                    () =>
+                        new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider,
+                            ServiceLocator.Statistics, ServiceLocator.StringsProvider));
+            _logingViewModelFactory =
+                new Lazy<ILoginViewModelFactory>(
+                    () =>
+                        new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
+                            ServiceLocator.ApplicationSettings, ServiceLocator.Statistics));
         }
     }
 }

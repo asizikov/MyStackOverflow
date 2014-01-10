@@ -53,6 +53,7 @@
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />
     <Compile Include="Navigation\INavigationService.cs" />
+    <Compile Include="Services\IStringsProvider.cs" />
     <Compile Include="Services\ISystemDispatcher.cs" />
     <Compile Include="Navigation\Pages.cs" />
     <Compile Include="ProfileViewModel.cs" />

@@ -147,7 +147,7 @@
     <value>age:</value>
   </data>
   <data name="Answers" xml:space="preserve">
-    <value>answers:</value>
+    <value>{0} answers</value>
   </data>
   <data name="BagesTitle" xml:space="preserve">
     <value>bages</value>
@@ -159,7 +159,7 @@
     <value>profile</value>
   </data>
   <data name="Questions" xml:space="preserve">
-    <value>questions:</value>
+    <value>{0} questions</value>
   </data>
   <data name="ReputationTitle" xml:space="preserve">
     <value>reputation</value>
@@ -172,5 +172,8 @@
   </data>
   <data name="Location" xml:space="preserve">
     <value>location:</value>
+  </data>
+  <data name="QuestionsAndAnswers" xml:space="preserve">
+    <value>questions &amp; answers</value>
   </data>
 </root>

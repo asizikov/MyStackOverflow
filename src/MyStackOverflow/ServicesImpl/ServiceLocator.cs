@@ -22,6 +22,7 @@ namespace MyStackOverflow.ServicesImpl
             ApplicationSettings = new ApplicationSettings();
             NavigationService = new NavigationService(rootFrame, SystemDispatcher);
             Statistics = new YandexMetricaStatistiscService();
+            StringsProvider = new StringsProvider();
         }
 
         [NotNull]
@@ -41,5 +42,8 @@ namespace MyStackOverflow.ServicesImpl
 
         [NotNull]
         public static StatisticsService Statistics { get; private set; }
+
+        [NotNull]
+        public static IStringsProvider StringsProvider { get; private set; }
     }
 }
