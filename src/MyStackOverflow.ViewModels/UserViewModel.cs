@@ -2,6 +2,8 @@
 using JetBrains.Annotations;
 using MyStackOverflow.Data.Utils;
 using MyStackOverflow.Model;
+using MyStackOverflow.ViewModels.Commands;
+using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
@@ -11,17 +13,38 @@ namespace MyStackOverflow.ViewModels
         private const string URL_GRAVATAR = "http://www.gravatar.com/avatar/{0}?s=128&d=identicon&r=PG";
         private readonly User _model;
         private readonly IStringsProvider _stringsProvider;
+        private readonly INavigationService _navigation;
         private string _userPic;
 
         public UserViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] User model,
-            [NotNull] IStringsProvider stringsProvider)
+            [NotNull] IStringsProvider stringsProvider, [NotNull] INavigationService navigation)
             : base(dispatcher)
         {
             if (model == null) throw new ArgumentNullException("model");
             if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
+            if (navigation == null) throw new ArgumentNullException("navigation");
             _model = model;
             _stringsProvider = stringsProvider;
+            _navigation = navigation;
             UserPic = _model.EmailHash;
+            InitCommand();
+        }
+
+        private void InitCommand()
+        {
+            ShowQuestionsCommand = new RelayCommand(NavigateToQuestions);
+        }
+
+        private void NavigateToQuestions(object obj)
+        {
+            _navigation.GoToPage(Pages.QuestionsPage, new[]
+            {
+                new NavigationParameter
+                {
+                    Parameter = NavigationParameterName.Id,
+                    Value = _model.UserId.ToString()
+                }
+            });
         }
 
         public string DisplayName
@@ -90,5 +113,7 @@ namespace MyStackOverflow.ViewModels
                 OnPropertyChanged("UserPic");
             }
         }
+
+        public RelayCommand ShowQuestionsCommand { get; private set; }
     }
 }

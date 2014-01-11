@@ -15,5 +15,8 @@ namespace MyStackOverflow.ViewModels.Navigation
 
         [NotNull]
         public const string AboutPage = "/View/AboutPage.xaml";
+
+        [NotNull]
+        public const string QuestionsPage = "/View/QuestionsPage.xaml";
     }
 }

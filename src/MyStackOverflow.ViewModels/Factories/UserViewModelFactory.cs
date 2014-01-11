@@ -1,34 +1,36 @@
 ﻿using System;
 using JetBrains.Annotations;
+using MyStackOverflow.Model;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels.Factories
 {
-    public class LoginViewModelFactory : ILoginViewModelFactory
+    public class UserViewModelFactory : IUserViewModelFactory
     {
         private readonly ISystemDispatcher _dispatcher;
         private readonly INavigationService _navigation;
-        private readonly IApplicationSettings _settings;
         private readonly StatisticsService _statistics;
+        private readonly IStringsProvider _stringsProvider;
 
-        public LoginViewModelFactory([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
-            [NotNull] IApplicationSettings settings,
+        public UserViewModelFactory([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
+            [NotNull] IStringsProvider stringsProvider,
             [NotNull] StatisticsService statistics)
         {
             if (dispatcher == null) throw new ArgumentNullException("dispatcher");
             if (navigation == null) throw new ArgumentNullException("navigation");
-            if (settings == null) throw new ArgumentNullException("settings");
+            if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
             if (statistics == null) throw new ArgumentNullException("statistics");
             _dispatcher = dispatcher;
             _navigation = navigation;
-            _settings = settings;
+            _stringsProvider = stringsProvider;
             _statistics = statistics;
         }
 
-        public BaseViewModel Create()
+
+        public UserViewModel Create(User user)
         {
-            return new LoginViewModel(_dispatcher, _navigation, _settings, _statistics);
+            return new UserViewModel(_dispatcher, user, _stringsProvider, _navigation);
         }
     }
 }

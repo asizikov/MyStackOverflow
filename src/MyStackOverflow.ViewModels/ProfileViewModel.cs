@@ -4,6 +4,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
 using MyStackOverflow.Model;
+using MyStackOverflow.ViewModels.Factories;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
@@ -13,21 +14,22 @@ namespace MyStackOverflow.ViewModels
         private readonly AsyncDataProvider _dataProvider;
         private readonly int _id;
         private readonly StatisticsService _statistics;
-        private readonly IStringsProvider _stringsProvider;
+        private readonly IUserViewModelFactory _userViewModelFactory;
         private ObservableCollection<Badge> _badges;
         private UserViewModel _user;
 
         public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id,
-            [NotNull] StatisticsService statistics, [NotNull] IStringsProvider stringsProvider)
+            [NotNull] StatisticsService statistics,
+            [NotNull] IUserViewModelFactory userViewModelFactory)
             : base(dispatcher)
         {
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
             if (statistics == null) throw new ArgumentNullException("statistics");
-            if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
+            if (userViewModelFactory == null) throw new ArgumentNullException("userViewModelFactory");
             _dataProvider = dataProvider;
             _id = id;
             _statistics = statistics;
-            _stringsProvider = stringsProvider;
+            _userViewModelFactory = userViewModelFactory;
             Initialize();
             _statistics.ReportProfilePageLoaded();
         }
@@ -64,8 +66,8 @@ namespace MyStackOverflow.ViewModels
                 {
                     if (result != null && result.Total > 0)
                     {
-                        User user = result.Users.First();
-                        User = new UserViewModel(Dispatcher, user, _stringsProvider);
+                        var user = result.Users.First();
+                        User = _userViewModelFactory.Create(user);
                         LoadBagesInfo(_id);
                     }
                 }, ex => { IsLoading = false; });

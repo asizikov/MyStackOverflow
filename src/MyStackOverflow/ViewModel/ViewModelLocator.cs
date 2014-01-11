@@ -9,6 +9,7 @@ namespace MyStackOverflow.ViewModel
         private static Lazy<IProfileViewModelFactory> _mainViewModelFactory;
         private static Lazy<ILoginViewModelFactory> _logingViewModelFactory;
 
+
         static ViewModelLocator()
         {
             InitFactories();
@@ -30,7 +31,7 @@ namespace MyStackOverflow.ViewModel
                 new Lazy<IProfileViewModelFactory>(
                     () =>
                         new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider,
-                            ServiceLocator.Statistics, ServiceLocator.StringsProvider));
+                            ServiceLocator.Statistics, ServiceLocator.StringsProvider, ServiceLocator.NavigationService));
             _logingViewModelFactory =
                 new Lazy<ILoginViewModelFactory>(
                     () =>
