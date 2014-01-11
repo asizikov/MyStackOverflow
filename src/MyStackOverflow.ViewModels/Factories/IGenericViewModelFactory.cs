@@ -2,7 +2,7 @@
 
 namespace MyStackOverflow.ViewModels.Factories
 {
-    public interface ILoginViewModelFactory
+    public interface IGenericViewModelFactory
     {
         [NotNull]
         BaseViewModel Create();

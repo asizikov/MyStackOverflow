@@ -6,8 +6,9 @@ namespace MyStackOverflow.ViewModel
 {
     internal static class ViewModelLocator
     {
-        private static Lazy<IProfileViewModelFactory> _mainViewModelFactory;
-        private static Lazy<ILoginViewModelFactory> _logingViewModelFactory;
+        private static Lazy<IGenericViewModelByIdFactory> _mainViewModelFactory;
+        private static Lazy<IGenericViewModelFactory> _logingViewModelFactory;
+        private static Lazy<IGenericViewModelByIdFactory> _questionsViewModelFactory;
 
 
         static ViewModelLocator()
@@ -15,28 +16,38 @@ namespace MyStackOverflow.ViewModel
             InitFactories();
         }
 
-        public static IProfileViewModelFactory ProfileViewModelFactory
+        public static IGenericViewModelByIdFactory ProfileViewModelFactory
         {
             get { return _mainViewModelFactory.Value; }
         }
 
-        public static ILoginViewModelFactory LoginViewModelFactory
+        public static IGenericViewModelFactory LoginViewModelFactory
         {
             get { return _logingViewModelFactory.Value; }
+        }
+
+        public static IGenericViewModelByIdFactory QuestionsViewModelFactory
+        {
+            get { return _questionsViewModelFactory.Value; }
         }
 
         private static void InitFactories()
         {
             _mainViewModelFactory =
-                new Lazy<IProfileViewModelFactory>(
+                new Lazy<IGenericViewModelByIdFactory>(
                     () =>
                         new ProfileViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.DataProvider,
                             ServiceLocator.Statistics, ServiceLocator.StringsProvider, ServiceLocator.NavigationService));
             _logingViewModelFactory =
-                new Lazy<ILoginViewModelFactory>(
+                new Lazy<IGenericViewModelFactory>(
                     () =>
                         new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
                             ServiceLocator.ApplicationSettings, ServiceLocator.Statistics));
+
+            _questionsViewModelFactory = new Lazy<IGenericViewModelByIdFactory>(() =>
+                new QuestionsViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.Statistics,
+                    ServiceLocator.DataProvider)
+                );
         }
     }
 }

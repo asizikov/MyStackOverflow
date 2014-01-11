@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
-using MyStackOverflow.ViewModels;
 using MyStackOverflow.ViewModels.Navigation;
+using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ServicesImpl
 {

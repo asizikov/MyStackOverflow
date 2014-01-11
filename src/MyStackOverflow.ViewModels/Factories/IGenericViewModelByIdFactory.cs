@@ -1,6 +1,6 @@
 ﻿namespace MyStackOverflow.ViewModels.Factories
 {
-    public interface IProfileViewModelFactory
+    public interface IGenericViewModelByIdFactory
     {
         BaseViewModel Create(int id);
     }

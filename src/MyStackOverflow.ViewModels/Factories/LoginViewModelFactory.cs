@@ -5,7 +5,7 @@ using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels.Factories
 {
-    public class LoginViewModelFactory : ILoginViewModelFactory
+    public class LoginViewModelFactory : IGenericViewModelFactory
     {
         private readonly ISystemDispatcher _dispatcher;
         private readonly INavigationService _navigation;

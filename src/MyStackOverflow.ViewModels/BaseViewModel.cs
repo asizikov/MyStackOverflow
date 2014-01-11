@@ -1,19 +1,20 @@
 ﻿using System;
 using System.ComponentModel;
 using JetBrains.Annotations;
+using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        protected readonly ISystemDispatcher Dispatcher;
+        private readonly ISystemDispatcher _dispatcher;
         public event PropertyChangedEventHandler PropertyChanged;
         private bool _isLoading;
 
         protected BaseViewModel([NotNull] ISystemDispatcher dispatcher)
         {
             if (dispatcher == null) throw new ArgumentNullException("dispatcher");
-            Dispatcher = dispatcher;
+            _dispatcher = dispatcher;
         }
 
         [NotifyPropertyChangedInvocator]
@@ -22,7 +23,7 @@ namespace MyStackOverflow.ViewModels
             var handler = PropertyChanged;
             if (handler != null)
             {
-                Dispatcher.InvokeOnUIifNeeded(() => handler(this, new PropertyChangedEventArgs(propertyName)));
+                _dispatcher.InvokeOnUIifNeeded(() => handler(this, new PropertyChangedEventArgs(propertyName)));
             }
         }
 

@@ -20,7 +20,6 @@ namespace MyStackOverflow.View
             {
                 DataContext = ViewModelLocator.ProfileViewModelFactory.Create(Int32.Parse(id));
             }
-                
         }
     }
 }

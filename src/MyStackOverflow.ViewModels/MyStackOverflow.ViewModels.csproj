@@ -48,11 +48,13 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Factories\IUserViewModelFactory.cs" />
     <Compile Include="Factories\LoginViewModelFactory.cs" />
-    <Compile Include="Factories\ILoginViewModelFactory.cs" />
+    <Compile Include="Factories\IGenericViewModelFactory.cs" />
+    <Compile Include="Factories\QuestionsViewModelFactory.cs" />
     <Compile Include="Factories\UserViewModelFactory.cs" />
     <Compile Include="LoginViewModel.cs" />
-    <Compile Include="Factories\IProfileViewModelFactory.cs" />
+    <Compile Include="Factories\IGenericViewModelByIdFactory.cs" />
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
+    <Compile Include="QuestionsViewModel.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />
     <Compile Include="Navigation\INavigationService.cs" />
     <Compile Include="Services\IStringsProvider.cs" />

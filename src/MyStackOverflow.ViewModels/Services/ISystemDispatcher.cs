@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyStackOverflow.ViewModels
+namespace MyStackOverflow.ViewModels.Services
 {
     public interface ISystemDispatcher
     {

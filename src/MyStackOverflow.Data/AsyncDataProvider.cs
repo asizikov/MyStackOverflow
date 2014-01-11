@@ -22,5 +22,11 @@ namespace MyStackOverflow.Data
             var request = CallFactory.CreateBagesRequestById(id);
             return GetDataAsync(request);
         }
+
+        public IObservable<QuestionsResponce> GetUserQuestionsList(int id)
+        {
+            var request = CallFactory.CreateUserQuestionsRequestById(id);
+            return GetDataAsync(request);
+        }
     }
 }

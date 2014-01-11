@@ -6,7 +6,7 @@ using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels.Factories
 {
-    public class ProfileViewModelFactory : IProfileViewModelFactory
+    public class ProfileViewModelFactory : IGenericViewModelByIdFactory
     {
         private static Lazy<IUserViewModelFactory> _userViewModelFactory;
         private readonly AsyncDataProvider _dataProvider;

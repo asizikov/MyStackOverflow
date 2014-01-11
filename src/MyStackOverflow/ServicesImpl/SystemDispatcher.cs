@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Threading;
 using JetBrains.Annotations;
-using MyStackOverflow.ViewModels;
+using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ServicesImpl
 {
