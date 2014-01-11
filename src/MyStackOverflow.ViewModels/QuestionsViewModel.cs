@@ -12,6 +12,7 @@ namespace MyStackOverflow.ViewModels
         private readonly AsyncDataProvider _dataProvider;
         private readonly StatisticsService _statistics;
         private readonly int _userId;
+        private ObservableCollection<Question> _questions;
 
         public QuestionsViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
             [NotNull] AsyncDataProvider dataProvider, int userId)
@@ -40,6 +41,15 @@ namespace MyStackOverflow.ViewModels
                 }, ex => { IsLoading = false; });
         }
 
-        public ObservableCollection<Question> Questions { get; private set; } 
+        public ObservableCollection<Question> Questions
+        {
+            get { return _questions; }
+            private set
+            {
+                if (Equals(value, _questions)) return;
+                _questions = value;
+                OnPropertyChanged("Questions");
+            }
+        }
     }
 }
