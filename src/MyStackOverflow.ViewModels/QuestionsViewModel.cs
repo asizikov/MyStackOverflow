@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
+using MyStackOverflow.Model;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
@@ -28,7 +30,16 @@ namespace MyStackOverflow.ViewModels
         {
             IsLoading = true;
             _dataProvider.GetUserQuestionsList(_userId)
-                .Subscribe(responce => { IsLoading = false; }, ex => { IsLoading = false; });
+                .Subscribe(responce =>
+                {
+                    if (responce != null && responce.Questions.Count != 0)
+                    {
+                        Questions = new ObservableCollection<Question>(responce.Questions);
+                    }
+                    IsLoading = false;
+                }, ex => { IsLoading = false; });
         }
+
+        public ObservableCollection<Question> Questions { get; private set; } 
     }
 }
