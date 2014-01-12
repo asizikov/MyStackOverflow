@@ -187,6 +187,15 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to questions.
+        /// </summary>
+        public static string QuestionsTitle {
+            get {
+                return ResourceManager.GetString("QuestionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to reputation:.
         /// </summary>
         public static string Reputation {

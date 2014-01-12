@@ -1,5 +1,0 @@
-<ViewModels:ProfileViewModel xmlns:ViewModels="clr-namespace:MyStackOverflow.ViewModels;assembly=MyStackOverflow.ViewModels" 
-BronzeBages="5134" 
-DisplayName="Jon Skeet" GoldBages="288" 
-IsLoading="True" 
-Location="Reading, United Kingdom" Reputation="618,647" SilverBages="3691"/>

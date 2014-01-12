@@ -6,11 +6,13 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
+    d:DataContext="{d:DesignData Source=/SampleData/QuestionsViewModelSampleData.xaml}"
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.Opacity="0">
     <shell:SystemTray.ProgressIndicator>
@@ -30,7 +32,10 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
+            <TextBlock 
+                Text="{Binding LocalizedResources.QuestionsTitle, Source={StaticResource LocalizedStrings}}" 
+                Margin="9,-7,0,0" 
+                Style="{StaticResource PhoneTextTitle1Style}" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -38,14 +43,31 @@
             <phone:LongListSelector ItemsSource="{Binding Questions}">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
+                        <Grid 
+                            toolkit:TiltEffect.IsTiltEnabled="True" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="{Binding Title }" Style="{StaticResource PhoneTextLargeStyle}"
-                                       TextWrapping="Wrap" />
-                            <TextBlock Grid.Row="1" Text="{Binding Tags[0]}"/>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+                            <TextBlock x:Name="Title"
+								Grid.Column="1"
+								Grid.Row="0" 
+								Text="{Binding Title }" 
+								Style="{StaticResource PhoneTextLargeStyle}"
+                                TextWrapping="Wrap" />
+                            <TextBlock x:Name="Tag" 
+								Grid.Column="1"
+								Grid.Row="1" 
+								TextWrapping="Wrap"
+								Text="{Binding TagsList}" Margin="12,0,0,0" Foreground="#FFA09E9E" Style="{StaticResource GrayTitleStyle}"/>
+							<TextBlock x:Name="Score" 
+								Grid.Row="0" 
+								Grid.Column="0" 
+								Text="{Binding Score}" Margin="12,12,12,0"/>
                         </Grid>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>

@@ -1,0 +1,121 @@
+<ViewModels:QuestionsViewModel xmlns:ViewModels="clr-namespace:MyStackOverflow.ViewModels;assembly=MyStackOverflow.ViewModels" xmlns:Model="clr-namespace:MyStackOverflow.Model;assembly=MyStackOverflow.Model" xmlns:System="clr-namespace:System;assembly=mscorlib" IsLoading="True">
+	<ViewModels:QuestionsViewModel.Questions>
+		<Model:Question AcceptedAnswerID="37" 
+                        AnswerCount="2" 
+                        CreationDate="1363896383" 
+                        CommunityOwned="True" 
+                        DownVoteCount="37" 
+                        FavoriteCount="37" 
+                        LastActivityDate="13" 
+                        LastEditDate="1363961812" 
+                        QuestionCommentsUrl="Phasellus aliquam vestibulum" 
+                        QuestionAnswersUrl="Maecenas curabitur class" 
+                        QuestionID="31" 
+                        QuestionTimelineUrl="Adipiscing curae praesent donec" 
+                        Score="43" 
+                        Title="Share dll between WP7 and WP8 application" 
+                        UpVoteCount="39" 
+                        TagsList="c#, windows-phone-7, xaml, data-binding"
+                        ViewCount="187">
+			<Model:Question.Tags>
+                <System:String>c#</System:String>
+                <System:String>windows-phone-7</System:String>
+                <System:String>windows-phone-8</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="96" 
+                        AnswerCount="19" 
+                        CreationDate="12"
+                        CommunityOwned="False" 
+                        DownVoteCount="43" 
+                        FavoriteCount="82" 
+                        LastActivityDate="34" 
+                        LastEditDate="67" 
+                        QuestionCommentsUrl="Sed duis" 
+                        QuestionAnswersUrl="Eleifend facilisi nam"
+                        QuestionID="50" 
+                        QuestionTimelineUrl="Aliquet nunc adipiscing amet morbi" 
+                        Score="16" 
+                        TagsList="python, intellij-idea"
+                        Title="IntelliJ IDEA 10 shows strange empty Debug window on Ubuntu Linux" 
+                        UpVoteCount="57" ViewCount="68">
+			<Model:Question.Tags>
+                <System:String>python</System:String>
+                <System:String>intellij-idea</System:String>
+				<System:String>Proin ante mauris</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="78" AnswerCount="93" CreationDate="96" CommunityOwned="True" DownVoteCount="19" FavoriteCount="76" LastActivityDate="22" LastEditDate="92" QuestionCommentsUrl="Augue conubia" QuestionAnswersUrl="Adipiscing parturient commodo" QuestionID="28" QuestionTimelineUrl="Dolor eget elit inceptos" Score="49" Title="Nunc facilisis nec cubilia" UpVoteCount="80" ViewCount="18">
+			<Model:Question.Tags>
+				<System:String>Enim erat eros fames</System:String>
+				<System:String>Interdum nibh auctor felis ipsum</System:String>
+				<System:String>Lobortis nisi nisl justo congue</System:String>
+				<System:String>Nascetur vestibulum vestibulum cursus dignissim</System:String>
+				<System:String>Mus elementum</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="83" AnswerCount="50" CreationDate="29" CommunityOwned="False" DownVoteCount="11" FavoriteCount="14" LastActivityDate="25" LastEditDate="96" QuestionCommentsUrl="Orci pharetra fermentum placerat pede" QuestionAnswersUrl="Odio dictum" QuestionID="87" QuestionTimelineUrl="Non pulvinar" Score="86" Title="Magna quis" UpVoteCount="25" ViewCount="71">
+			<Model:Question.Tags>
+				<System:String>Lacus adipiscing lectus</System:String>
+				<System:String>Sagittis libero senectus dapibus parturient</System:String>
+				<System:String>Sociosqu per</System:String>
+				<System:String>Vestibulum quam suscipit ligula fringilla</System:String>
+				<System:String>Lorem egestas habitasse</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="78" AnswerCount="51" CreationDate="92" CommunityOwned="True" DownVoteCount="86" FavoriteCount="33" LastActivityDate="64" LastEditDate="32" QuestionCommentsUrl="Massa sed" QuestionAnswersUrl="Vestibulum adipiscing" QuestionID="50" QuestionTimelineUrl="Torquent euismod" Score="68" Title="Vestibulum mattis mauris ante malesuada" UpVoteCount="68" ViewCount="73">
+			<Model:Question.Tags>
+				<System:String>Ultrices metus feugiat gravida parturient</System:String>
+				<System:String>Sem urna iaculis cras hendrerit</System:String>
+				<System:String>Lacinia duis vestibulum nunc litora</System:String>
+				<System:String>Himenaeos laoreet</System:String>
+				<System:String>Imperdiet amet luctus magnis</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="69" AnswerCount="59" CreationDate="78" CommunityOwned="False" DownVoteCount="41" FavoriteCount="27" LastActivityDate="36" LastEditDate="32" QuestionCommentsUrl="Morbi vehicula neque sit adipiscing" QuestionAnswersUrl="Penatibus porttitor tincidunt" QuestionID="38" QuestionTimelineUrl="Parturient netus nulla vel nam" Score="24" Title="Ultricies venenatis eget velit" UpVoteCount="89" ViewCount="32">
+			<Model:Question.Tags>
+				<System:String>Vestibulum sed arcu</System:String>
+				<System:String>Porta vestibulum volutpat purus</System:String>
+				<System:String>Adipiscing diam</System:String>
+				<System:String>Tristique dis mollis</System:String>
+				<System:String>Montes parturient risus est</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="87" AnswerCount="35" CreationDate="61" CommunityOwned="True" DownVoteCount="23" FavoriteCount="81" LastActivityDate="30" LastEditDate="51" QuestionCommentsUrl="Vulputate hac curae enim" QuestionAnswersUrl="Elit vitae class maecenas" QuestionID="54" QuestionTimelineUrl="Leo erat mus natoque" Score="29" Title="Platea eleifend adipiscing" UpVoteCount="71" ViewCount="52">
+			<Model:Question.Tags>
+				<System:String>Nostra praesent donec etiam eros</System:String>
+				<System:String>Accumsan ornare bibendum</System:String>
+				<System:String>Curabitur vestibulum</System:String>
+				<System:String>Posuere nec dictumst</System:String>
+				<System:String>Vestibulum nibh</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="16" AnswerCount="24" CreationDate="55" CommunityOwned="False" DownVoteCount="26" FavoriteCount="90" LastActivityDate="89" LastEditDate="38" QuestionCommentsUrl="Non phasellus parturient facilisi faucibus" QuestionAnswersUrl="Nisi primis" QuestionID="96" QuestionTimelineUrl="Potenti pretium" Score="99" Title="Parturient elementum" UpVoteCount="21" ViewCount="50">
+			<Model:Question.Tags>
+				<System:String>Consequat rutrum nisl vestibulum per</System:String>
+				<System:String>Habitant sapien vestibulum</System:String>
+				<System:String>Convallis rhoncus adipiscing dignissim</System:String>
+				<System:String>Nunc semper</System:String>
+				<System:String>Sociis taciti fusce inceptos lorem</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="20" AnswerCount="81" CreationDate="70" CommunityOwned="True" DownVoteCount="32" FavoriteCount="73" LastActivityDate="97" LastEditDate="69" QuestionCommentsUrl="Sed sem sodales" QuestionAnswersUrl="Vestibulum facilisis tellus" QuestionID="65" QuestionTimelineUrl="Tempor interdum" Score="57" Title="Habitasse sed" UpVoteCount="11" ViewCount="82">
+			<Model:Question.Tags>
+				<System:String>Fermentum lobortis viverra nascetur</System:String>
+				<System:String>Sit aliquam morbi</System:String>
+				<System:String>Pharetra vel</System:String>
+				<System:String>Integer nulla</System:String>
+				<System:String>Proin nam tempus fringilla</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+		<Model:Question AcceptedAnswerID="56" AnswerCount="63" CreationDate="67" CommunityOwned="False" DownVoteCount="34" FavoriteCount="19" LastActivityDate="83" LastEditDate="12" QuestionCommentsUrl="Vestibulum tortor vivamus pulvinar adipiscing" QuestionAnswersUrl="Dis est placerat augue quisque" QuestionID="98" QuestionTimelineUrl="Aliquam sagittis hendrerit" Score="23" Title="Aliquet adipiscing sociosqu parturient per" UpVoteCount="48" ViewCount="11">
+			<Model:Question.Tags>
+				<System:String>Parturient odio vestibulum orci hac</System:String>
+				<System:String>Vestibulum dolor leo mus himenaeos</System:String>
+				<System:String>Nec imperdiet</System:String>
+				<System:String>Fames pede non</System:String>
+				<System:String>Senectus malesuada</System:String>
+			</Model:Question.Tags>
+		</Model:Question>
+	</ViewModels:QuestionsViewModel.Questions>
+</ViewModels:QuestionsViewModel>

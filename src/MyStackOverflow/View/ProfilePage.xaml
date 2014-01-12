@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     FontFamily="{StaticResource PhoneFontFamilyLight}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    d:DataContext="{d:DesignData Source=/SampleData/ProfileViewModelSampleData.xaml}"
+    d:DataContext="{d:DesignData Source=/SampleData/ProfileViewModelSampleData1.xaml}"
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.Opacity="0">
     <shell:SystemTray.ProgressIndicator>
@@ -19,18 +19,6 @@
                                  IsVisible="{Binding IsLoading}" />
     </shell:SystemTray.ProgressIndicator>
     <Grid x:Name="LayoutRoot">
-        <Grid.Resources>
-            <ResourceDictionary>
-                <Style x:Key="GrayTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextLargeStyle}">
-                    <Setter Property="Foreground" Value="Gray" />
-                    <Setter Property="FontSize" Value="23" />
-                    <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyLight}" />
-                </Style>
-                <Style x:Key="StackPanelStyle" TargetType="StackPanel">
-                    <Setter Property="Margin" Value="0,0,12,12" />
-                </Style>
-            </ResourceDictionary>
-        </Grid.Resources>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="/MyStackOverflow;component/Assets/main_bg.png" />
         </Grid.Background>

@@ -1,0 +1,134 @@
+<ViewModels:ProfileViewModel xmlns:ViewModels="clr-namespace:MyStackOverflow.ViewModels;assembly=MyStackOverflow.ViewModels" xmlns:Model="clr-namespace:MyStackOverflow.Model;assembly=MyStackOverflow.Model" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Commands="clr-namespace:MyStackOverflow.ViewModels.Commands;assembly=MyStackOverflow.ViewModels" IsLoading="False">
+	<ViewModels:ProfileViewModel.Badges>
+		<Model:Badge Description="Vestibulum nam cras aliquam integer" Name="Adipiscing parturient" award_count="60" badges_recipients_url="Nullam habitant dignissim gravida" badge_id="69" rank="Proin augue non elementum" tag_based="True">
+			<Model:Badge.User>
+				<Model:User Age="73" AcceptRate="34" AssociationID="Quisque nunc class vestibulum" AnswerCount="81" AboutMe="Duis vestibulum" DownVoteCount="59" DisplayName="Amet sed dis curae" EmailHash="Curabitur maecenas vivamus ante donec" Location="Phasellus aliquam aliquet praesent etiam" LastAccessDate="16" QuestionCount="99" Reputation="73" UserId="39" UserFavoritesUrl="Eleifend hac" UserTagsUrl="Mus cubilia" UserMentionedUrl="Eget leo morbi" UserReputationUrl="Convallis elit" UserAnswersUrl="Fusce accumsan" UserType="Vestibulum faucibus nulla" UserTimelineUrl="Dapibus facilisi" UserQuestionsUrl="Consequat commodo parturient conubia mauris" UpVoteCount="67" UserBadgesUrl="Arcu bibendum dictumst adipiscing blandit" UserCommentsUrl="Est diam lorem aenean" ViewCount="92" WebsiteUrl="Egestas nec vestibulum euismod feugiat">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="80" Gold="23" Silver="94"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Inceptos adipiscing" Name="Per iaculis dolor" award_count="89" badges_recipients_url="Lacus vestibulum sed odio" badge_id="52" rank="Vestibulum sodales" tag_based="False">
+			<Model:Badge.User>
+				<Model:User Age="93" AcceptRate="17" AssociationID="Erat vestibulum aptent lacinia" AnswerCount="11" AboutMe="Enim parturient vestibulum sed interdum" DownVoteCount="52" DisplayName="Eros nibh sem fames" EmailHash="Lobortis auctor adipiscing facilisis" Location="Congue fermentum laoreet" LastAccessDate="45" QuestionCount="49" Reputation="51" UserId="85" UserFavoritesUrl="Dictum nisl lectus vestibulum" UserTagsUrl="Vel senectus" UserMentionedUrl="Libero fringilla pharetra felis" UserReputationUrl="Habitasse pretium sagittis litora" UserAnswersUrl="Natoque posuere nascetur" UserType="Parturient luctus justo" UserTimelineUrl="Sociosqu adipiscing" UserQuestionsUrl="Ligula ipsum placerat pulvinar nunc" UpVoteCount="19" UserBadgesUrl="Sit parturient potenti nisi" UserCommentsUrl="Cursus vestibulum" ViewCount="50" WebsiteUrl="Nam suscipit rhoncus">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="85" Gold="21" Silver="97"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Magnis orci" Name="Adipiscing torquent" award_count="28" badges_recipients_url="Leo purus" badge_id="71" rank="Eleifend facilisi enim cubilia dapibus" tag_based="True">
+			<Model:Badge.User>
+				<Model:User Age="27" AcceptRate="91" AssociationID="Hendrerit ultrices lorem quam dis" AnswerCount="21" AboutMe="Pede parturient vestibulum" DownVoteCount="86" DisplayName="Vestibulum mattis himenaeos est" EmailHash="Mauris mollis viverra aliquam vehicula" Location="Hac integer volutpat quis" LastAccessDate="70" QuestionCount="32" Reputation="95" UserId="22" UserFavoritesUrl="Accumsan quisque" UserTagsUrl="Arcu aliquam aliquet blandit nostra" UserMentionedUrl="Parturient metus nunc bibendum" UserReputationUrl="Amet ante netus malesuada" UserAnswersUrl="Adipiscing maecenas urna" UserType="Conubia eget porta" UserTimelineUrl="Penatibus nulla commodo diam" UserQuestionsUrl="Vestibulum morbi vivamus neque" UpVoteCount="66" UserBadgesUrl="Magna montes massa cras imperdiet" UserCommentsUrl="Duis praesent" ViewCount="12" WebsiteUrl="Dictumst ornare elit vestibulum">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="82" Gold="94" Silver="85"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Erat platea porttitor tincidunt" Name="Tristique mus primis adipiscing" award_count="38" badges_recipients_url="Dignissim proin" badge_id="14" rank="Augue elementum aenean facilisis" tag_based="False">
+			<Model:Badge.User>
+				<Model:User Age="66" AcceptRate="73" AssociationID="Nec venenatis faucibus egestas" AnswerCount="97" AboutMe="Ultricies risus rutrum" DownVoteCount="22" DisplayName="Sapien semper velit non vitae" EmailHash="Class per parturient sed" Location="Sociis sem euismod" LastAccessDate="34" QuestionCount="26" Reputation="59" UserId="37" UserFavoritesUrl="Vestibulum iaculis lacinia vulputate" UserTagsUrl="Vel nisi nisl" UserMentionedUrl="Interdum tempor adipiscing donec etiam" UserReputationUrl="Tortor curabitur fusce lorem" UserAnswersUrl="Curae vestibulum taciti" UserType="Phasellus morbi consequat turpis nunc" UserTimelineUrl="Nam laoreet" UserQuestionsUrl="Tempus nibh" UpVoteCount="82" UserBadgesUrl="Habitant feugiat" UserCommentsUrl="Inceptos sit tellus eros gravida" ViewCount="41" WebsiteUrl="Parturient nulla lobortis convallis varius">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="72" Gold="91" Silver="42"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Mauris natoque" Name="Nascetur pharetra vestibulum placerat odio" award_count="89" badges_recipients_url="Quisque per" badge_id="54" rank="Massa malesuada penatibus porttitor metus" tag_based="True">
+			<Model:Badge.User>
+				<Model:User Age="19" AcceptRate="19" AssociationID="Sed orci fames nullam" AnswerCount="26" AboutMe="Pulvinar dolor fermentum" DownVoteCount="28" DisplayName="Aptent fringilla" EmailHash="Auctor sagittis" Location="Senectus posuere" LastAccessDate="19" QuestionCount="65" Reputation="83" UserId="33" UserFavoritesUrl="Pede hac habitasse cursus torquent" UserTagsUrl="Parturient vestibulum himenaeos viverra" UserMentionedUrl="Ultrices rhoncus dictum sodales leo" UserReputationUrl="Lectus hendrerit cras ipsum justo" UserAnswersUrl="Sociosqu dis potenti" UserType="Nec vestibulum aliquam integer" UserTimelineUrl="Mus imperdiet duis lacus" UserQuestionsUrl="Quam quis urna" UpVoteCount="30" UserBadgesUrl="Suscipit est felis congue" UserCommentsUrl="Vestibulum pretium adipiscing" ViewCount="78" WebsiteUrl="Nunc lorem non magna">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="56" Gold="82" Silver="49"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Sed sem vehicula libero" Name="Ligula tincidunt" award_count="33" badges_recipients_url="Nec euismod bibendum vestibulum" badge_id="22" rank="Consequat porta erat nostra" tag_based="False">
+			<Model:Badge.User>
+				<Model:User Age="49" AcceptRate="85" AssociationID="Vel amet parturient vivamus ante" AnswerCount="26" AboutMe="Sit tristique adipiscing" DownVoteCount="88" DisplayName="Aliquam vestibulum vestibulum" EmailHash="Morbi neque" Location="Aliquet blandit ultricies" LastAccessDate="77" QuestionCount="98" Reputation="19" UserId="93" UserFavoritesUrl="Luctus magnis mattis maecenas" UserTagsUrl="Parturient diam nulla dapibus" UserMentionedUrl="Mauris adipiscing est" UserReputationUrl="Netus cubilia arcu" UserAnswersUrl="Nam venenatis adipiscing sed parturient" UserType="Leo phasellus" UserTimelineUrl="Mollis eget accumsan elit" UserQuestionsUrl="Praesent conubia hac" UpVoteCount="78" UserBadgesUrl="Vestibulum vulputate vestibulum" UserCommentsUrl="Litora commodo dis volutpat curabitur" ViewCount="94" WebsiteUrl="Egestas montes vestibulum enim mus">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="78" Gold="78" Silver="52"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Feugiat dictumst convallis" Name="Eleifend gravida" award_count="89" badges_recipients_url="Etiam vestibulum" badge_id="70" rank="Adipiscing nam parturient porttitor sed" tag_based="True">
+			<Model:Badge.User>
+				<Model:User Age="55" AcceptRate="58" AssociationID="Iaculis habitant adipiscing inceptos" AnswerCount="41" AboutMe="Eros ornare facilisi faucibus" DownVoteCount="95" DisplayName="Lacinia parturient non dignissim vestibulum" EmailHash="Laoreet purus interdum vestibulum risus" Location="Natoque elementum adipiscing" LastAccessDate="56" QuestionCount="46" Reputation="31" UserId="57" UserFavoritesUrl="Parturient placerat posuere sed" UserTagsUrl="Sagittis vel" UserMentionedUrl="Sem pulvinar sit" UserReputationUrl="Rutrum potenti" UserAnswersUrl="Lobortis per platea" UserType="Class curae penatibus pretium" UserTimelineUrl="Hendrerit himenaeos imperdiet malesuada senectus" UserQuestionsUrl="Vestibulum habitasse nibh vitae primis" UpVoteCount="54" UserBadgesUrl="Velit nascetur" UserCommentsUrl="Facilisis fermentum pharetra fringilla" ViewCount="41" WebsiteUrl="Rhoncus sapien donec">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="28" Gold="86" Silver="56"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Fusce lorem vestibulum semper" Name="Sociosqu sodales" award_count="46" badges_recipients_url="Non conubia" badge_id="13" rank="Convallis cubilia dapibus dignissim" tag_based="False">
+			<Model:Badge.User>
+				<Model:User Age="43" AcceptRate="19" AssociationID="Nisi sociis tincidunt nulla tristique" AnswerCount="44" AboutMe="Vestibulum viverra morbi aliquam integer" DownVoteCount="20" DisplayName="Dis est adipiscing nisl quisque" EmailHash="Proin ultricies vivamus aliquam" Location="Augue venenatis suscipit" LastAccessDate="62" QuestionCount="60" Reputation="61" UserId="42" UserFavoritesUrl="Felis hac ipsum" UserTagsUrl="Consequat parturient mus" UserMentionedUrl="Ultrices phasellus vestibulum justo leo" UserReputationUrl="Tellus adipiscing odio" UserAnswersUrl="Vulputate dolor" UserType="Lorem vestibulum tempor volutpat" UserTimelineUrl="Vehicula blandit vestibulum commodo" UserQuestionsUrl="Lacus vestibulum" UpVoteCount="31" UserBadgesUrl="Nunc taciti" UserCommentsUrl="Torquent aliquet fames curabitur parturient" ViewCount="28" WebsiteUrl="Magna maecenas nec massa">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="71" Gold="74" Silver="42"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Elementum per praesent tempus" Name="Accumsan tortor" award_count="56" badges_recipients_url="Lacinia laoreet dictum ante lectus" badge_id="33" rank="Vitae class curae" tag_based="True">
+			<Model:Badge.User>
+				<Model:User Age="34" AcceptRate="56" AssociationID="Bibendum dictumst varius pede" AnswerCount="85" AboutMe="Turpis egestas orci metus morbi" DownVoteCount="91" DisplayName="Aenean sed" EmailHash="Sem neque netus" Location="Eleifend nulla facilisi" LastAccessDate="60" QuestionCount="13" Reputation="98" UserId="93" UserFavoritesUrl="Purus sit" UserTagsUrl="Inceptos cras gravida auctor interdum" UserMentionedUrl="Adipiscing nullam urna fermentum" UserReputationUrl="Nam aptent habitant parturient" UserAnswersUrl="Euismod porta quam" UserType="Congue velit" UserTimelineUrl="Duis risus nunc" UserQuestionsUrl="Feugiat vel fringilla faucibus" UpVoteCount="89" UserBadgesUrl="Adipiscing parturient" UserCommentsUrl="Vestibulum facilisis quis vestibulum mauris" ViewCount="80" WebsiteUrl="Sed amet cursus iaculis">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="53" Gold="35" Silver="75"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+		<Model:Badge Description="Arcu dis habitasse diam" Name="Lobortis eget hendrerit" award_count="66" badges_recipients_url="Torquent ultrices quisque dolor" badge_id="64" rank="Vehicula sed fames" tag_based="False">
+			<Model:Badge.User>
+				<Model:User Age="56" AcceptRate="95" AssociationID="Est nascetur" AnswerCount="87" AboutMe="Natoque posuere" DownVoteCount="58" DisplayName="Elit donec himenaeos" EmailHash="Etiam fusce libero pharetra hac" Location="Enim placerat" LastAccessDate="32" QuestionCount="59" Reputation="79" UserId="93" UserFavoritesUrl="Nulla vestibulum luctus" UserTagsUrl="Augue per" UserMentionedUrl="Pretium rhoncus sodales non magnis" UserReputationUrl="Viverra eros proin sociosqu" UserAnswersUrl="Pulvinar lorem leo ligula" UserType="Aliquam integer" UserTimelineUrl="Malesuada suscipit nibh nisi" UserQuestionsUrl="Imperdiet senectus adipiscing" UpVoteCount="47" UserBadgesUrl="Mus potenti erat morbi" UserCommentsUrl="Vestibulum nec litora sagittis" ViewCount="81" WebsiteUrl="Penatibus porttitor tincidunt">
+					<Model:User.BadgeCounts>
+						<Model:BadgeCounts Bronze="37" Gold="10" Silver="45"/>
+					</Model:User.BadgeCounts>
+					<Model:User.CreationDate>
+						<System:Int64/>
+					</Model:User.CreationDate>
+				</Model:User>
+			</Model:Badge.User>
+		</Model:Badge>
+	</ViewModels:ProfileViewModel.Badges>
+	<ViewModels:ProfileViewModel.User>
+		<ViewModels:UserViewModel Age="24" AcceptRate="Vivamus parturient" AnswerCount="Vestibulum tristique volutpat vestibulum nisl" DisplayName="Sem ultricies" IsLoading="True" Location="Mattis nunc venenatis vulputate" LastAccessDate="Adipiscing parturient felis" MemberFor="Vestibulum ipsum sit justo" QuestionCount="Odio aliquam" Reputation="75" UserPic="Maecenas lacus praesent curabitur">
+			<ViewModels:UserViewModel.BadgeCounts>
+				<Model:BadgeCounts Bronze="76" Gold="20" Silver="43"/>
+			</ViewModels:UserViewModel.BadgeCounts>
+			<ViewModels:UserViewModel.ShowQuestionsCommand>
+				<Commands:RelayCommand/>
+			</ViewModels:UserViewModel.ShowQuestionsCommand>
+		</ViewModels:UserViewModel>
+	</ViewModels:ProfileViewModel.User>
+</ViewModels:ProfileViewModel>

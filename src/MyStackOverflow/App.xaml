@@ -7,8 +7,15 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:MyStackOverflow" x:Key="LocalizedStrings"/>
-        <servicesImpl:MyAppJetImageLoaderConverter x:Key="JetImageLoaderConverter"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+                <ResourceDictionary>
+                        <local:LocalizedStrings xmlns:local="clr-namespace:MyStackOverflow" x:Key="LocalizedStrings"/>
+                        <servicesImpl:MyAppJetImageLoaderConverter x:Key="JetImageLoaderConverter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

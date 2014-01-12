@@ -131,6 +131,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +182,12 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -191,6 +201,9 @@
     </Reference>
     <Reference Include="JetImageLoader">
       <HintPath>..\packages\WP-JetImagLoader.0.8.3\lib\JetImageLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -240,7 +253,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <DesignData Include="SampleData\ProfileViewModelSampleData.xaml">
+    <DesignData Include="SampleData\ProfileViewModelSampleData1.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+    <DesignData Include="SampleData\QuestionsViewModelSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
   </ItemGroup>

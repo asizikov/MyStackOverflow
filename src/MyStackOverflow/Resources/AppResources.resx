@@ -176,4 +176,7 @@
   <data name="QuestionsAndAnswers" xml:space="preserve">
     <value>questions &amp; answers</value>
   </data>
+  <data name="QuestionsTitle" xml:space="preserve">
+    <value>questions</value>
+  </data>
 </root>
