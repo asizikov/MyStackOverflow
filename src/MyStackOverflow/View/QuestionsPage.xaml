@@ -38,8 +38,15 @@
             <phone:LongListSelector ItemsSource="{Binding Questions}">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Title }" Style="{StaticResource PhoneTextLargeStyle}"
-                                   TextWrapping="Wrap" />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{Binding Title }" Style="{StaticResource PhoneTextLargeStyle}"
+                                       TextWrapping="Wrap" />
+                            <TextBlock Grid.Row="1" Text="{Binding Tags[0]}"/>
+                        </Grid>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
