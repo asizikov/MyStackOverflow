@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -82,26 +83,32 @@
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Style="{StaticResource StackPanelStyle}">
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.Location, Source={StaticResource LocalizedStrings}}" />
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="2"
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
                                 Text="{Binding User.Location}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Style="{StaticResource StackPanelStyle}" Grid.Row="1">
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="1"
                                 Text="{Binding LocalizedResources.Age, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource GrayTitleStyle}" />
                             <TextBlock Text="{Binding User.Age}"
+                                       toolkit:SlideInEffect.LineIndex="2"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Style="{StaticResource StackPanelStyle}" Grid.Row="2">
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="1"
                                 Text="{Binding LocalizedResources.LastAccess, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource GrayTitleStyle}" />
                             <TextBlock Text="{Binding User.LastAccessDate}"
+                                       toolkit:SlideInEffect.LineIndex="2"
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
@@ -118,18 +125,22 @@
                         </Grid.RowDefinitions>
                         <StackPanel Style="{StaticResource StackPanelStyle}">
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.MemberFor, Source={StaticResource LocalizedStrings}}" />
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="2"
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
                                 Text="{Binding User.MemberFor}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
                         <StackPanel Grid.Row="1" Style="{StaticResource StackPanelStyle}">
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}" />
                             <TextBlock
+                                toolkit:SlideInEffect.LineIndex="2"
                                 FontFamily="{StaticResource PhoneFontFamilyLight}"
                                 Text="{Binding User.AcceptRate}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
