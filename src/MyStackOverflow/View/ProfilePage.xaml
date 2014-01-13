@@ -164,28 +164,16 @@
                             <Button Grid.Row="1"
                                     Grid.Column="1" Content="{Binding User.AnswerCount}"/>
                         </Grid>
-                        <!--                        <StackPanel Grid.Row="0" Orientation="Horizontal">-->
-                        <!--                            <TextBlock-->
-                        <!--                                Text="{Binding LocalizedResources.Bages, Mode=OneWay, Source={StaticResource LocalizedStrings}}"-->
-                        <!--                                FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                            <TextBlock Text="{Binding User.BadgeCounts.Gold}"-->
-                        <!--                                       Foreground="Gold"-->
-                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                            <TextBlock Text="{Binding User.BadgeCounts.Silver}"-->
-                        <!--                                       Foreground="Silver"-->
-                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                            <TextBlock Text="{Binding User.BadgeCounts.Bronze}"-->
-                        <!--                                       Foreground="SaddleBrown"-->
-                        <!--                                       FontFamily="{StaticResource PhoneFontFamilyLight}"-->
-                        <!--                                       Style="{StaticResource PhoneTextLargeStyle}" />-->
-                        <!--                        </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>
     </Grid>
-
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Opacity="0.1" Mode="Minimized" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Click="ApplicationBarMenuItem_OnClick" Text="drop settings"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

@@ -61,7 +61,6 @@ namespace MyStackOverflow.ViewModels
             {
                 Id = UserId
             };
-
             _navigation.GoToPage(Pages.ProfilePage, new[]
             {
                 new NavigationParameter
@@ -69,7 +68,7 @@ namespace MyStackOverflow.ViewModels
                     Parameter = NavigationParameterName.Id,
                     Value = UserId
                 }
-            });
+            },1);
         }
     }
 }

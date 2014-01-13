@@ -195,6 +195,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="BindableApplicationBar">
+      <HintPath>..\packages\BindableApplicationBar.1.1.0.0\lib\wp8\BindableApplicationBar.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations.PCL">
       <HintPath>..\Lib\JetBrains.Annotations.PCL.dll</HintPath>
     </Reference>
