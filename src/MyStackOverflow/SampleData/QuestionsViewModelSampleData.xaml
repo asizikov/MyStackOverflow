@@ -12,7 +12,7 @@
                         QuestionAnswersUrl="Maecenas curabitur class" 
                         QuestionID="31" 
                         QuestionTimelineUrl="Adipiscing curae praesent donec" 
-                        Score="43" 
+                        Score="-22" 
                         Title="Share dll between WP7 and WP8 application" 
                         UpVoteCount="39" 
                         TagsList="c#, windows-phone-7, xaml, data-binding"
@@ -35,7 +35,7 @@
                         QuestionAnswersUrl="Eleifend facilisi nam"
                         QuestionID="50" 
                         QuestionTimelineUrl="Aliquet nunc adipiscing amet morbi" 
-                        Score="16" 
+                        Score="0" 
                         TagsList="python, intellij-idea"
                         Title="IntelliJ IDEA 10 shows strange empty Debug window on Ubuntu Linux" 
                         UpVoteCount="57" ViewCount="68">
@@ -54,7 +54,19 @@
 				<System:String>Mus elementum</System:String>
 			</Model:Question.Tags>
 		</Model:Question>
-		<Model:Question AcceptedAnswerID="83" AnswerCount="50" CreationDate="29" CommunityOwned="False" DownVoteCount="11" FavoriteCount="14" LastActivityDate="25" LastEditDate="96" QuestionCommentsUrl="Orci pharetra fermentum placerat pede" QuestionAnswersUrl="Odio dictum" QuestionID="87" QuestionTimelineUrl="Non pulvinar" Score="86" Title="Magna quis" UpVoteCount="25" ViewCount="71">
+		<Model:Question AcceptedAnswerID="83" 
+                        AnswerCount="50" 
+                        CreationDate="29" 
+                        CommunityOwned="False" 
+                        DownVoteCount="11" 
+                        FavoriteCount="14" 
+                        LastActivityDate="25" 
+                        LastEditDate="96" 
+                        QuestionCommentsUrl="Orci pharetra fermentum placerat pede" 
+                        QuestionAnswersUrl="Odio dictum" 
+                        QuestionID="87" 
+                        QuestionTimelineUrl="Non pulvinar" 
+                        Score="345" Title="Magna quis" UpVoteCount="25" ViewCount="71">
 			<Model:Question.Tags>
 				<System:String>Lacus adipiscing lectus</System:String>
 				<System:String>Sagittis libero senectus dapibus parturient</System:String>
