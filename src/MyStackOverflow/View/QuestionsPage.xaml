@@ -35,6 +35,7 @@
             <TextBlock 
                 Text="{Binding LocalizedResources.QuestionsTitle, Source={StaticResource LocalizedStrings}}" 
                 Margin="9,-7,0,0" 
+                FontWeight="Light"
                 Style="{StaticResource PhoneTextTitle1Style}" />
         </StackPanel>
 
