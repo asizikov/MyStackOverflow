@@ -1,5 +1,6 @@
 ﻿using System;
 using JetBrains.Annotations;
+using MyStackOverflow.Model.Internal;
 using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
@@ -56,6 +57,11 @@ namespace MyStackOverflow.ViewModels
 
         private void GoToProfile(object obj)
         {
+            _settings.Settings.Me = new Me
+            {
+                Id = UserId
+            };
+
             _navigation.GoToPage(Pages.ProfilePage, new[]
             {
                 new NavigationParameter
