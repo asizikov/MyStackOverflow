@@ -154,11 +154,15 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                            <TextBlock Grid.Row="0"
+                                       toolkit:SlideInEffect.LineIndex="1"
+                                       Grid.Column="0" Grid.ColumnSpan="2"
                                        Text="{Binding  LocalizedResources.QuestionsAndAnswers, Source={StaticResource LocalizedStrings}}"
                                        Style="{StaticResource GrayTitleStyle}"/>
-                            <Button Grid.Row="1" Grid.Column="0" Command="{Binding User.ShowQuestionsCommand}" Content="{Binding User.QuestionCount}"/>
-                            <Button Grid.Row="1" Grid.Column="1" Content="{Binding User.AnswerCount}"/>
+                            <Button Grid.Row="1"
+                                    Grid.Column="0" Command="{Binding User.ShowQuestionsCommand}" Content="{Binding User.QuestionCount}"/>
+                            <Button Grid.Row="1"
+                                    Grid.Column="1" Content="{Binding User.AnswerCount}"/>
                         </Grid>
                         <!--                        <StackPanel Grid.Row="0" Orientation="Horizontal">-->
                         <!--                            <TextBlock-->
