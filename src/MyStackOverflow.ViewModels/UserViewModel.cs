@@ -77,9 +77,9 @@ namespace MyStackOverflow.ViewModels
             get { return string.Format(_stringsProvider.Answers, _model.AnswerCount); }
         }
 
-        public string AcceptRate
+        public int AcceptRate
         {
-            get { return string.Format("{0}%", _model.AcceptRate); }
+            get { return _model.AcceptRate; }
         }
 
         public string LastAccessDate
