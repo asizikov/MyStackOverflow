@@ -51,8 +51,8 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="66"/>
-								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="45"/>
+								<ColumnDefinition/>
 							</Grid.ColumnDefinitions>
                             <TextBlock x:Name="Title"
 								Grid.Column="1"

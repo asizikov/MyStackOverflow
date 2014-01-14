@@ -69,7 +69,7 @@
                                    FontFamily="{StaticResource PhoneFontFamilyLight}" />
                     </DataTemplate>
                 </phone:Pivot.HeaderTemplate>
-                <phone:PivotItem
+                <phone:PivotItem x:Name="Summary"
                     Header="{Binding LocalizedResources.SummaryTitle, Source={StaticResource LocalizedStrings}}">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -114,7 +114,7 @@
                         </StackPanel>
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem
+                <phone:PivotItem x:Name="Profile"
                     Header="{Binding LocalizedResources.ProfileTitle, Source={StaticResource LocalizedStrings}}">
                     <Grid Margin="12,0,12,0">
                         <Grid.RowDefinitions>
@@ -123,7 +123,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                        <StackPanel x:Name="mebmer" Style="{StaticResource StackPanelStyle}">
                             <TextBlock
                                 toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
@@ -134,18 +134,13 @@
                                 Text="{Binding User.MemberFor}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelStyle}">
+                        <StackPanel x:Name="accept_rate" Grid.Row="1" Style="{StaticResource StackPanelStyle}">
                             <TextBlock
                                 toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}" />
-                            <TextBlock
-                                toolkit:SlideInEffect.LineIndex="2"
-                                FontFamily="{StaticResource PhoneFontFamilyLight}"
-                                Text="{Binding User.AcceptRate}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <Grid Grid.Row="2">
+                        <Grid x:Name="questions_and_answers" Grid.Row="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>

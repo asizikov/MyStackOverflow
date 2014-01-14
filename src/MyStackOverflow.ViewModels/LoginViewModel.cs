@@ -68,7 +68,7 @@ namespace MyStackOverflow.ViewModels
                     Parameter = NavigationParameterName.Id,
                     Value = UserId
                 }
-            },1);
+            }, 1);
         }
     }
 }
