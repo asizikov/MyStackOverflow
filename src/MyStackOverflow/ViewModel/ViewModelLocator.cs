@@ -8,7 +8,7 @@ namespace MyStackOverflow.ViewModel
     {
         private static Lazy<IGenericViewModelByIdFactory> _mainViewModelFactory;
         private static Lazy<IGenericViewModelFactory> _logingViewModelFactory;
-        private static Lazy<IGenericViewModelByIdFactory> _questionsViewModelFactory;
+        private static Lazy<QuestionsViewModelFactory> _questionsViewModelFactory;
 
 
         static ViewModelLocator()
@@ -26,7 +26,7 @@ namespace MyStackOverflow.ViewModel
             get { return _logingViewModelFactory.Value; }
         }
 
-        public static IGenericViewModelByIdFactory QuestionsViewModelFactory
+        public static QuestionsViewModelFactory QuestionsViewModelFactory
         {
             get { return _questionsViewModelFactory.Value; }
         }
@@ -44,7 +44,7 @@ namespace MyStackOverflow.ViewModel
                         new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
                             ServiceLocator.ApplicationSettings, ServiceLocator.Statistics));
 
-            _questionsViewModelFactory = new Lazy<IGenericViewModelByIdFactory>(() =>
+            _questionsViewModelFactory = new Lazy<QuestionsViewModelFactory>(() =>
                 new QuestionsViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.Statistics,
                     ServiceLocator.DataProvider)
                 );

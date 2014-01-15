@@ -33,7 +33,7 @@ namespace MyStackOverflow.ViewModels
         private void InitCommand()
         {
             ShowQuestionsCommand = new RelayCommand(NavigateToQuestions);
-            ShowAnswersCommand= new RelayCommand(NavigateToAnswers);
+            ShowAnswersCommand = new RelayCommand(NavigateToAnswers);
         }
 
         private void NavigateToAnswers(object obj)
@@ -44,6 +44,11 @@ namespace MyStackOverflow.ViewModels
                 {
                     Parameter = NavigationParameterName.Id,
                     Value = _model.UserId.ToString()
+                },
+                new NavigationParameter
+                {
+                    Parameter = NavigationParameterName.Answers,
+                    Value = true.ToString()
                 }
             });
         }
@@ -56,6 +61,11 @@ namespace MyStackOverflow.ViewModels
                 {
                     Parameter = NavigationParameterName.Id,
                     Value = _model.UserId.ToString()
+                },
+                new NavigationParameter
+                {
+                    Parameter = NavigationParameterName.Questions,
+                    Value = true.ToString()
                 }
             });
         }

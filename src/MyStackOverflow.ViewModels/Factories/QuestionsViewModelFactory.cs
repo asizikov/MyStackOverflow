@@ -1,11 +1,12 @@
 ﻿using System;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
+using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels.Factories
 {
-    public class QuestionsViewModelFactory : IGenericViewModelByIdFactory
+    public class QuestionsViewModelFactory
     {
         private readonly ISystemDispatcher _systemDispatcher;
         private readonly StatisticsService _statistics;
@@ -23,9 +24,9 @@ namespace MyStackOverflow.ViewModels.Factories
             _dataProvider = dataProvider;
         }
 
-        public BaseViewModel Create(int id)
+        public BaseViewModel Create(int id, DetailsType detailsType)
         {
-            return new QuestionsViewModel(_systemDispatcher, _statistics, _dataProvider, id);
+            return new QuestionsViewModel(_systemDispatcher, _statistics, _dataProvider, id, detailsType);
         }
     }
 }

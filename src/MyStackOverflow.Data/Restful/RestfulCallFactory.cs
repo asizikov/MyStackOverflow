@@ -42,7 +42,7 @@ namespace MyStackOverflow.Data.Restful
         [NotNull]
         public RestfullRequest<AnswersResponce> CreateUserAnswersRequestById(int userId)
         {
-            return new RestfullRequest<AnswersResponce>(URL_PREFIX + InjectIdToTemplate(QUESTIONS_TEMPLATE, userId), _webService);
+            return new RestfullRequest<AnswersResponce>(URL_PREFIX + InjectIdToTemplate(ANSWERS_TEMPLATE, userId), _webService);
         } 
     }
 }

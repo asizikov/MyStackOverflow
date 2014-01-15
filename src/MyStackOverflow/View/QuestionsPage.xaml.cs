@@ -15,11 +15,19 @@ namespace MyStackOverflow.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            var id = string.Empty;
+            string id;
+            string  type;
             if (NavigationContext.QueryString.TryGetValue(NavigationParameterName.Id, out id))
             {
-                DataContext = ViewModelLocator.QuestionsViewModelFactory.Create(Int32.Parse(id));
+                DataContext = ViewModelLocator.QuestionsViewModelFactory.Create(Int32.Parse(id), GetDetailsType());
             }
+        }
+
+        private DetailsType GetDetailsType()
+        {
+            return NavigationContext.QueryString.ContainsKey(NavigationParameterName.Answers)
+                ? DetailsType.Answers
+                : DetailsType.Questions;
         }
     }
 }
