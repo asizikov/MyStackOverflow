@@ -33,6 +33,19 @@ namespace MyStackOverflow.ViewModels
         private void InitCommand()
         {
             ShowQuestionsCommand = new RelayCommand(NavigateToQuestions);
+            ShowAnswersCommand= new RelayCommand(NavigateToAnswers);
+        }
+
+        private void NavigateToAnswers(object obj)
+        {
+            _navigation.GoToPage(Pages.QuestionsPage, new[]
+            {
+                new NavigationParameter
+                {
+                    Parameter = NavigationParameterName.Id,
+                    Value = _model.UserId.ToString()
+                }
+            });
         }
 
         private void NavigateToQuestions(object obj)
@@ -115,5 +128,6 @@ namespace MyStackOverflow.ViewModels
         }
 
         public RelayCommand ShowQuestionsCommand { get; private set; }
+        public RelayCommand ShowAnswersCommand { get; private set; }
     }
 }
