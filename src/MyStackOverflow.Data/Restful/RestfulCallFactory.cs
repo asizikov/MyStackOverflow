@@ -12,6 +12,7 @@ namespace MyStackOverflow.Data.Restful
         private const string USERS_TEMPLATE = "users/{0}";
         private const string BAGES_TEMPLATE = "users/{0}/badges";
         private const string QUESTIONS_TEMPLATE = "users/{0}/questions";
+        private const string ANSWERS_TEMPLATE = "users/{0}/answers";
 
 
         private static string InjectIdToTemplate(string template, int id)
@@ -29,13 +30,19 @@ namespace MyStackOverflow.Data.Restful
         [NotNull]
         public RestfullRequest<BagesResponce> CreateBagesRequestById(int userId)
         {
-            return new BagesRequest(URL_PREFIX + InjectIdToTemplate(BAGES_TEMPLATE, userId), _webService);
+            return new RestfullRequest<BagesResponce>(URL_PREFIX + InjectIdToTemplate(BAGES_TEMPLATE, userId), _webService);
         }
 
         [NotNull]
         public RestfullRequest<QuestionsResponce> CreateUserQuestionsRequestById(int userId)
         {
-            return new QuestionsRequest(URL_PREFIX + InjectIdToTemplate(QUESTIONS_TEMPLATE, userId), _webService);
+            return new RestfullRequest<QuestionsResponce>(URL_PREFIX + InjectIdToTemplate(QUESTIONS_TEMPLATE, userId), _webService);
         }
+
+        [NotNull]
+        public RestfullRequest<AnswersResponce> CreateUserAnswersRequestById(int userId)
+        {
+            return new RestfullRequest<AnswersResponce>(URL_PREFIX + InjectIdToTemplate(QUESTIONS_TEMPLATE, userId), _webService);
+        } 
     }
 }

@@ -9,13 +9,13 @@ namespace MySackOverflow.Networking
         Post = 1
     }
 
-    public abstract class RestfullRequest<T> where T : new()
+    public class RestfullRequest<T> where T : new()
     {
         private readonly TimeSpan _timeoutTimeSpan = TimeSpan.FromSeconds(40);
         private readonly string _baseUrl;
         private readonly ReactiveWebService _webService;
 
-        protected RestfullRequest([NotNull] string baseUrl, [NotNull] ReactiveWebService webService)
+        public RestfullRequest([NotNull] string baseUrl, [NotNull] ReactiveWebService webService)
         {
             if (baseUrl == null) throw new ArgumentNullException("baseUrl");
             if (webService == null) throw new ArgumentNullException("webService");
@@ -43,7 +43,6 @@ namespace MySackOverflow.Networking
                     return _webService.Get<T>(Url, _timeoutTimeSpan);
                 case RequestMethod.Post:
                     return _webService.Post<T>(Url, Body, _timeoutTimeSpan);
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
