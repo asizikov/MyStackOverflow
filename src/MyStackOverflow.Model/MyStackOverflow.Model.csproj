@@ -36,9 +36,11 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswersResponce.cs" />
     <Compile Include="BadgeCounts.cs" />
     <Compile Include="BagesResponce.cs" />
     <Compile Include="Badge.cs" />
+    <Compile Include="Answer.cs" />
     <Compile Include="Internal\Me.cs" />
     <Compile Include="Internal\Settings.cs" />
     <Compile Include="Question.cs" />
