@@ -134,14 +134,16 @@
                                 Text="{Binding User.MemberFor}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel x:Name="accept_rate" Grid.Row="1" Style="{StaticResource StackPanelStyle}">
+                        <StackPanel x:Name="AcceptRate" Grid.Row="1" Style="{StaticResource StackPanelStyle}">
                             <TextBlock
                                 toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
                                 Text="{Binding LocalizedResources.AcceptRate, Source={StaticResource LocalizedStrings}}" />
-                            <ProgressBar Width="400" Value="{Binding User.AcceptRate}" Height="35"/>
+                            <ProgressBar Width="400" 
+                                         Foreground="White"
+                                         Value="{Binding User.AcceptRate}" Height="35"/>
                         </StackPanel>
-                        <Grid x:Name="questions_and_answers" Grid.Row="2">
+                        <Grid x:Name="QuestionsAndAnswers" Grid.Row="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
