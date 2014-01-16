@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace MyStackOverflow.Model
@@ -40,26 +39,5 @@ namespace MyStackOverflow.Model
         public bool CommunityOwned { get; set; }
         [JsonProperty("title")]
         public string Title { get; set; }
-
-        public string TagsList
-        {
-            get
-            {
-                if (Tags == null || Tags.Count == 0) return string.Empty;
-
-                var sb = new StringBuilder(Tags.Count);
-                var index = 0;
-                foreach (var tag in Tags)
-                {
-                    sb.Append(string.Format("{0}", tag));
-                    if (index != Tags.Count - 1 )
-                    {
-                        sb.Append(", ");
-                    }
-                    index++;
-                }
-                return sb.ToString();
-            }
-        }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
 using MyStackOverflow.Model;
@@ -8,13 +11,57 @@ using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
 {
+    public class ListItem
+    {
+
+        private IEnumerable<string> _tags;
+
+        public ListItem(Question question)
+        {
+            _tags = question.Tags;
+            Title = question.Title;
+        }
+
+        public ListItem(Answer answer)
+        {
+            _tags = Enumerable.Empty<string>();
+            Title = answer.Title;
+        }
+
+        public string Title { get; private set; }
+
+
+        public string TagsList
+        {
+            get
+            {
+                var count = _tags.Count();
+                if (_tags == null || !_tags.Any()) return string.Empty;
+
+                var sb = new StringBuilder(count);
+                var index = 0;
+                foreach (var tag in _tags)
+                {
+                    sb.Append(string.Format("{0}", tag));
+                    if (index != count - 1)
+                    {
+                        sb.Append(", ");
+                    }
+                    index++;
+                }
+                return sb.ToString();
+            }
+        }
+
+    }
+
     public class QuestionsViewModel : BaseViewModel
     {
         private readonly AsyncDataProvider _dataProvider;
         private readonly StatisticsService _statistics;
         private readonly int _userId;
         private readonly DetailsType _detailsType;
-        private ObservableCollection<Question> _questions;
+        private ObservableCollection<ListItem> _questions;
 
         public QuestionsViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
             [NotNull] AsyncDataProvider dataProvider, int userId, DetailsType detailsType)
@@ -40,7 +87,7 @@ namespace MyStackOverflow.ViewModels
                     {
                         if (responce != null && responce.Questions.Count != 0)
                         {
-                            Questions = new ObservableCollection<Question>(responce.Questions);
+                            Questions = new ObservableCollection<ListItem>(responce.Questions.Select(q => new ListItem(q)));
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -52,14 +99,14 @@ namespace MyStackOverflow.ViewModels
                     {
                         if (responce != null && responce.Answers.Count != 0)
                         {
-                            //Questions = new ObservableCollection<Question>(responce.Questions);
+                            Questions = new ObservableCollection<ListItem>(responce.Answers.Select(a => new ListItem(a)));
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
             }
         }
 
-        public ObservableCollection<Question> Questions
+        public ObservableCollection<ListItem> Questions
         {
             get { return _questions; }
             private set
