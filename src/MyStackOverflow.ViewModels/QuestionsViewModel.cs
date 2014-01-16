@@ -20,16 +20,20 @@ namespace MyStackOverflow.ViewModels
         {
             _tags = question.Tags;
             Title = question.Title;
+            Score = question.Score;
         }
 
         public ListItem(Answer answer)
         {
             _tags = Enumerable.Empty<string>();
             Title = answer.Title;
+            Score = answer.Score;
+
         }
 
         public string Title { get; private set; }
 
+        public int Score { get; private set; }
 
         public string TagsList
         {
