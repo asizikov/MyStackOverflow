@@ -13,8 +13,7 @@ namespace MyStackOverflow.ViewModels
 {
     public class ListItem
     {
-
-        private IEnumerable<string> _tags;
+        private readonly IEnumerable<string> _tags;
 
         public ListItem(Question question)
         {
