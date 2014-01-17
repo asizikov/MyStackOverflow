@@ -119,5 +119,13 @@ namespace MyStackOverflow.ViewModels
                 OnPropertyChanged("Questions");
             }
         }
+		
+		public string Title 
+		{
+			get
+			{
+				return _detailsType == DetailsType.Questions ? "questions" : "answers";
+			}
+		}
     }
 }
