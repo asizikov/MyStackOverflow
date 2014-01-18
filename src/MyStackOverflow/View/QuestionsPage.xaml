@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:converters="clr-namespace:YAToolkit.Converters;assembly=YAToolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -29,6 +30,11 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            </ResourceDictionary>
+        </Grid.Resources>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
@@ -72,7 +78,7 @@
                             <Image 
                                 Grid.Row="1" 
 								Grid.Column="0" 
-                                
+                                Visibility="{Binding ShowCheckMark, Converter={StaticResource BoolToVisibilityConverter}}"
                                 Source="../Assets/Images/appbar.checkmark.png"/>
                         </Grid>
                     </DataTemplate>
