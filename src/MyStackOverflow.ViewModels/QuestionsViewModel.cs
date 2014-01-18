@@ -20,6 +20,7 @@ namespace MyStackOverflow.ViewModels
             _tags = question.Tags;
             Title = question.Title;
             Score = question.Score;
+            ShowCheckMark = question.AcceptedAnswerID != 0;
         }
 
         public ListItem(Answer answer)
@@ -27,6 +28,7 @@ namespace MyStackOverflow.ViewModels
             _tags = Enumerable.Empty<string>();
             Title = answer.Title;
             Score = answer.Score;
+            ShowCheckMark = answer.Accepted;
         }
 
         public string Title { get; private set; }
@@ -54,6 +56,8 @@ namespace MyStackOverflow.ViewModels
                 return sb.ToString();
             }
         }
+
+        public bool ShowCheckMark { get; private set; }
     }
 
     public class QuestionsViewModel : BaseViewModel

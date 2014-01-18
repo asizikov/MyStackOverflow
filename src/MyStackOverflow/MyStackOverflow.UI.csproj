@@ -164,6 +164,7 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\appbar.checkmark.png" />
     <Content Include="Assets\Images\appbar.location.png" />
     <Content Include="Assets\Images\profile_bg.png" />
     <Content Include="Assets\login_bg.png" />
