@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
-using MyStackOverflow.Model;
 using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
@@ -14,13 +13,13 @@ namespace MyStackOverflow.ViewModels
     public class UserActivityViewModel : BaseViewModel
     {
         private readonly AsyncDataProvider _dataProvider;
-        private readonly IStringsProvider _stringsProvider;
-        private readonly StatisticsService _statistics;
-        private readonly int _userId;
         private readonly DetailsType _detailsType;
+        private readonly StatisticsService _statistics;
+        private readonly IStringsProvider _stringsProvider;
+        private readonly int _userId;
         private ObservableCollection<UserActivityItem> _activityItems;
-        private bool _hasMoreItems;
         private int _currentPage = 1;
+        private bool _hasMoreItems;
         private RelayCommand _loadMoreCommand;
 
         public UserActivityViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
@@ -39,6 +38,50 @@ namespace MyStackOverflow.ViewModels
 
             LoadMoreCommand = new RelayCommand(_ => LoadNext());
             LoadNext();
+        }
+
+        public bool HasMoreItems
+        {
+            get { return _hasMoreItems; }
+            private set
+            {
+                if (value.Equals(_hasMoreItems)) return;
+                _hasMoreItems = value;
+                OnPropertyChanged("HasMoreItems");
+            }
+        }
+
+        public RelayCommand LoadMoreCommand
+        {
+            get { return _loadMoreCommand; }
+            private set
+            {
+                if (Equals(value, _loadMoreCommand)) return;
+                _loadMoreCommand = value;
+                OnPropertyChanged("LoadMoreCommand");
+            }
+        }
+
+        [CanBeNull]
+        public ObservableCollection<UserActivityItem> Questions
+        {
+            get { return _activityItems; }
+            private set
+            {
+                if (Equals(value, _activityItems)) return;
+                _activityItems = value;
+                OnPropertyChanged("Questions");
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return _detailsType == DetailsType.Questions
+                    ? _stringsProvider.QuestionsTitle
+                    : _stringsProvider.AnswersTitle;
+            }
         }
 
         private void LoadNext()
@@ -111,57 +154,13 @@ namespace MyStackOverflow.ViewModels
                 {
                     Questions = new ObservableCollection<UserActivityItem>();
                 }
-                foreach (var userActivityItem in list)
+                foreach (UserActivityItem userActivityItem in list)
                 {
                     Questions.Add(userActivityItem);
                 }
                 HasMoreItems = total > Questions.Count;
             });
             _currentPage++;
-        }
-
-        public bool HasMoreItems
-        {
-            get { return _hasMoreItems; }
-            private set
-            {
-                if (value.Equals(_hasMoreItems)) return;
-                _hasMoreItems = value;
-                OnPropertyChanged("HasMoreItems");
-            }
-        }
-
-        public RelayCommand LoadMoreCommand
-        {
-            get { return _loadMoreCommand; }
-            private set
-            {
-                if (Equals(value, _loadMoreCommand)) return;
-                _loadMoreCommand = value;
-                OnPropertyChanged("LoadMoreCommand");
-            }
-        }
-
-        [CanBeNull]
-        public ObservableCollection<UserActivityItem> Questions
-        {
-            get { return _activityItems; }
-            private set
-            {
-                if (Equals(value, _activityItems)) return;
-                _activityItems = value;
-                OnPropertyChanged("Questions");
-            }
-        }
-
-        public string Title
-        {
-            get
-            {
-                return _detailsType == DetailsType.Questions
-                    ? _stringsProvider.QuestionsTitle
-                    : _stringsProvider.AnswersTitle;
-            }
         }
     }
 }
