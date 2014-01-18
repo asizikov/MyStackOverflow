@@ -68,6 +68,7 @@ namespace MyStackOverflow.ViewModels
         private readonly int _userId;
         private readonly DetailsType _detailsType;
         private ObservableCollection<ListItem> _questions;
+        private bool _hasMoreItems;
 
         public QuestionsViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
             [NotNull] AsyncDataProvider dataProvider, [NotNull] IStringsProvider stringsProvider, int userId,
@@ -98,6 +99,7 @@ namespace MyStackOverflow.ViewModels
                         {
                             Questions =
                                 new ObservableCollection<ListItem>(responce.Questions.Select(q => new ListItem(q)));
+                            HasMoreItems = responce.Total > Questions.Count;
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -110,9 +112,21 @@ namespace MyStackOverflow.ViewModels
                         if (responce != null && responce.Answers.Count != 0)
                         {
                             Questions = new ObservableCollection<ListItem>(responce.Answers.Select(a => new ListItem(a)));
+                            HasMoreItems = responce.Total > Questions.Count;
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
+            }
+        }
+
+        public bool HasMoreItems
+        {
+            get { return _hasMoreItems; }
+            private set
+            {
+                if (value.Equals(_hasMoreItems)) return;
+                _hasMoreItems = value;
+                OnPropertyChanged("HasMoreItems");
             }
         }
 
