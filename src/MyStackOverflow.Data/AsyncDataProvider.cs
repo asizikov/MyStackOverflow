@@ -23,15 +23,15 @@ namespace MyStackOverflow.Data
             return GetDataAsync(request);
         }
 
-        public IObservable<QuestionsResponce> GetUserQuestionsList(int id)
+        public IObservable<QuestionsResponce> GetUserQuestionsList(int userId, int page)
         {
-            var request = CallFactory.CreateUserQuestionsRequestById(id);
+            var request = CallFactory.CreateUserQuestionsRequestById(userId, page);
             return GetDataAsync(request);
         }
 
-        public IObservable<AnswersResponce> GetUserAnswersList(int id)
+        public IObservable<AnswersResponce> GetUserAnswersList(int userId, int page)
         {
-            var request = CallFactory.CreateUserAnswersRequestById(id);
+            var request = CallFactory.CreateUserAnswersRequestById(userId, page);
             return GetDataAsync(request);
         }
     }

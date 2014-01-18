@@ -30,19 +30,22 @@ namespace MyStackOverflow.Data.Restful
         [NotNull]
         public RestfullRequest<BagesResponce> CreateBagesRequestById(int userId)
         {
-            return new RestfullRequest<BagesResponce>(URL_PREFIX + InjectIdToTemplate(BAGES_TEMPLATE, userId), _webService);
+            return new RestfullRequest<BagesResponce>(URL_PREFIX + InjectIdToTemplate(BAGES_TEMPLATE, userId),
+                _webService);
         }
 
         [NotNull]
-        public RestfullRequest<QuestionsResponce> CreateUserQuestionsRequestById(int userId)
+        public RestfullRequest<QuestionsResponce> CreateUserQuestionsRequestById(int userId, int page)
         {
-            return new RestfullRequest<QuestionsResponce>(URL_PREFIX + InjectIdToTemplate(QUESTIONS_TEMPLATE, userId), _webService);
+            var url = URL_PREFIX + InjectIdToTemplate(QUESTIONS_TEMPLATE, userId);
+            return new RestfullRequest<QuestionsResponce>(url + "?page=" + page + "&pagesize=30", _webService);
         }
 
         [NotNull]
-        public RestfullRequest<AnswersResponce> CreateUserAnswersRequestById(int userId)
+        public RestfullRequest<AnswersResponce> CreateUserAnswersRequestById(int userId, int page)
         {
-            return new RestfullRequest<AnswersResponce>(URL_PREFIX + InjectIdToTemplate(ANSWERS_TEMPLATE, userId), _webService);
-        } 
+            var url = URL_PREFIX + InjectIdToTemplate(ANSWERS_TEMPLATE, userId);
+            return new RestfullRequest<AnswersResponce>(url + "?page=" + page + "&pagesize=30", _webService);
+        }
     }
 }

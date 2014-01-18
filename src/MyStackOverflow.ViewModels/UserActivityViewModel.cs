@@ -17,6 +17,7 @@ namespace MyStackOverflow.ViewModels
         private readonly DetailsType _detailsType;
         private ObservableCollection<UserActivityItem> _questions;
         private bool _hasMoreItems;
+        private int _currentPage = 1;
 
         public UserActivityViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
             [NotNull] AsyncDataProvider dataProvider, [NotNull] IStringsProvider stringsProvider, int userId,
@@ -40,13 +41,14 @@ namespace MyStackOverflow.ViewModels
             IsLoading = true;
             if (_detailsType == DetailsType.Questions)
             {
-                _dataProvider.GetUserQuestionsList(_userId)
+                _dataProvider.GetUserQuestionsList(_userId, _currentPage)
                     .Subscribe(responce =>
                     {
                         if (responce != null && responce.Questions.Count != 0)
                         {
                             Questions =
-                                new ObservableCollection<UserActivityItem>(responce.Questions.Select(q => new UserActivityItem(q)));
+                                new ObservableCollection<UserActivityItem>(
+                                    responce.Questions.Select(q => new UserActivityItem(q)));
                             HasMoreItems = responce.Total > Questions.Count;
                         }
                         IsLoading = false;
@@ -54,12 +56,14 @@ namespace MyStackOverflow.ViewModels
             }
             else
             {
-                _dataProvider.GetUserAnswersList(_userId)
+                _dataProvider.GetUserAnswersList(_userId, _currentPage)
                     .Subscribe(responce =>
                     {
                         if (responce != null && responce.Answers.Count != 0)
                         {
-                            Questions = new ObservableCollection<UserActivityItem>(responce.Answers.Select(a => new UserActivityItem(a)));
+                            Questions =
+                                new ObservableCollection<UserActivityItem>(
+                                    responce.Answers.Select(a => new UserActivityItem(a)));
                             HasMoreItems = responce.Total > Questions.Count;
                         }
                         IsLoading = false;
