@@ -54,7 +54,7 @@
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="Factories\IGenericViewModelByIdFactory.cs" />
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
-    <Compile Include="QuestionsViewModel.cs" />
+    <Compile Include="UserActivityViewModel.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />
     <Compile Include="Navigation\INavigationService.cs" />
     <Compile Include="Services\IStringsProvider.cs" />
@@ -65,6 +65,7 @@
     <Compile Include="Navigation\NavigationParameter.cs" />
     <Compile Include="Navigation\NavigationParameterName.cs" />
     <Compile Include="Services\StatisticsService.cs" />
+    <Compile Include="UserActivityItem.cs" />
     <Compile Include="UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -38,7 +38,7 @@ namespace MyStackOverflow.ViewModels
 
         private void NavigateToAnswers(object obj)
         {
-            _navigation.GoToPage(Pages.QuestionsPage, new[]
+            _navigation.GoToPage(Pages.UserActivityPage, new[]
             {
                 new NavigationParameter
                 {
@@ -55,7 +55,7 @@ namespace MyStackOverflow.ViewModels
 
         private void NavigateToQuestions(object obj)
         {
-            _navigation.GoToPage(Pages.QuestionsPage, new[]
+            _navigation.GoToPage(Pages.UserActivityPage, new[]
             {
                 new NavigationParameter
                 {

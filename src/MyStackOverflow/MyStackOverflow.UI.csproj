@@ -122,8 +122,8 @@
     <Compile Include="View\EntryPage.xaml.cs">
       <DependentUpon>EntryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\QuestionsPage.xaml.cs">
-      <DependentUpon>QuestionsPage.xaml</DependentUpon>
+    <Compile Include="View\UserActivityPage.xaml.cs">
+      <DependentUpon>UserActivityPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +147,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QuestionsPage.xaml">
+    <Page Include="View\UserActivityPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

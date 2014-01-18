@@ -5,9 +5,9 @@ using MyStackOverflow.ViewModels.Navigation;
 
 namespace MyStackOverflow.View
 {
-    public partial class QuestionsPage
+    public partial class UserActivityPage
     {
-        public QuestionsPage()
+        public UserActivityPage()
         {
             InitializeComponent();
         }

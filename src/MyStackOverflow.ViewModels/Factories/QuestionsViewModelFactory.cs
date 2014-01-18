@@ -29,7 +29,7 @@ namespace MyStackOverflow.ViewModels.Factories
 
         public BaseViewModel Create(int id, DetailsType detailsType)
         {
-            return new QuestionsViewModel(_systemDispatcher, _statistics, _dataProvider,_stringsProvider, id, detailsType);
+            return new UserActivityViewModel(_systemDispatcher, _statistics, _dataProvider,_stringsProvider, id, detailsType);
         }
     }
 }
