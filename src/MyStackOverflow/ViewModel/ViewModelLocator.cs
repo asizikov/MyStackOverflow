@@ -46,7 +46,7 @@ namespace MyStackOverflow.ViewModel
 
             _questionsViewModelFactory = new Lazy<QuestionsViewModelFactory>(() =>
                 new QuestionsViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.Statistics,
-                    ServiceLocator.DataProvider)
+                    ServiceLocator.DataProvider, ServiceLocator.StringsProvider)
                 );
         }
     }

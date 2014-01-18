@@ -14,5 +14,15 @@ namespace MyStackOverflow.ServicesImpl
         {
             get { return AppResources.Questions; }
         }
+
+        public string AnswersTitle
+        {
+            get { return AppResources.AnswersTitle; }
+        }
+
+        public string QuestionsTitle
+        {
+            get { return AppResources.QuestionsTitle; }
+        }
     }
 }

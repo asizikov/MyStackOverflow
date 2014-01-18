@@ -4,5 +4,7 @@
     {
         string Answers { get; }
         string Questions { get; }
+        string AnswersTitle { get; }
+        string QuestionsTitle { get; }
     }
 }

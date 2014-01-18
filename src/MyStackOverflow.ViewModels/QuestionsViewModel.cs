@@ -27,7 +27,6 @@ namespace MyStackOverflow.ViewModels
             _tags = Enumerable.Empty<string>();
             Title = answer.Title;
             Score = answer.Score;
-
         }
 
         public string Title { get; private set; }
@@ -55,25 +54,28 @@ namespace MyStackOverflow.ViewModels
                 return sb.ToString();
             }
         }
-
     }
 
     public class QuestionsViewModel : BaseViewModel
     {
         private readonly AsyncDataProvider _dataProvider;
+        private readonly IStringsProvider _stringsProvider;
         private readonly StatisticsService _statistics;
         private readonly int _userId;
         private readonly DetailsType _detailsType;
         private ObservableCollection<ListItem> _questions;
 
         public QuestionsViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
-            [NotNull] AsyncDataProvider dataProvider, int userId, DetailsType detailsType)
+            [NotNull] AsyncDataProvider dataProvider, [NotNull] IStringsProvider stringsProvider, int userId,
+            DetailsType detailsType)
             : base(dispatcher)
         {
             if (statistics == null) throw new ArgumentNullException("statistics");
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
+            if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
             _statistics = statistics;
             _dataProvider = dataProvider;
+            _stringsProvider = stringsProvider;
             _userId = userId;
             _detailsType = detailsType;
 
@@ -90,7 +92,8 @@ namespace MyStackOverflow.ViewModels
                     {
                         if (responce != null && responce.Questions.Count != 0)
                         {
-                            Questions = new ObservableCollection<ListItem>(responce.Questions.Select(q => new ListItem(q)));
+                            Questions =
+                                new ObservableCollection<ListItem>(responce.Questions.Select(q => new ListItem(q)));
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -119,13 +122,15 @@ namespace MyStackOverflow.ViewModels
                 OnPropertyChanged("Questions");
             }
         }
-		
-		public string Title 
-		{
-			get
-			{
-				return _detailsType == DetailsType.Questions ? "questions" : "answers";
-			}
-		}
+
+        public string Title
+        {
+            get
+            {
+                return _detailsType == DetailsType.Questions
+                    ? _stringsProvider.QuestionsTitle
+                    : _stringsProvider.AnswersTitle;
+            }
+        }
     }
 }

@@ -179,4 +179,7 @@
   <data name="QuestionsTitle" xml:space="preserve">
     <value>questions</value>
   </data>
+  <data name="AnswersTitle" xml:space="preserve">
+    <value>answers</value>
+  </data>
 </root>

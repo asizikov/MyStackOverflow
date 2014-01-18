@@ -88,6 +88,15 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to answers.
+        /// </summary>
+        public static string AnswersTitle {
+            get {
+                return ResourceManager.GetString("AnswersTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {
