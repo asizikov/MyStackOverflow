@@ -20,7 +20,7 @@ namespace MyStackOverflow.ViewModels
         private ObservableCollection<UserActivityItem> _questions;
         private bool _hasMoreItems;
         private int _currentPage = 1;
-        private RelayCommand _loadMore;
+        private RelayCommand _loadMoreCommand;
 
         public UserActivityViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
             [NotNull] AsyncDataProvider dataProvider, [NotNull] IStringsProvider stringsProvider, int userId,
@@ -36,7 +36,7 @@ namespace MyStackOverflow.ViewModels
             _userId = userId;
             _detailsType = detailsType;
 
-            LoadMore = new RelayCommand(_ => LoadNext());
+            LoadMoreCommand = new RelayCommand(_ => LoadNext());
             LoadNext();
         }
 
@@ -55,18 +55,27 @@ namespace MyStackOverflow.ViewModels
                                 Questions =
                                     new ObservableCollection<UserActivityItem>(
                                         responce.Questions.Select(q => new UserActivityItem(q)));
+                                _currentPage++;
+                                HasMoreItems = responce.Total > Questions.Count;
                             }
                             else
                             {
-                                var list =
-                                    new List<UserActivityItem>(responce.Questions.Select(a => new UserActivityItem(a)));
-                                foreach (var userActivityItem in list)
+                                if (responce.Page == _currentPage)
                                 {
-                                    Questions.Add(userActivityItem);
+                                    var list =
+                                        new List<UserActivityItem>(
+                                            responce.Questions.Select(a => new UserActivityItem(a)));
+                                    Dispatcher.InvokeOnUIifNeeded(() =>
+                                    {
+                                        foreach (var userActivityItem in list)
+                                        {
+                                            Questions.Add(userActivityItem);
+                                        }
+                                        HasMoreItems = responce.Total > Questions.Count;
+                                    });
+                                    _currentPage++;
                                 }
                             }
-                            HasMoreItems = responce.Total > Questions.Count;
-                            _currentPage++;
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -83,18 +92,27 @@ namespace MyStackOverflow.ViewModels
                                 Questions =
                                     new ObservableCollection<UserActivityItem>(
                                         responce.Answers.Select(a => new UserActivityItem(a)));
+                                _currentPage++;
+                                HasMoreItems = responce.Total > Questions.Count;
                             }
                             else
                             {
-                                var list =
-                                    new List<UserActivityItem>(responce.Answers.Select(a => new UserActivityItem(a)));
-                                foreach (var userActivityItem in list)
+                                if (responce.Page == _currentPage)
                                 {
-                                    Questions.Add(userActivityItem);
+                                    var list =
+                                        new List<UserActivityItem>(responce.Answers.Select(a => new UserActivityItem(a)));
+                                    Dispatcher.InvokeOnUIifNeeded(() =>
+                                    {
+                                        foreach (var userActivityItem in list)
+                                        {
+                                            Questions.Add(userActivityItem);
+                                        }
+                                        HasMoreItems = responce.Total > Questions.Count;
+                                    });
+
+                                    _currentPage++;
                                 }
                             }
-                            HasMoreItems = responce.Total > Questions.Count;
-                            _currentPage++;
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -112,14 +130,14 @@ namespace MyStackOverflow.ViewModels
             }
         }
 
-        public RelayCommand LoadMore
+        public RelayCommand LoadMoreCommand
         {
-            get { return _loadMore; }
+            get { return _loadMoreCommand; }
             private set
             {
-                if (Equals(value, _loadMore)) return;
-                _loadMore = value;
-                OnPropertyChanged("LoadMore");
+                if (Equals(value, _loadMoreCommand)) return;
+                _loadMoreCommand = value;
+                OnPropertyChanged("LoadMoreCommand");
             }
         }
 
