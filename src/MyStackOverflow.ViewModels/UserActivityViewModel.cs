@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
+using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
@@ -18,6 +20,7 @@ namespace MyStackOverflow.ViewModels
         private ObservableCollection<UserActivityItem> _questions;
         private bool _hasMoreItems;
         private int _currentPage = 1;
+        private RelayCommand _loadMore;
 
         public UserActivityViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] StatisticsService statistics,
             [NotNull] AsyncDataProvider dataProvider, [NotNull] IStringsProvider stringsProvider, int userId,
@@ -33,10 +36,11 @@ namespace MyStackOverflow.ViewModels
             _userId = userId;
             _detailsType = detailsType;
 
-            Init();
+            LoadMore = new RelayCommand(_ => LoadNext());
+            LoadNext();
         }
 
-        private void Init()
+        private void LoadNext()
         {
             IsLoading = true;
             if (_detailsType == DetailsType.Questions)
@@ -46,10 +50,23 @@ namespace MyStackOverflow.ViewModels
                     {
                         if (responce != null && responce.Questions.Count != 0)
                         {
-                            Questions =
-                                new ObservableCollection<UserActivityItem>(
-                                    responce.Questions.Select(q => new UserActivityItem(q)));
+                            if (Questions == null)
+                            {
+                                Questions =
+                                    new ObservableCollection<UserActivityItem>(
+                                        responce.Questions.Select(q => new UserActivityItem(q)));
+                            }
+                            else
+                            {
+                                var list =
+                                    new List<UserActivityItem>(responce.Questions.Select(a => new UserActivityItem(a)));
+                                foreach (var userActivityItem in list)
+                                {
+                                    Questions.Add(userActivityItem);
+                                }
+                            }
                             HasMoreItems = responce.Total > Questions.Count;
+                            _currentPage++;
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -61,10 +78,23 @@ namespace MyStackOverflow.ViewModels
                     {
                         if (responce != null && responce.Answers.Count != 0)
                         {
-                            Questions =
-                                new ObservableCollection<UserActivityItem>(
-                                    responce.Answers.Select(a => new UserActivityItem(a)));
+                            if (Questions == null)
+                            {
+                                Questions =
+                                    new ObservableCollection<UserActivityItem>(
+                                        responce.Answers.Select(a => new UserActivityItem(a)));
+                            }
+                            else
+                            {
+                                var list =
+                                    new List<UserActivityItem>(responce.Answers.Select(a => new UserActivityItem(a)));
+                                foreach (var userActivityItem in list)
+                                {
+                                    Questions.Add(userActivityItem);
+                                }
+                            }
                             HasMoreItems = responce.Total > Questions.Count;
+                            _currentPage++;
                         }
                         IsLoading = false;
                     }, ex => { IsLoading = false; });
@@ -82,6 +112,18 @@ namespace MyStackOverflow.ViewModels
             }
         }
 
+        public RelayCommand LoadMore
+        {
+            get { return _loadMore; }
+            private set
+            {
+                if (Equals(value, _loadMore)) return;
+                _loadMore = value;
+                OnPropertyChanged("LoadMore");
+            }
+        }
+
+        [CanBeNull]
         public ObservableCollection<UserActivityItem> Questions
         {
             get { return _questions; }
