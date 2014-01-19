@@ -34,13 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\MySackOverflow.Networking\MySackOverflow.Networking.csproj">
-      <Project>{151d6cf2-902a-412f-a4de-70dcb90f3fb0}</Project>
-      <Name>MySackOverflow.Networking</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MyStackOverflow.Model\MyStackOverflow.Model.csproj">
       <Project>{cf654fea-a8de-4b86-bc85-062b04023d74}</Project>
       <Name>MyStackOverflow.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyStackOverflow.Networking\MyStackOverflow.Networking.csproj">
+      <Project>{151d6cf2-902a-412f-a4de-70dcb90f3fb0}</Project>
+      <Name>MyStackOverflow.Networking</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using JetBrains.Annotations;
-using MySackOverflow.Networking;
+using MyStackOverflow.Networking;
 using MyStackOverflow.Data.Restful;
 
 namespace MyStackOverflow.Data

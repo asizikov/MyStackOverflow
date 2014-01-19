@@ -33,17 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\MyStackOverflow.Data\MyStackOverflow.Data.csproj">
-      <Project>{3762c1c7-c64b-4f6e-a9f4-1f36c2f486e1}</Project>
-      <Name>MyStackOverflow.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyStackOverflow.Model\MyStackOverflow.Model.csproj">
-      <Project>{cf654fea-a8de-4b86-bc85-062b04023d74}</Project>
-      <Name>MyStackOverflow.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Factories\IUserViewModelFactory.cs" />
@@ -81,6 +70,16 @@
     <Reference Include="System.Reactive.Linq">
       <HintPath>..\packages\Rx-Linq.2.1.30214.0\lib\WP8\System.Reactive.Linq.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyStackOverflow.Data\MyStackOverflow.Data.csproj">
+      <Project>{3762c1c7-c64b-4f6e-a9f4-1f36c2f486e1}</Project>
+      <Name>MyStackOverflow.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyStackOverflow.Model\MyStackOverflow.Model.csproj">
+      <Project>{cf654fea-a8de-4b86-bc85-062b04023d74}</Project>
+      <Name>MyStackOverflow.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

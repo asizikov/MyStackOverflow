@@ -230,7 +230,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySackOverflow.Networking\MySackOverflow.Networking.csproj">
+    <ProjectReference Include="..\MyStackOverflow.Networking\MyStackOverflow.Networking.csproj">
       <Project>{151D6CF2-902A-412F-A4DE-70DCB90F3FB0}</Project>
       <Name>MySackOverflow.Networking</Name>
     </ProjectReference>

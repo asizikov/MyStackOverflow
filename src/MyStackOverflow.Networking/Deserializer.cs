@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using Newtonsoft.Json;
 
-namespace MySackOverflow.Networking
+namespace MyStackOverflow.Networking
 {
     public class Deserializer
     {

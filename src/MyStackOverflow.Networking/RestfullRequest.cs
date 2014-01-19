@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace MySackOverflow.Networking
+namespace MyStackOverflow.Networking
 {
     public enum RequestMethod
     {

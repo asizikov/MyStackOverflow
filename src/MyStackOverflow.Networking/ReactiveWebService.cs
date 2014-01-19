@@ -11,7 +11,7 @@ using JetBrains.Annotations;
 using Ionic.Zlib;
 using Newtonsoft.Json;
 
-namespace MySackOverflow.Networking
+namespace MyStackOverflow.Networking
 {
     public class ReactiveWebService
     {

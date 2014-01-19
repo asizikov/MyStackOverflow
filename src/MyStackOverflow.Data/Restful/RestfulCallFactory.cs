@@ -1,5 +1,5 @@
 ﻿using JetBrains.Annotations;
-using MySackOverflow.Networking;
+using MyStackOverflow.Networking;
 using MyStackOverflow.Model;
 
 namespace MyStackOverflow.Data.Restful
