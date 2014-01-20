@@ -12,24 +12,28 @@ namespace MyStackOverflow.ViewModels.Factories
         private readonly StatisticsService _statistics;
         private readonly AsyncDataProvider _dataProvider;
         private readonly IStringsProvider _stringsProvider;
+        private readonly IPhoneTasks _phoneTasks;
 
         public QuestionsViewModelFactory([NotNull] ISystemDispatcher systemDispatcher,
             [NotNull] StatisticsService statistics, [NotNull] AsyncDataProvider dataProvider,
-            [NotNull] IStringsProvider stringsProvider)
+            [NotNull] IStringsProvider stringsProvider, [NotNull] IPhoneTasks phoneTasks)
         {
             if (systemDispatcher == null) throw new ArgumentNullException("systemDispatcher");
             if (statistics == null) throw new ArgumentNullException("statistics");
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
             if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
+            if (phoneTasks == null) throw new ArgumentNullException("phoneTasks");
             _systemDispatcher = systemDispatcher;
             _statistics = statistics;
             _dataProvider = dataProvider;
             _stringsProvider = stringsProvider;
+            _phoneTasks = phoneTasks;
         }
 
         public BaseViewModel Create(int id, DetailsType detailsType)
         {
-            return new UserActivityViewModel(_systemDispatcher, _statistics, _dataProvider,_stringsProvider, id, detailsType);
+            return new UserActivityViewModel(_systemDispatcher, _statistics, _dataProvider, _stringsProvider,
+                _phoneTasks, id, detailsType);
         }
     }
 }

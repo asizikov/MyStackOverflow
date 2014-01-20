@@ -2,7 +2,6 @@
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
 using MyStackOverflow.Data;
-using MyStackOverflow.ViewModels;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
@@ -23,6 +22,7 @@ namespace MyStackOverflow.ServicesImpl
             NavigationService = new NavigationService(rootFrame, SystemDispatcher);
             Statistics = new YandexMetricaStatistiscService();
             StringsProvider = new StringsProvider();
+            PhoneTasks = new PhoneTasks();
         }
 
         [NotNull]
@@ -45,5 +45,8 @@ namespace MyStackOverflow.ServicesImpl
 
         [NotNull]
         public static IStringsProvider StringsProvider { get; private set; }
+
+         [NotNull]
+        public static IPhoneTasks PhoneTasks { get; private set; }
     }
 }

@@ -1,13 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MyStackOverflow.Model;
+using MyStackOverflow.ViewModels.Commands;
 
 namespace MyStackOverflow.ViewModels
 {
     public class UserActivityItem
     {
         private readonly IEnumerable<string> _tags;
+        private RelayCommand _openCommand;
+        private int _id;
 
         public UserActivityItem(Question question)
         {
@@ -15,6 +19,8 @@ namespace MyStackOverflow.ViewModels
             Title = question.Title;
             Score = question.Score;
             ShowCheckMark = question.AcceptedAnswerID != 0;
+            _id = question.QuestionID;
+            InitCommand();
         }
 
         public UserActivityItem(Answer answer)
@@ -23,7 +29,22 @@ namespace MyStackOverflow.ViewModels
             Title = answer.Title;
             Score = answer.Score;
             ShowCheckMark = answer.Accepted;
+            _id = answer.QuestionID;
+            InitCommand();
         }
+
+        private void InitCommand()
+        {
+            _openCommand = new RelayCommand(_ =>
+            {
+                if (OnOpen != null)
+                {
+                    OnOpen(_id);
+                }
+            });
+        }
+
+        public event Action<int> OnOpen;
 
         public string Title { get; private set; }
 
@@ -52,5 +73,10 @@ namespace MyStackOverflow.ViewModels
         }
 
         public bool ShowCheckMark { get; private set; }
+
+        public RelayCommand OpenCommand
+        {
+            get { return _openCommand; }
+        }
     }
 }
