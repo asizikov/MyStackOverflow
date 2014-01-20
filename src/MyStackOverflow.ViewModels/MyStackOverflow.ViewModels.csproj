@@ -43,6 +43,7 @@
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="Factories\IGenericViewModelByIdFactory.cs" />
     <Compile Include="Factories\ProfileViewModelFactory.cs" />
+    <Compile Include="Services\IPhoneTasks.cs" />
     <Compile Include="UserActivityViewModel.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />
     <Compile Include="Navigation\INavigationService.cs" />

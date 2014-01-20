@@ -32,15 +32,15 @@
         </Grid.RowDefinitions>
         <Grid.Resources>
             <ResourceDictionary>
-                <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+                <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
             </ResourceDictionary>
         </Grid.Resources>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock 
-                Text="{Binding Title}" 
-                Margin="9,-7,0,0" 
+            <TextBlock
+                Text="{Binding Title}"
+                Margin="9,-7,0,0"
                 FontWeight="Light"
                 Style="{StaticResource PhoneTextTitle1Style}" />
         </StackPanel>
@@ -48,49 +48,57 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <phone:LongListSelector 
+            <phone:LongListSelector
                 Grid.Row="0"
                 ItemsSource="{Binding Questions}">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                        <Grid 
-                            toolkit:TiltEffect.IsTiltEnabled="True" >
+                        <Grid
+                            toolkit:TiltEffect.IsTiltEnabled="True">
+                            <toolkit:ContextMenuService.ContextMenu>
+                                <toolkit:ContextMenu IsZoomEnabled="False">
+                                    <toolkit:MenuItem
+                                        Command="{Binding OpenCommand}"
+                                                      Header="{Binding LocalizedResources.OpenInIE, Source={StaticResource LocalizedStrings}}" />
+                                </toolkit:ContextMenu>
+                            </toolkit:ContextMenuService.ContextMenu>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="45"/>
-								<ColumnDefinition/>
-							</Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <TextBlock x:Name="Title"
-								Grid.Column="1"
-								Grid.Row="0" 
-								Text="{Binding Title }" 
-								Style="{StaticResource PhoneTextLargeStyle}"
-                                TextWrapping="Wrap" />
-                            <TextBlock x:Name="Tag" 
-								Grid.Column="1"
-								Grid.Row="1" 
-								TextWrapping="Wrap"
-								Text="{Binding TagsList}" Margin="12,0,0,0" Foreground="#FFA09E9E" Style="{StaticResource GrayTitleStyle}"/>
-							<TextBlock x:Name="Score" 
-								Grid.Row="0" 
-								Grid.Column="0" 
-								Text="{Binding Score}" Margin="12,12,0,0"/>
-                            <Image 
-                                Grid.Row="1" 
-								Grid.Column="0" 
+                                       Grid.Column="1"
+                                       Grid.Row="0"
+                                       Text="{Binding Title }"
+                                       Style="{StaticResource PhoneTextLargeStyle}"
+                                       TextWrapping="Wrap" />
+                            <TextBlock x:Name="Tag"
+                                       Grid.Column="1"
+                                       Grid.Row="1"
+                                       TextWrapping="Wrap"
+                                       Text="{Binding TagsList}" Margin="12,0,0,0" Foreground="#FFA09E9E"
+                                       Style="{StaticResource GrayTitleStyle}" />
+                            <TextBlock x:Name="Score"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="{Binding Score}" Margin="12,12,0,0" />
+                            <Image
+                                Grid.Row="1"
+                                Grid.Column="0"
                                 Visibility="{Binding ShowCheckMark, Converter={StaticResource BoolToVisibilityConverter}}"
-                                Source="../Assets/Images/appbar.checkmark.png"/>
+                                Source="../Assets/Images/appbar.checkmark.png" />
                         </Grid>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
-            <Button Grid.Row="1" Content="more" Command="{Binding LoadMoreCommand}" IsEnabled="{Binding HasMoreItems}"/>
+            <Button Grid.Row="1" Content="more" Command="{Binding LoadMoreCommand}" IsEnabled="{Binding HasMoreItems}" />
         </Grid>
     </Grid>
 

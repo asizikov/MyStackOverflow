@@ -182,4 +182,7 @@
   <data name="AnswersTitle" xml:space="preserve">
     <value>answers</value>
   </data>
+  <data name="OpenInIE" xml:space="preserve">
+    <value>open in Internet Explorer</value>
+  </data>
 </root>
