@@ -102,6 +102,7 @@ namespace MyStackOverflow.ViewModels
         {
             if (string.IsNullOrWhiteSpace(query))
             {
+                SearchResult = new ObservableCollection<SearchResultItem>();
             }
             else
             {

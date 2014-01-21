@@ -45,14 +45,14 @@
                 <toolkit:PhoneTextBox
                     Hint="{Binding  LocalizedResources.TypeUserNameOrId, Source={StaticResource LocalizedStrings}}"
                     binding:BindingUtility.UpdateSourceOnChange="True"
-                    Text="{Binding Query, Mode=TwoWay}" Margin="0,24,0,0" />
+                    Text="{Binding Query, Mode=TwoWay}" Margin="12,24,0,0" />
             </StackPanel>
         </Grid>
         <controls:ExtendedSelector
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Grid.Row="2"
-            Margin="12,12,12,12"
+            Margin="24,12,12,12"
             RepositionOnAddStyle="NewItem"
             ItemsSource="{Binding SearchResult}"
             SelectedItem="{Binding SelectedProfile, Mode=TwoWay}"
