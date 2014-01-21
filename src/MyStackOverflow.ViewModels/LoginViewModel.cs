@@ -127,7 +127,7 @@ namespace MyStackOverflow.ViewModels
         {
             _settings.Settings.Me = new Me
             {
-                Id = Query
+                Id = id.ToString()
             };
             _navigation.GoToPage(Pages.ProfilePage, new[]
             {
