@@ -1,5 +1,6 @@
 ﻿using System;
 using JetBrains.Annotations;
+using MyStackOverflow.Data;
 using MyStackOverflow.Model.Internal;
 using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
@@ -11,19 +12,22 @@ namespace MyStackOverflow.ViewModels
     {
         private readonly INavigationService _navigation;
         private readonly IApplicationSettings _settings;
+        private readonly AsyncDataProvider _dataProvider;
         private readonly StatisticsService _statistics;
         private string _userId;
 
         public LoginViewModel([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
-            [NotNull] IApplicationSettings settings,
+            [NotNull] IApplicationSettings settings, [NotNull] AsyncDataProvider dataProvider,
             [NotNull] StatisticsService statistics)
             : base(dispatcher)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (settings == null) throw new ArgumentNullException("settings");
+            if (dataProvider == null) throw new ArgumentNullException("dataProvider");
             if (statistics == null) throw new ArgumentNullException("statistics");
             _navigation = navigation;
             _settings = settings;
+            _dataProvider = dataProvider;
             _statistics = statistics;
             InitCommands();
             _statistics.PublishLoginPageLoaded();

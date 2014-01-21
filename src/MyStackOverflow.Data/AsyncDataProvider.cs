@@ -34,5 +34,11 @@ namespace MyStackOverflow.Data
             var request = CallFactory.CreateUserAnswersRequestById(userId, page);
             return GetDataAsync(request);
         }
+
+        public IObservable<UsersResponce> GetUsersByString(string query)
+        {
+            var request = CallFactory.CreateUsersRequestByString(query);
+            return GetDataAsync(request);
+        }
     }
 }

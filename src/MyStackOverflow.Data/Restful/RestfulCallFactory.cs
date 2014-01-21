@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using JetBrains.Annotations;
 using MyStackOverflow.Networking;
 using MyStackOverflow.Model;
 
@@ -13,11 +14,20 @@ namespace MyStackOverflow.Data.Restful
         private const string BAGES_TEMPLATE = "users/{0}/badges";
         private const string QUESTIONS_TEMPLATE = "users/{0}/questions";
         private const string ANSWERS_TEMPLATE = "users/{0}/answers";
+        private const string USERS_FILTER_TEMPLATE = "users?filter=anton%20sizikov";
 
 
         private static string InjectIdToTemplate(string template, int id)
         {
             return string.Format(template, id);
+        }
+
+        [NotNull]
+        public UsersRequest CreateUsersRequestByString(string query)
+        {
+            var url = URL_PREFIX + USERS_FILTER_TEMPLATE + Uri.EscapeUriString(query.ToLower());
+            var request = new UsersRequest(url, _webService);
+            return request;
         }
 
         [NotNull]

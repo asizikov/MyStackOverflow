@@ -1,5 +1,6 @@
 ﻿using System;
 using JetBrains.Annotations;
+using MyStackOverflow.Data;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
@@ -10,10 +11,11 @@ namespace MyStackOverflow.ViewModels.Factories
         private readonly ISystemDispatcher _dispatcher;
         private readonly INavigationService _navigation;
         private readonly IApplicationSettings _settings;
+        private readonly AsyncDataProvider _dataProvider;
         private readonly StatisticsService _statistics;
 
         public LoginViewModelFactory([NotNull] ISystemDispatcher dispatcher, [NotNull] INavigationService navigation,
-            [NotNull] IApplicationSettings settings,
+            [NotNull] IApplicationSettings settings, AsyncDataProvider dataProvider,
             [NotNull] StatisticsService statistics)
         {
             if (dispatcher == null) throw new ArgumentNullException("dispatcher");
@@ -23,12 +25,13 @@ namespace MyStackOverflow.ViewModels.Factories
             _dispatcher = dispatcher;
             _navigation = navigation;
             _settings = settings;
+            _dataProvider = dataProvider;
             _statistics = statistics;
         }
 
         public BaseViewModel Create()
         {
-            return new LoginViewModel(_dispatcher, _navigation, _settings, _statistics);
+            return new LoginViewModel(_dispatcher, _navigation, _settings, _dataProvider, _statistics);
         }
     }
 }

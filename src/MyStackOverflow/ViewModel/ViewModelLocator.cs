@@ -42,7 +42,7 @@ namespace MyStackOverflow.ViewModel
                 new Lazy<IGenericViewModelFactory>(
                     () =>
                         new LoginViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.NavigationService,
-                            ServiceLocator.ApplicationSettings, ServiceLocator.Statistics));
+                            ServiceLocator.ApplicationSettings, ServiceLocator.DataProvider, ServiceLocator.Statistics));
 
             _questionsViewModelFactory = new Lazy<QuestionsViewModelFactory>(() =>
                 new QuestionsViewModelFactory(ServiceLocator.SystemDispatcher, ServiceLocator.Statistics,
