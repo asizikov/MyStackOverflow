@@ -14,7 +14,7 @@ namespace MyStackOverflow.Data.Restful
         private const string BAGES_TEMPLATE = "users/{0}/badges";
         private const string QUESTIONS_TEMPLATE = "users/{0}/questions";
         private const string ANSWERS_TEMPLATE = "users/{0}/answers";
-        private const string USERS_FILTER_TEMPLATE = "users?filter=anton%20sizikov";
+        private const string USERS_FILTER_TEMPLATE = "users?filter=";
 
 
         private static string InjectIdToTemplate(string template, int id)

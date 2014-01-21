@@ -257,5 +257,14 @@ namespace MyStackOverflow.Resources {
                 return ResourceManager.GetString("SummaryTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to type your user name or id.
+        /// </summary>
+        public static string TypeUserNameOrId {
+            get {
+                return ResourceManager.GetString("TypeUserNameOrId", resourceCulture);
+            }
+        }
     }
 }
