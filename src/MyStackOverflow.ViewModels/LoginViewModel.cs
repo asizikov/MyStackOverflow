@@ -7,7 +7,6 @@ using JetBrains.Annotations;
 using MyStackOverflow.Data;
 using MyStackOverflow.Model;
 using MyStackOverflow.Model.Internal;
-using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
@@ -39,6 +38,8 @@ namespace MyStackOverflow.ViewModels
             _statistics = statistics;
             SubscribeToQuery();
             _statistics.PublishLoginPageLoaded();
+            SelectedProfile = null;
+            SearchResult = new ObservableCollection<SearchResultItem>();
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Default)]
@@ -53,13 +54,13 @@ namespace MyStackOverflow.ViewModels
             }
         }
 
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
-        public RelayCommand GoToProfileCommand { get; private set; }
-
         [UsedImplicitly(ImplicitUseKindFlags.Access),CanBeNull]
         public ObservableCollection<SearchResultItem> SearchResult
         {
-            get { return _searchResult; }
+            get
+            {
+                return _searchResult;
+            }
             private set
             {
                 if (Equals(value, _searchResult)) return;

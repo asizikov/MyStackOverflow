@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:binding="clr-namespace:YAToolkit.Binding;assembly=YAToolkit"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:MyStackOverflow.Controls"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -47,15 +48,16 @@
                     Text="{Binding Query, Mode=TwoWay}" Margin="0,24,0,0" />
             </StackPanel>
         </Grid>
-        <phone:LongListSelector
+        <controls:ExtendedSelector
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Grid.Row="2"
             Margin="12,12,12,12"
+            RepositionOnAddStyle="NewItem"
             ItemsSource="{Binding SearchResult}"
             SelectedItem="{Binding SelectedProfile, Mode=TwoWay}"
             >
-            <phone:LongListSelector.ItemTemplate>
+            <controls:ExtendedSelector.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="12,12,12,12"
                           toolkit:TiltEffect.IsTiltEnabled="True"
@@ -74,8 +76,8 @@
                         
                     </Grid>
                 </DataTemplate>
-            </phone:LongListSelector.ItemTemplate>
-        </phone:LongListSelector>
+            </controls:ExtendedSelector.ItemTemplate>
+        </controls:ExtendedSelector>
     </Grid>
 
 </phone:PhoneApplicationPage>
