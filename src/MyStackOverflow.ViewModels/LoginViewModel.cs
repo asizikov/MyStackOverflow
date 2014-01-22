@@ -106,6 +106,7 @@ namespace MyStackOverflow.ViewModels
             }
             else
             {
+                IsLoading = true;
                 _dataProvider.GetUsersByString(query)
                     .Subscribe(HandleResults, ex => { IsLoading = false; });
             }

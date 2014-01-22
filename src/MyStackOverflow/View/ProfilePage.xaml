@@ -68,7 +68,7 @@
                        Opacity="0.4" />
         </Grid>
         <Grid Grid.Row="1" Margin="12,0,12,0">
-            <phone:Pivot>
+            <phone:Pivot x:Name="ProfilePivot">
                 <phone:Pivot.HeaderTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}"
