@@ -44,6 +44,7 @@
                        Source="/MyStackOverflow;component/Assets/Images/logo.png" Height="115" Margin="0,120,0,0"
                        Width="400" />
                 <toolkit:PhoneTextBox
+                    Name="SearchBox"
                     Hint="{Binding  LocalizedResources.TypeUserNameOrId, Source={StaticResource LocalizedStrings}}"
                     binding:BindingUtility.UpdateSourceOnChange="True"
                     Text="{Binding Query, Mode=TwoWay}" Margin="12,24,0,0" />

@@ -4,7 +4,9 @@ using System.Linq;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
 using MyStackOverflow.Model;
+using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Factories;
+using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels
@@ -15,12 +17,13 @@ namespace MyStackOverflow.ViewModels
         private readonly int _id;
         private readonly StatisticsService _statistics;
         private readonly IUserViewModelFactory _userViewModelFactory;
+        private readonly INavigationService _navigation;
         private ObservableCollection<Badge> _badges;
         private UserViewModel _user;
 
         public ProfileViewModel(ISystemDispatcher dispatcher, [NotNull] AsyncDataProvider dataProvider, int id,
             [NotNull] StatisticsService statistics,
-            [NotNull] IUserViewModelFactory userViewModelFactory)
+            [NotNull] IUserViewModelFactory userViewModelFactory, INavigationService navigation)
             : base(dispatcher)
         {
             if (dataProvider == null) throw new ArgumentNullException("dataProvider");
@@ -30,8 +33,16 @@ namespace MyStackOverflow.ViewModels
             _id = id;
             _statistics = statistics;
             _userViewModelFactory = userViewModelFactory;
+            _navigation = navigation;
+            _navigation.CleanNavigationStack();
             Initialize();
             _statistics.ReportProfilePageLoaded();
+            SelectNewUserCommand=new RelayCommand(SelectNewUser);
+        }
+
+        private void SelectNewUser(object obj)
+        {
+            _navigation.GoToPage(Pages.LoginPage);
         }
 
         [CanBeNull, UsedImplicitly(ImplicitUseKindFlags.Access)]
@@ -72,6 +83,8 @@ namespace MyStackOverflow.ViewModels
                     }
                 }, ex => { IsLoading = false; });
         }
+
+        public RelayCommand SelectNewUserCommand { get; private set; }
 
         private void LoadBagesInfo(int id)
         {

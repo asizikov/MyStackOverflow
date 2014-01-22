@@ -250,6 +250,15 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select new user.
+        /// </summary>
+        public static string SelectNewUser {
+            get {
+                return ResourceManager.GetString("SelectNewUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to summary.
         /// </summary>
         public static string SummaryTitle {

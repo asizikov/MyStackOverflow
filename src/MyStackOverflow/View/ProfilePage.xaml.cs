@@ -28,12 +28,6 @@ namespace MyStackOverflow.View
             }
         }
 
-        private void ApplicationBarMenuItem_OnClick(object sender, EventArgs e)
-        {
-            ServiceLocator.ApplicationSettings.Settings.Me = null;
-            ServiceLocator.ApplicationSettings.Save();
-        }
-
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);

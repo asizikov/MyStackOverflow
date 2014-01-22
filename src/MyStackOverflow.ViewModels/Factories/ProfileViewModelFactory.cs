@@ -44,7 +44,7 @@ namespace MyStackOverflow.ViewModels.Factories
         public BaseViewModel Create(int id)
         {
             return new ProfileViewModel(_systemDispatcher, _dataProvider, id, _statistics,
-                UserViewModelFactory);
+                UserViewModelFactory, _navigationService);
         }
     }
 }

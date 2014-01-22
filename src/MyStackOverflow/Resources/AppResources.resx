@@ -188,4 +188,7 @@
   <data name="TypeUserNameOrId" xml:space="preserve">
     <value>type your user name here</value>
   </data>
+  <data name="SelectNewUser" xml:space="preserve">
+    <value>select new user</value>
+  </data>
 </root>

@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:converters="clr-namespace:YAToolkit.Converters;assembly=YAToolkit"
+    xmlns:bindableApplicationBar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
     mc:Ignorable="d"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -179,11 +180,23 @@
             </phone:Pivot>
         </Grid>
     </Grid>
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar Opacity="0.1" Mode="Minimized" IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Click="ApplicationBarMenuItem_OnClick" Text="drop settings"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    <bindableApplicationBar:Bindable.ApplicationBar>
+        <bindableApplicationBar:BindableApplicationBar
+            Mode="Minimized"
+            BindableOpacity="0.5"
+            >
+            <bindableApplicationBar:BindableApplicationBar.MenuItems>
+                <bindableApplicationBar:BindableApplicationBarMenuItem
+                    Text="{Binding LocalizedResources.SelectNewUser , Source={StaticResource LocalizedStrings}}"
+                    Command="{Binding SelectNewUserCommand}" />
+            </bindableApplicationBar:BindableApplicationBar.MenuItems>
+        </bindableApplicationBar:BindableApplicationBar>
+    </bindableApplicationBar:Bindable.ApplicationBar>
+    <!--    <phone:PhoneApplicationPage.ApplicationBar>-->
+<!--        <shell:ApplicationBar Opacity="0.1" Mode="Minimized" IsVisible="True" IsMenuEnabled="True">-->
+<!--            <shell:ApplicationBar.MenuItems>-->
+<!--                <shell:ApplicationBarMenuItem Click="ApplicationBarMenuItem_OnClick" Text="drop settings"/>-->
+<!--            </shell:ApplicationBar.MenuItems>-->
+<!--        </shell:ApplicationBar>-->
+<!--    </phone:PhoneApplicationPage.ApplicationBar>-->
 </phone:PhoneApplicationPage>
