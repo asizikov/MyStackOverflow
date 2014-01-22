@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:converters="clr-namespace:YAToolkit.Converters;assembly=YAToolkit"
     mc:Ignorable="d"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -20,6 +21,12 @@
                                  IsVisible="{Binding IsLoading}" />
     </shell:SystemTray.ProgressIndicator>
     <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <toolkit:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+                <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
+            </ResourceDictionary>
+        </Grid.Resources>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="/MyStackOverflow;component/Assets/main_bg.png" />
         </Grid.Background>
@@ -81,7 +88,9 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelStyle}">
+                        <StackPanel 
+                            Visibility="{Binding User.Location, Converter={StaticResource NullToVisibilityConverter}}"
+                            Grid.Row="0" Style="{StaticResource StackPanelStyle}">
                             <TextBlock
                                 toolkit:SlideInEffect.LineIndex="1"
                                 Style="{StaticResource GrayTitleStyle}"
@@ -92,7 +101,9 @@
                                 Text="{Binding User.Location}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel Style="{StaticResource StackPanelStyle}" Grid.Row="1">
+                        <StackPanel 
+                            Visibility="{Binding User.Age, Converter={StaticResource ZeroToVisibilityConverter}}"
+                            Style="{StaticResource StackPanelStyle}" Grid.Row="1">
                             <TextBlock
                                 toolkit:SlideInEffect.LineIndex="1"
                                 Text="{Binding LocalizedResources.Age, Source={StaticResource LocalizedStrings}}"
@@ -102,7 +113,8 @@
                                        FontFamily="{StaticResource PhoneFontFamilyLight}"
                                        Style="{StaticResource PhoneTextLargeStyle}" />
                         </StackPanel>
-                        <StackPanel Style="{StaticResource StackPanelStyle}" Grid.Row="2">
+                        <StackPanel
+                            Style="{StaticResource StackPanelStyle}" Grid.Row="2">
                             <TextBlock
                                 toolkit:SlideInEffect.LineIndex="1"
                                 Text="{Binding LocalizedResources.LastAccess, Source={StaticResource LocalizedStrings}}"
