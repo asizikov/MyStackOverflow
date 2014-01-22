@@ -192,11 +192,4 @@
             </bindableApplicationBar:BindableApplicationBar.MenuItems>
         </bindableApplicationBar:BindableApplicationBar>
     </bindableApplicationBar:Bindable.ApplicationBar>
-    <!--    <phone:PhoneApplicationPage.ApplicationBar>-->
-<!--        <shell:ApplicationBar Opacity="0.1" Mode="Minimized" IsVisible="True" IsMenuEnabled="True">-->
-<!--            <shell:ApplicationBar.MenuItems>-->
-<!--                <shell:ApplicationBarMenuItem Click="ApplicationBarMenuItem_OnClick" Text="drop settings"/>-->
-<!--            </shell:ApplicationBar.MenuItems>-->
-<!--        </shell:ApplicationBar>-->
-<!--    </phone:PhoneApplicationPage.ApplicationBar>-->
 </phone:PhoneApplicationPage>
