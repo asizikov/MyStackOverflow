@@ -19,6 +19,7 @@ namespace MyStackOverflow
                 Counter.CustomAppVersion = Configuration.Version;
                 Counter.TrackLocationEnabled = true;
                 Counter.Start(Configuration.YandexMetricaKey);
+                Counter.SendEventsBuffer();
             }
         }
 

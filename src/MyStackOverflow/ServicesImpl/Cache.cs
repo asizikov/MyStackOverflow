@@ -89,7 +89,7 @@ namespace MyStackOverflow.ServicesImpl
             using (var writer = new StreamWriter(fileStream))
             {
                 var json = new JsonSerializer();
-                json.Serialize(writer, _cache, _cache.GetType());
+                json.Serialize(writer, new Dictionary<string, CacheItem>(_cache), _cache.GetType());
             }
         }
 

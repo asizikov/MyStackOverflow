@@ -40,8 +40,9 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Grid.ColumnSpan="2">
             <StackPanel>
-                <Image HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top"
-                       Source="/MyStackOverflow;component/Assets/Images/logo.png" Height="115" Margin="0,120,0,0"
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Source="/MyStackOverflow;component/Assets/Images/logo.png" Height="115" 
+                       Margin="0,120,0,0"
                        Width="400" />
                 <toolkit:PhoneTextBox
                     Name="SearchBox"
