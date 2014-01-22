@@ -259,7 +259,7 @@ namespace MyStackOverflow.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to type your user name or id.
+        ///   Looks up a localized string similar to type your user name here.
         /// </summary>
         public static string TypeUserNameOrId {
             get {
