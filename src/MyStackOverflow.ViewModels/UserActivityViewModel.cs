@@ -40,7 +40,7 @@ namespace MyStackOverflow.ViewModels
             _tasks = tasks;
             _userId = userId;
             _detailsType = detailsType;
-
+            _statistics.PublishActivityPageLoaded(_detailsType == DetailsType.Questions);
             LoadMoreCommand = new RelayCommand(_ => LoadNext());
             LoadNext();
         }
