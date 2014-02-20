@@ -1,7 +1,8 @@
 ﻿using System;
+using Curacao.MVVM.Navigation;
+using Curacao.MVVM.Services;
 using JetBrains.Annotations;
 using MyStackOverflow.Model;
-using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ViewModels.Factories

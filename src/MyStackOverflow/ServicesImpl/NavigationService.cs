@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Curacao.MVVM.Navigation;
+using Curacao.MVVM.Services;
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
 using MyStackOverflow.ViewModels.Navigation;
-using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ServicesImpl
 {
@@ -40,6 +41,11 @@ namespace MyStackOverflow.ServicesImpl
                 }
             }
             _dispatcher.InvokeOnUIifNeeded(() => _rootFrame.Navigate(new Uri(sb.ToString(), UriKind.Relative)));
+        }
+
+        public void GoToPage(string page, IDictionary<string, string> parameters)
+        {
+            throw new NotImplementedException();
         }
 
         public void CleanNavigationStack()

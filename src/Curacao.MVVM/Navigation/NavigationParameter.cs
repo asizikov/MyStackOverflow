@@ -1,5 +1,8 @@
-﻿namespace MyStackOverflow.ViewModels.Navigation
+﻿using JetBrains.Annotations;
+
+namespace Curacao.MVVM.Navigation
 {
+    [PublicAPI]
     public sealed class NavigationParameter
     {
         public string Parameter { get; set; }

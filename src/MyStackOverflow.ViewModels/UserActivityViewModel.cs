@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
+using Curacao.MVVM.Commands;
+using Curacao.MVVM.Services;
+using Curacao.MVVM.ViewModel;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
-using MyStackOverflow.ViewModels.Commands;
 using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 

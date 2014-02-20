@@ -160,6 +160,7 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="RateMyAppGuide_v1 1.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -214,6 +215,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RateMyApp">
+      <HintPath>..\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Reactive.Core">
       <HintPath>..\packages\Rx-Core.2.1.30214.0\lib\Portable-Net45+WinRT45+WP8\System.Reactive.Core.dll</HintPath>
     </Reference>
@@ -232,6 +236,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Curacao.MVVM\Curacao.MVVM.csproj">
+      <Project>{F66E4F7D-DF19-447E-BAF2-31118687BE7F}</Project>
+      <Name>Curacao.MVVM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyStackOverflow.Networking\MyStackOverflow.Networking.csproj">
       <Project>{151D6CF2-902A-412F-A4DE-70DCB90F3FB0}</Project>
       <Name>MySackOverflow.Networking</Name>

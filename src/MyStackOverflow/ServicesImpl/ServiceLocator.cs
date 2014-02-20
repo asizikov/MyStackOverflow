@@ -1,4 +1,6 @@
 ﻿using System;
+using Curacao.MVVM.Navigation;
+using Curacao.MVVM.Services;
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
 using MyStackOverflow.Data;

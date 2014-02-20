@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyStackOverflow.ViewModels.Services
+namespace Curacao.MVVM.Services
 {
     public interface ISystemDispatcher
     {

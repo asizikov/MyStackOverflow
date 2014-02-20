@@ -9,6 +9,7 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:converters="clr-namespace:YAToolkit.Converters;assembly=YAToolkit"
     xmlns:bindableApplicationBar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+    xmlns:controls="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
     mc:Ignorable="d"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -179,6 +180,12 @@
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>
+        <controls:FeedbackOverlay
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"
+            FeedbackTo="{Binding Path=LocalizedResources.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+            ApplicationName="{Binding Path=LocalizedResources.AppName, Source={StaticResource LocalizedStrings}}" />
     </Grid>
     <bindableApplicationBar:Bindable.ApplicationBar>
         <bindableApplicationBar:BindableApplicationBar

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
+using Curacao.MVVM.Services;
 using JetBrains.Annotations;
-using MyStackOverflow.ViewModels.Services;
 
-namespace MyStackOverflow.ViewModels
+namespace Curacao.MVVM.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        protected readonly ISystemDispatcher Dispatcher;
+        [PublicAPI, NotNull] protected readonly ISystemDispatcher Dispatcher;
         public event PropertyChangedEventHandler PropertyChanged;
         private bool _isLoading;
 
@@ -17,7 +17,7 @@ namespace MyStackOverflow.ViewModels
             Dispatcher = dispatcher;
         }
 
-        [NotifyPropertyChangedInvocator]
+        [NotifyPropertyChangedInvocator, PublicAPI]
         protected void OnPropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
@@ -27,7 +27,7 @@ namespace MyStackOverflow.ViewModels
             }
         }
 
-        [UsedImplicitly(ImplicitUseKindFlags.Access)]
+        [UsedImplicitly(ImplicitUseKindFlags.Access), PublicAPI]
         public bool IsLoading
         {
             get { return _isLoading; }

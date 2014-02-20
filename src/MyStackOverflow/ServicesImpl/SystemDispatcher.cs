@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Threading;
+using Curacao.MVVM.Services;
 using JetBrains.Annotations;
-using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ServicesImpl
 {

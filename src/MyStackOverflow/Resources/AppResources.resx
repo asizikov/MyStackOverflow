@@ -191,4 +191,13 @@
   <data name="SelectNewUser" xml:space="preserve">
     <value>select new user</value>
   </data>
+  <data name="AppName" xml:space="preserve">
+    <value>MyStackOverflow</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Anton Sizikov</value>
+  </data>
+  <data name="FeedbackTo" xml:space="preserve">
+    <value>pinholder@yandex.ru</value>
+  </data>
 </root>

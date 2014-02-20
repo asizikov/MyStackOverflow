@@ -33,11 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BaseViewModel.cs" />
-    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Factories\IUserViewModelFactory.cs" />
     <Compile Include="Factories\LoginViewModelFactory.cs" />
-    <Compile Include="Factories\IGenericViewModelFactory.cs" />
     <Compile Include="Factories\QuestionsViewModelFactory.cs" />
     <Compile Include="Factories\UserViewModelFactory.cs" />
     <Compile Include="LoginViewModel.cs" />
@@ -47,13 +44,10 @@
     <Compile Include="Services\IPhoneTasks.cs" />
     <Compile Include="UserActivityViewModel.cs" />
     <Compile Include="Services\IApplicationSettings.cs" />
-    <Compile Include="Navigation\INavigationService.cs" />
     <Compile Include="Services\IStringsProvider.cs" />
-    <Compile Include="Services\ISystemDispatcher.cs" />
     <Compile Include="Navigation\Pages.cs" />
     <Compile Include="ProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Navigation\NavigationParameter.cs" />
     <Compile Include="Navigation\NavigationParameterName.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="UserActivityItem.cs" />
@@ -74,6 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Curacao.MVVM\Curacao.MVVM.csproj">
+      <Project>{f66e4f7d-df19-447e-baf2-31118687be7f}</Project>
+      <Name>Curacao.MVVM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyStackOverflow.Data\MyStackOverflow.Data.csproj">
       <Project>{3762c1c7-c64b-4f6e-a9f4-1f36c2f486e1}</Project>
       <Name>MyStackOverflow.Data</Name>

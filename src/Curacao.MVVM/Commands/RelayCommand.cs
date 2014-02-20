@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace MyStackOverflow.ViewModels.Commands
+namespace Curacao.MVVM.Commands
 {
     public class RelayCommand : ICommand
     {

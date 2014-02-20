@@ -1,4 +1,6 @@
-﻿namespace MyStackOverflow.ViewModels.Factories
+﻿using Curacao.MVVM.ViewModel;
+
+namespace MyStackOverflow.ViewModels.Factories
 {
     public interface IGenericViewModelByIdFactory
     {
