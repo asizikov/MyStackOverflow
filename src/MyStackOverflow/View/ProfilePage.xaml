@@ -190,7 +190,7 @@
     <bindableApplicationBar:Bindable.ApplicationBar>
         <bindableApplicationBar:BindableApplicationBar
             Mode="Minimized"
-            BindableOpacity="0.5"
+            BindableOpacity="0.9"
             >
             <bindableApplicationBar:BindableApplicationBar.MenuItems>
                 <bindableApplicationBar:BindableApplicationBarMenuItem

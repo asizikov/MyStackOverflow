@@ -6,7 +6,7 @@ namespace MyStackOverflow
     {
         public static bool EnableStatistics
         {
-            get { return false; }
+            get { return true; }
         }
 
         public static Version Version
@@ -16,7 +16,7 @@ namespace MyStackOverflow
 
         public static uint YandexMetricaKey
         {
-            get { return 0; }
+            get { return 17878; }
         }
     }
 }
