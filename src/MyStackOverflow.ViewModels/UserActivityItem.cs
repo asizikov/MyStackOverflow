@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Curacao.MVVM.Commands;
+using Curacao.Mvvm.Commands;
 using MyStackOverflow.Model;
 
 namespace MyStackOverflow.ViewModels

@@ -1,5 +1,5 @@
 ﻿using System;
-using Curacao.MVVM.ViewModel.Factories;
+using Curacao.Mvvm.ViewModel.Factories;
 using MyStackOverflow.ServicesImpl;
 using MyStackOverflow.ViewModels.Factories;
 

@@ -235,9 +235,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Curacao.MVVM\Curacao.MVVM.csproj">
+    <ProjectReference Include="..\..\Externals\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj">
+      <Project>{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}</Project>
+      <Name>Curacao.Mvvm.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Externals\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj">
       <Project>{F66E4F7D-DF19-447E-BAF2-31118687BE7F}</Project>
-      <Name>Curacao.MVVM</Name>
+      <Name>Curacao.Mvvm</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyStackOverflow.Networking\MyStackOverflow.Networking.csproj">
       <Project>{151D6CF2-902A-412F-A4DE-70DCB90F3FB0}</Project>

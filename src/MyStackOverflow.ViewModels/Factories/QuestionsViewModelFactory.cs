@@ -1,6 +1,6 @@
 ﻿using System;
-using Curacao.MVVM.Services;
-using Curacao.MVVM.ViewModel;
+using Curacao.Mvvm.Abstractions.Services;
+using Curacao.Mvvm.ViewModel;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
 using MyStackOverflow.ViewModels.Navigation;

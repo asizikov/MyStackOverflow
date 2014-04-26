@@ -1,4 +1,4 @@
-﻿using Curacao.MVVM.ViewModel;
+﻿using Curacao.Mvvm.ViewModel;
 
 namespace MyStackOverflow.ViewModels.Factories
 {

@@ -1,10 +1,9 @@
 ﻿using System;
-using Curacao.MVVM.Navigation;
-using Curacao.MVVM.Services;
+using Curacao.Mvvm.Abstractions.Navigation;
+using Curacao.Mvvm.Abstractions.Services;
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
 using MyStackOverflow.Data;
-using MyStackOverflow.ViewModels.Navigation;
 using MyStackOverflow.ViewModels.Services;
 
 namespace MyStackOverflow.ServicesImpl

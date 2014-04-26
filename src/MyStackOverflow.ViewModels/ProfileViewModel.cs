@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Curacao.MVVM.Commands;
-using Curacao.MVVM.Navigation;
-using Curacao.MVVM.Services;
-using Curacao.MVVM.ViewModel;
+using Curacao.Mvvm.Abstractions.Navigation;
+using Curacao.Mvvm.Abstractions.Services;
+using Curacao.Mvvm.Commands;
+using Curacao.Mvvm.ViewModel;
 using JetBrains.Annotations;
 using MyStackOverflow.Data;
 using MyStackOverflow.Model;

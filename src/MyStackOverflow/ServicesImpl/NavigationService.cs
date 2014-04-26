@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Curacao.MVVM.Navigation;
-using Curacao.MVVM.Services;
+using Curacao.Mvvm.Abstractions.Navigation;
+using Curacao.Mvvm.Abstractions.Services;
 using JetBrains.Annotations;
 using Microsoft.Phone.Controls;
-using MyStackOverflow.ViewModels.Navigation;
 
 namespace MyStackOverflow.ServicesImpl
 {

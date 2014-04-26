@@ -11,7 +11,7 @@
     <RootNamespace>MyStackOverflow.ViewModels</RootNamespace>
     <AssemblyName>MyStackOverflow.ViewModels</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -68,9 +68,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Curacao.MVVM\Curacao.MVVM.csproj">
+    <ProjectReference Include="..\..\Externals\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj">
+      <Project>{89d0eefb-d98e-4cb7-85ed-ca55f98a8b41}</Project>
+      <Name>Curacao.Mvvm.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Externals\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj">
       <Project>{f66e4f7d-df19-447e-baf2-31118687be7f}</Project>
-      <Name>Curacao.MVVM</Name>
+      <Name>Curacao.Mvvm</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyStackOverflow.Data\MyStackOverflow.Data.csproj">
       <Project>{3762c1c7-c64b-4f6e-a9f4-1f36c2f486e1}</Project>

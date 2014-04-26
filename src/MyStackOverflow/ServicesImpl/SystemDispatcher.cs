@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Threading;
-using Curacao.MVVM.Services;
+using Curacao.Mvvm.Abstractions.Services;
 using JetBrains.Annotations;
 
 namespace MyStackOverflow.ServicesImpl
