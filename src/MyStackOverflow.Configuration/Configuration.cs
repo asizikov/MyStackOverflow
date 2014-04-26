@@ -6,17 +6,17 @@ namespace MyStackOverflow
     {
         public static bool EnableStatistics
         {
-            get { return true; }
+            get { return false; }
         }
 
         public static Version Version
         {
-            get { return new Version(1, 1, 0); }
+            get { return new Version(1, 2, 0); }
         }
 
         public static uint YandexMetricaKey
         {
-            get { return 17878; }
+            get { return 0; }
         }
     }
 }
