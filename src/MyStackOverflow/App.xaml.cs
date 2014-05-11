@@ -34,6 +34,7 @@ namespace MyStackOverflow
             // Language display initialization
             InitializeLanguage();
             Bootstrapper.InitApplication(RootFrame);
+            ThemeManager.ToDarkTheme();
 
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)

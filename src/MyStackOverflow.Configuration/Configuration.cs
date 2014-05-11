@@ -11,7 +11,7 @@ namespace MyStackOverflow
 
         public static Version Version
         {
-            get { return new Version(1, 2, 0); }
+            get { return new Version(1, 2, 1); }
         }
 
         public static uint YandexMetricaKey
